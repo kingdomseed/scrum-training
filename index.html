@@ -968,6 +968,195 @@
         <h1>Day 2: Apply to Your Product</h1>
       </section>
 
+      <!-- Slide 36: Day 2 Opening -->
+      <section>
+        <h2>Welcome Back!</h2>
+        <div class="card--accent">
+          <p><strong>Quick Recap:</strong> What stuck with you from yesterday?</p>
+        </div>
+        <div class="exercise-card" style="margin-top: 20px;">
+          <p>Share one thing you remember, learned, or are still thinking about.</p>
+        </div>
+      </section>
+
+      <!-- Slide 37: Sprint Events Flow -->
+      <section>
+        <h2>The Sprint as a Learning Loop</h2>
+        <div style="max-width: 700px; margin: 0 auto;">
+          <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background -->
+            <rect width="900" height="600" fill="#ffffff" />
+            <!-- Container: The Sprint -->
+            <rect x="40" y="40" width="820" height="520" fill="none" stroke="black" stroke-width="3" />
+            <rect x="60" y="25" width="280" height="30" fill="black" />
+            <text x="70" y="46" font-family="Arial, sans-serif" font-weight="bold" font-size="16" fill="white">THE SPRINT (1 MONTH OR LESS)</text>
+            <!-- Input: Product Backlog -->
+            <g transform="translate(60, 100)">
+              <rect x="4" y="4" width="160" height="60" fill="rgba(0,0,0,0.12)" />
+              <rect width="160" height="60" fill="#ffd700" stroke="black" stroke-width="3" />
+              <text x="80" y="35" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="black">PRODUCT BACKLOG</text>
+            </g>
+            <!-- Arrow: Input to Sprint Planning -->
+            <path d="M 220 130 L 260 130" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead-sf)" />
+            <!-- Event 1: Sprint Planning -->
+            <g transform="translate(270, 90)">
+              <rect x="4" y="4" width="180" height="80" fill="rgba(0,0,0,0.12)" />
+              <rect width="180" height="80" fill="#0066ff" stroke="black" stroke-width="3" />
+              <text x="90" y="40" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="white">SPRINT PLANNING</text>
+            </g>
+            <!-- Output: Sprint Backlog + Goal -->
+            <g transform="translate(480, 100)">
+              <rect x="4" y="4" width="180" height="60" fill="rgba(0,0,0,0.12)" />
+              <rect width="180" height="60" fill="#ffd700" stroke="black" stroke-width="3" />
+              <text x="90" y="25" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle" fill="black">SPRINT BACKLOG</text>
+              <text x="90" y="45" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle" fill="black">+ SPRINT GOAL</text>
+            </g>
+            <!-- Arrow: Planning to Daily Scrum Area -->
+            <path d="M 360 170 L 360 240" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead-sf)" />
+            <!-- Event 2: Daily Scrum (Iterative Loop) -->
+            <g transform="translate(280, 250)">
+              <rect x="4" y="4" width="160" height="100" fill="rgba(0,0,0,0.12)" />
+              <rect width="160" height="100" fill="#0066ff" stroke="black" stroke-width="3" />
+              <text x="80" y="40" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" fill="white">DAILY SCRUM</text>
+              <text x="80" y="70" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">(REPEATING)</text>
+              <!-- Loop Circle -->
+              <path d="M 160 50 A 25 25 0 1 1 160 49" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead-sf)" />
+            </g>
+            <!-- Arrow: Daily Scrum to Review -->
+            <path d="M 360 350 L 360 410" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead-sf)" />
+            <!-- Event 3: Sprint Review -->
+            <g transform="translate(270, 420)">
+              <rect x="4" y="4" width="180" height="80" fill="rgba(0,0,0,0.12)" />
+              <rect width="180" height="80" fill="#0066ff" stroke="black" stroke-width="3" />
+              <text x="90" y="40" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="white">SPRINT REVIEW</text>
+            </g>
+            <!-- Output: Increment -->
+            <g transform="translate(480, 430)">
+              <rect x="4" y="4" width="160" height="60" fill="rgba(0,0,0,0.12)" />
+              <rect width="160" height="60" fill="#ffd700" stroke="black" stroke-width="3" />
+              <text x="80" y="35" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="black">INCREMENT</text>
+            </g>
+            <!-- Arrow: Review to Retrospective -->
+            <path d="M 450 460 L 520 460" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead-sf)" />
+            <!-- Event 4: Sprint Retrospective -->
+            <g transform="translate(530, 420)">
+              <rect x="4" y="4" width="200" height="80" fill="rgba(0,0,0,0.12)" />
+              <rect width="200" height="80" fill="#0066ff" stroke="black" stroke-width="3" />
+              <text x="100" y="40" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="white">SPRINT RETROSPECTIVE</text>
+            </g>
+            <!-- Arrow: Back to Planning (Circular Loop) -->
+            <path d="M 730 460 Q 820 460 820 300 Q 820 130 450 130" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead-sf)" stroke-dasharray="8,4" />
+            <!-- Definitions -->
+            <defs>
+              <marker id="arrowhead-sf" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+              </marker>
+            </defs>
+          </svg>
+        </div>
+        <p style="text-align: center; font-size: 0.85rem; color: var(--color-text-muted); margin-top: 12px;">Each event is an opportunity to inspect and adapt &mdash; the heartbeat of empiricism.</p>
+      </section>
+
+      <!-- Slide 38: Self-Management -->
+      <section>
+        <h2>Self-Managing Teams</h2>
+        <div class="card--primary">
+          <p>The team decides <strong>WHO</strong> does <strong>WHAT</strong> and <strong>HOW</strong></p>
+        </div>
+        <ul style="margin-top: 16px;">
+          <li>No one tells the team how to turn backlog items into Increments</li>
+          <li>The team collectively owns the Sprint Backlog</li>
+          <li>Decisions are made by those closest to the work</li>
+        </ul>
+        <div class="quote-card" style="margin-top: 16px;">
+          <p>&ldquo;Scrum Teams are cross-functional, meaning the members have all the skills necessary to create value each Sprint.&rdquo;</p>
+          <p class="attribution">&mdash; Scrum Guide (2020)</p>
+        </div>
+      </section>
+
+      <!-- Slide 39: Section Divider — Planning with Scrum -->
+      <section class="section-divider">
+        <h1>Planning with Scrum</h1>
+      </section>
+
+      <!-- Slide 40: Estimation -->
+      <section>
+        <h2>Estimation</h2>
+        <div class="card--accent">
+          <p>Estimation is a team activity, not a management tool.</p>
+        </div>
+        <div class="grid-2" style="margin-top: 20px;">
+          <div class="card">
+            <h3>Relative Sizing</h3>
+            <p>Compare items to each other, not to hours. Use T-shirt sizes: XS, S, M, L, XL</p>
+          </div>
+          <div class="card">
+            <h3>Why Relative?</h3>
+            <p>Humans are bad at absolute estimates. We&rsquo;re great at comparing: &ldquo;This is about twice as big as that.&rdquo;</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 41: Estimation Exercise -->
+      <section>
+        <h2>Estimation Exercise</h2>
+        <div class="exercise-card">
+          <p>As a team, estimate these items from your domain using T-shirt sizes (XS, S, M, L, XL):</p>
+          <ul>
+            <li>Pick 5&ndash;8 real tasks from your current work</li>
+            <li>Discuss as a team &mdash; the conversation IS the value</li>
+            <li><strong>Time: 10 minutes</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Slide 42: Product Backlog Refinement -->
+      <section>
+        <h2>Product Backlog Refinement</h2>
+        <ul>
+          <li>An ongoing activity, <strong>NOT</strong> a formal Scrum event</li>
+          <li>Adding detail, estimates, and order to items</li>
+          <li>Usually no more than 10% of Sprint capacity</li>
+          <li>Makes future Sprint Planning smoother</li>
+        </ul>
+        <div class="card--accent" style="margin-top: 20px;">
+          <p>Think of it as &ldquo;grooming the queue&rdquo; &mdash; keeping the backlog ready for the next Sprint.</p>
+        </div>
+      </section>
+
+      <!-- Slide 43: Definition of Ready -->
+      <section>
+        <h2>When Is a Backlog Item &ldquo;Ready&rdquo;?</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Clear</h3>
+            <p>The team understands what is being asked</p>
+          </div>
+          <div class="card--accent">
+            <h3>Sized</h3>
+            <p>The team has estimated the relative effort</p>
+          </div>
+          <div class="card">
+            <h3>Testable</h3>
+            <p>The team knows how to verify it&rsquo;s done</p>
+          </div>
+        </div>
+        <p style="text-align: center; font-size: 0.85rem; color: var(--color-text-muted); margin-top: 16px;">Ready &ne; fully specified. Just enough to start.</p>
+      </section>
+
+      <!-- Slide 44: Monitoring Sprint Progress -->
+      <section>
+        <h2>Monitoring Sprint Progress</h2>
+        <div class="card">
+          <ul>
+            <li>The Sprint Backlog makes progress visible</li>
+            <li>Developers inspect progress at least daily (Daily Scrum)</li>
+            <li>Burndown/burnup charts can help &mdash; but they&rsquo;re tools, not mandates</li>
+            <li>The Sprint Goal is the measure of success, not individual task completion</li>
+          </ul>
+        </div>
+      </section>
+
     </div>
   </div>
 
