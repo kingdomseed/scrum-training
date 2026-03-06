@@ -81,7 +81,7 @@
       font-weight: 400;
       color: var(--color-text);
       line-height: 1.6;
-      font-size: 0.95rem;
+      font-size: 1.1rem;
     }
 
     .reveal ul,
@@ -231,7 +231,7 @@
       font-style: normal;
       font-weight: 600;
       color: var(--color-text-muted);
-      font-size: 0.9rem;
+      font-size: 1.0rem;
       margin-top: 12px;
     }
 
@@ -264,7 +264,7 @@
       color: var(--color-on-primary);
       font-family: var(--font-body);
       font-weight: 700;
-      font-size: 0.8rem;
+      font-size: 0.95rem;
       border: var(--border-base);
       border-radius: 0;
       text-transform: uppercase;
@@ -401,7 +401,7 @@
     .timer-btn {
       font-family: var(--font-body);
       font-weight: 700;
-      font-size: 0.85rem;
+      font-size: 1.0rem;
       padding: 6px 16px;
       border: var(--border-base);
       background: #ffffff;
@@ -578,7 +578,42 @@
         <h2>Fundamentals of Scrum</h2>
       </section>
 
-      <!-- Slide 7: Definition of Scrum -->
+      <!-- Slide 7: Rugby Scrum Image -->
+      <section>
+        <h2>This Is a Scrum</h2>
+        <div class="card" style="text-align: center; padding: 8px;">
+          <img src="images/rugby-scrum.jpg" alt="A rugby scrum — two teams locked together, pushing as a unit" style="width: 100%; max-height: 420px; object-fit: cover; border: var(--border-base); display: block;">
+        </div>
+        <p style="text-align: center; color: var(--color-text-muted); margin-top: 12px;">In rugby, a <strong>scrum</strong> restarts play &mdash; the whole team binds together and moves the ball forward as one unit.</p>
+        <aside class="notes">
+          Show this image and let it land. Don't explain too much yet — just say "This is a scrum" and let the visual do the work. The next slide will connect it to the framework. The power of this image is that it immediately conveys: teamwork, physical togetherness, shared effort, no individual heroes.
+        </aside>
+      </section>
+
+      <!-- Slide 8: Origins of the Word "Scrum" -->
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-compass"/></svg> Where Does &ldquo;Scrum&rdquo; Come From?</h2>
+        <div class="quote-card" style="margin-bottom: 16px;">
+          <p>&ldquo;The &lsquo;rugby approach&rsquo; &mdash; where a team tries to go the distance as a unit, passing the ball back and forth &mdash; may better serve today&rsquo;s competitive requirements.&rdquo;</p>
+          <p class="attribution">&mdash; Takeuchi &amp; Nonaka, &ldquo;The New New Product Development Game&rdquo; (Harvard Business Review, 1986)</p>
+        </div>
+        <div class="grid-2">
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3>The Rugby Metaphor</h3>
+            <p>In rugby, a <strong>scrum</strong> is when the whole team locks together and moves the ball forward as one unit &mdash; no handoffs, no sequential phases.</p>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3>From Paper to Practice</h3>
+            <p><strong>Jeff Sutherland</strong> and <strong>Ken Schwaber</strong> took this idea and created the Scrum framework in the early 1990s, first presented at OOPSLA in 1995.</p>
+          </div>
+        </div>
+        <div class="slide-question">How is your team&rsquo;s current way of working more like a relay race or more like a rugby scrum?</div>
+        <aside class="notes">
+          The key insight from Takeuchi &amp; Nonaka: the best teams don't work in sequential phases (like a relay race). They work together, overlapping phases, adapting as they go. This is the fundamental shift Scrum asks teams to make. The relay race metaphor is powerful for this audience — art departments often work sequentially (design → review → revise → approve).
+        </aside>
+      </section>
+
+      <!-- Slide 8: Definition of Scrum -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-lightbulb"/></svg> What Is Scrum?</h2>
         <div class="quote-card">
@@ -602,24 +637,24 @@
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-heart"/></svg> The Agile Manifesto</h2>
         <div class="grid-2">
-          <div class="card">
-            <p style="font-size: 1.15rem; font-weight: 700;">Individuals &amp; Interactions</p>
-            <p style="color: var(--color-text-muted); font-size: 0.85rem;">over Processes &amp; Tools</p>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <p style="font-size: 1.3rem; font-weight: 700;">Individuals &amp; Interactions</p>
+            <p style="color: var(--color-text-muted); font-size: 1.0rem;">over Processes &amp; Tools</p>
           </div>
-          <div class="card">
-            <p style="font-size: 1.15rem; font-weight: 700;">Working Product</p>
-            <p style="color: var(--color-text-muted); font-size: 0.85rem;">over Comprehensive Documentation</p>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <p style="font-size: 1.3rem; font-weight: 700;">Working Product</p>
+            <p style="color: var(--color-text-muted); font-size: 1.0rem;">over Comprehensive Documentation</p>
           </div>
-          <div class="card">
-            <p style="font-size: 1.15rem; font-weight: 700;">Customer Collaboration</p>
-            <p style="color: var(--color-text-muted); font-size: 0.85rem;">over Contract Negotiation</p>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <p style="font-size: 1.3rem; font-weight: 700;">Customer Collaboration</p>
+            <p style="color: var(--color-text-muted); font-size: 1.0rem;">over Contract Negotiation</p>
           </div>
-          <div class="card">
-            <p style="font-size: 1.15rem; font-weight: 700;">Responding to Change</p>
-            <p style="color: var(--color-text-muted); font-size: 0.85rem;">over Following a Plan</p>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <p style="font-size: 1.3rem; font-weight: 700;">Responding to Change</p>
+            <p style="color: var(--color-text-muted); font-size: 1.0rem;">over Following a Plan</p>
           </div>
         </div>
-        <p style="text-align: center; font-style: italic; font-size: 0.8rem; color: var(--color-text-muted); margin-top: 16px;">While there is value in the items below, we value the items <strong>above</strong> more.</p>
+        <p style="text-align: center; font-style: italic; font-size: 1.0rem; color: var(--color-text-muted); margin-top: 16px;">While there is value in the items below, we value the items <strong>above</strong> more.</p>
         <div class="slide-question">Which of these values resonates most with you today?</div>
         <aside class="notes">
           Agile is a statement of values. Scrum is a way to put these values into focus, clarity, and practice. Ideas are easy — execution is hard.
@@ -677,23 +712,23 @@
               <text x="280" y="400" font-family="Arial, sans-serif" font-size="9" fill="#999" text-anchor="middle">Stacey, 1996</text>
             </svg>
           </div>
-          <!-- Complexity levels -->
-          <div style="padding-top: 10px;">
-            <div class="card" style="padding: 10px 14px; margin-bottom: 10px;">
-              <h3 style="margin-bottom: 2px;">Simple</h3>
-              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Everything is known &mdash; follow the recipe</p>
+          <!-- Complexity levels — 2x2 grid -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding-top: 10px;">
+            <div class="card" style="padding: 8px 12px; border-left: 5px solid var(--color-accent);">
+              <h3 style="margin-bottom: 2px; font-size: 0.95rem;">Simple</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Follow the recipe</p>
             </div>
-            <div class="card" style="padding: 10px 14px; margin-bottom: 10px;">
-              <h3 style="margin-bottom: 2px;">Complicated</h3>
-              <p style="font-size: 0.85rem; color: var(--color-text-muted);">More is known than unknown &mdash; call the experts</p>
+            <div class="card" style="padding: 8px 12px; border-left: 5px solid var(--color-primary);">
+              <h3 style="margin-bottom: 2px; font-size: 0.95rem;">Complicated</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Call the experts</p>
             </div>
-            <div class="card--accent" style="padding: 10px 14px; margin-bottom: 10px; border: var(--border-thick);">
-              <h3 style="margin-bottom: 2px;">Complex</h3>
-              <p style="font-size: 0.85rem;"><strong>More is unknown than known</strong> &mdash; experiment &amp; adapt</p>
+            <div class="card" style="padding: 8px 12px; border-left: 5px solid var(--color-accent); border-width: 2px 2px 2px 5px;">
+              <h3 style="margin-bottom: 2px; font-size: 0.95rem;">Complex</h3>
+              <p style="font-size: 0.85rem;"><strong>Experiment &amp; adapt</strong></p>
             </div>
-            <div class="card" style="padding: 10px 14px;">
-              <h3 style="margin-bottom: 2px;">Chaotic</h3>
-              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Very little is known &mdash; act first, make sense later</p>
+            <div class="card" style="padding: 8px 12px; border-left: 5px solid var(--color-primary);">
+              <h3 style="margin-bottom: 2px; font-size: 0.95rem;">Chaotic</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Act first, sense later</p>
             </div>
           </div>
         </div>
@@ -713,34 +748,34 @@
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-map"/></svg> The Cynefin Framework</h2>
         <div style="max-width: 620px; margin: 0 auto;">
           <svg width="800" height="520" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg">
-  <!-- Quadrants -->
-  <rect x="0" y="0" width="400" height="250" fill="#f9f9f9" stroke="black" stroke-width="3" />
-  <rect x="400" y="0" width="400" height="250" fill="#0066ff" stroke="black" stroke-width="3" />
+  <!-- Quadrants: Complex (TL), Complicated (TR), Chaotic (BL), Clear (BR) -->
+  <rect x="0" y="0" width="400" height="250" fill="#0066ff" stroke="black" stroke-width="3" />
+  <rect x="400" y="0" width="400" height="250" fill="#f9f9f9" stroke="black" stroke-width="3" />
   <rect x="0" y="250" width="400" height="250" fill="#f9f9f9" stroke="black" stroke-width="3" />
   <rect x="400" y="250" width="400" height="250" fill="#f9f9f9" stroke="black" stroke-width="3" />
 
   <!-- Labels -->
   <g font-family="Arial, sans-serif" font-weight="bold" text-anchor="middle" fill="black">
-    <text x="200" y="95" font-size="24">COMPLICATED</text>
-    <text x="200" y="130" font-size="15" font-weight="normal" fill="#444">Sense &rarr; Analyze &rarr; Respond</text>
-    <text x="200" y="155" font-size="14" fill="#444">Good Practice</text>
-
     <g fill="white">
-      <text x="600" y="95" font-size="24">COMPLEX</text>
-      <text x="600" y="130" font-size="15" font-weight="normal">Probe &rarr; Sense &rarr; Respond</text>
-      <text x="600" y="155" font-size="14">Emergent Practice</text>
+      <text x="200" y="95" font-size="24">COMPLEX</text>
+      <text x="200" y="130" font-size="15" font-weight="normal">Probe &rarr; Sense &rarr; Respond</text>
+      <text x="200" y="155" font-size="14">Emergent Practice</text>
     </g>
 
-    <rect x="510" y="185" width="180" height="36" fill="#ffd700" stroke="black" stroke-width="2" />
-    <text x="600" y="209" font-size="14" fill="black">Scrum lives here</text>
+    <rect x="110" y="185" width="180" height="36" fill="#ffd700" stroke="black" stroke-width="2" />
+    <text x="200" y="209" font-size="14" fill="black">Scrum lives here</text>
 
-    <text x="200" y="345" font-size="24">CLEAR</text>
-    <text x="200" y="380" font-size="15" font-weight="normal" fill="#444">Sense &rarr; Categorize &rarr; Respond</text>
-    <text x="200" y="405" font-size="14" fill="#444">Best Practice</text>
+    <text x="600" y="95" font-size="24">COMPLICATED</text>
+    <text x="600" y="130" font-size="15" font-weight="normal" fill="#444">Sense &rarr; Analyze &rarr; Respond</text>
+    <text x="600" y="155" font-size="14" fill="#444">Good Practice</text>
 
-    <text x="600" y="345" font-size="24">CHAOTIC</text>
-    <text x="600" y="380" font-size="15" font-weight="normal" fill="#444">Act &rarr; Sense &rarr; Respond</text>
-    <text x="600" y="405" font-size="14" fill="#444">Novel Practice</text>
+    <text x="200" y="345" font-size="24">CHAOTIC</text>
+    <text x="200" y="380" font-size="15" font-weight="normal" fill="#444">Act &rarr; Sense &rarr; Respond</text>
+    <text x="200" y="405" font-size="14" fill="#444">Novel Practice</text>
+
+    <text x="600" y="345" font-size="24">CLEAR</text>
+    <text x="600" y="380" font-size="15" font-weight="normal" fill="#444">Sense &rarr; Categorize &rarr; Respond</text>
+    <text x="600" y="405" font-size="14" fill="#444">Best Practice</text>
   </g>
 
   <!-- Attribution -->
@@ -811,8 +846,8 @@
       <!-- Slide 11: Empiricism in Practice — How Events Map to Pillars -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-eye"/></svg> How Scrum Events Use Empiricism</h2>
-        <p style="text-align: center; font-size: 0.95rem; margin-bottom: 16px;">Every Scrum event is an opportunity to inspect and adapt.</p>
-        <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; border: var(--border-base);">
+        <p style="text-align: center; font-size: 1.05rem; margin-bottom: 16px;">Every Scrum event is an opportunity to inspect and adapt.</p>
+        <table style="width: 100%; border-collapse: collapse; font-size: 1.0rem; border: var(--border-base);">
           <thead>
             <tr style="background: var(--color-accent); color: var(--color-on-accent); font-weight: 700;">
               <th style="padding: 8px 10px; text-align: left; border: var(--border-base);">Event</th>
@@ -957,7 +992,7 @@
             <text x="400" y="460" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#444">Feedback updates the Product Backlog</text>
           </svg>
         </div>
-        <p style="text-align: center; font-size: 0.85rem; color: var(--color-text-muted); margin-top: 4px;">One Scrum Team &middot; Three accountabilities &middot; Five events &middot; Three artifacts</p>
+        <p style="text-align: center; font-size: 1.0rem; color: var(--color-text-muted); margin-top: 4px;">One Scrum Team &middot; Three accountabilities &middot; Five events &middot; Three artifacts</p>
         <aside class="notes">
           Framework for team performance: how does the team work together? Careful alignment. Unity of purpose. Clarity of goal. The Sprint is a container event — everything happens within it. Notice how the feedback loop from Review goes all the way back to the Product Backlog.
         </aside>
@@ -967,7 +1002,7 @@
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-crown"/></svg> Product Owner</h2>
         <div class="card" style="margin-bottom: 16px; border-left: 5px solid var(--color-accent);">
-          <p style="font-size: 1.1rem; font-weight: 600;">Maximizes the value of the product</p>
+          <p style="font-size: 1.25rem; font-weight: 600;">Maximizes the value of the product</p>
         </div>
         <ul>
           <li>Developing and communicating the Product Goal</li>
@@ -985,7 +1020,7 @@
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-users"/></svg> Developers</h2>
         <div class="card" style="margin-bottom: 16px; border-left: 5px solid var(--color-primary);">
-          <p style="font-size: 1.1rem; font-weight: 600;">Turn Product Backlog items into a usable Increment</p>
+          <p style="font-size: 1.25rem; font-weight: 600;">Turn Product Backlog items into a usable Increment</p>
         </div>
         <ul>
           <li>Creating the Sprint Backlog (a plan for the Sprint)</li>
@@ -1000,7 +1035,7 @@
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-shield"/></svg> Scrum Master</h2>
         <div class="card" style="margin-bottom: 16px; border-left: 5px solid var(--color-accent);">
-          <p style="font-size: 1.1rem; font-weight: 600;">Accountable for establishing Scrum as defined in the Scrum Guide</p>
+          <p style="font-size: 1.25rem; font-weight: 600;">Accountable for establishing Scrum as defined in the Scrum Guide</p>
         </div>
         <ul>
           <li>Coaching the team in self-management and cross-functionality</li>
@@ -1020,7 +1055,7 @@
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> The Sprint</h2>
         <div class="card" style="margin-bottom: 16px; border-left: 5px solid var(--color-primary);">
-          <p style="font-size: 1.1rem; font-weight: 600;">The Sprint is itself an event &mdash; a fixed-length container (1 month or less) for all other events</p>
+          <p style="font-size: 1.25rem; font-weight: 600;">The Sprint is itself an event &mdash; a fixed-length container (1 month or less) for all other events</p>
         </div>
         <ul>
           <li>No changes that endanger the Sprint Goal</li>
@@ -1043,7 +1078,7 @@
           <div class="card" style="border-left: 5px solid var(--color-accent);">
             <h3><svg class="slide-icon slide-icon--heading"><use href="#icon-flag"/></svg> Sprint Planning</h3>
             <p>What can we deliver? How will we do it?</p>
-            <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 8px;">Up to 8 hours for a 1-month Sprint</p>
+            <p style="font-size: 0.95rem; color: var(--color-text-muted); margin-top: 8px;">Up to 8 hours for a 1-month Sprint</p>
           </div>
           <div class="card" style="border-left: 5px solid var(--color-primary);">
             <h3><svg class="slide-icon slide-icon--heading"><use href="#icon-clock"/></svg> Daily Scrum</h3>
@@ -1066,17 +1101,17 @@
         <div class="grid-3">
           <div class="card" style="border-left: 5px solid var(--color-accent);">
             <h3>Product Backlog</h3>
-            <p style="font-weight: 700; font-size: 0.85rem; color: var(--color-primary);">Commitment: Product Goal</p>
+            <p style="font-weight: 700; font-size: 1.0rem; color: var(--color-primary);">Commitment: Product Goal</p>
             <p>An ordered list of everything needed to improve the product</p>
           </div>
           <div class="card" style="border-left: 5px solid var(--color-accent);">
             <h3>Sprint Backlog</h3>
-            <p style="font-weight: 700; font-size: 0.85rem; color: var(--color-primary);">Commitment: Sprint Goal</p>
+            <p style="font-weight: 700; font-size: 1.0rem; color: var(--color-primary);">Commitment: Sprint Goal</p>
             <p>The Sprint Goal + selected PBIs + plan for delivering them</p>
           </div>
           <div class="card" style="border-left: 5px solid var(--color-accent);">
             <h3>Increment</h3>
-            <p style="font-weight: 700; font-size: 0.85rem; color: var(--color-primary);">Commitment: Definition of Done</p>
+            <p style="font-weight: 700; font-size: 1.0rem; color: var(--color-primary);">Commitment: Definition of Done</p>
             <p>A concrete stepping stone toward the Product Goal</p>
           </div>
         </div>
@@ -1125,61 +1160,67 @@
 
       <!-- Slide 23: Product Backlog -->
       <section>
-        <h2>Product Backlog</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-map"/></svg> Product Backlog</h2>
         <div class="grid-4">
-          <div class="card" style="padding: 10px; text-align: center; font-size: 0.85rem;">
-            <strong>Art Studio</strong><br>(2)
+          <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-accent);">
+            <strong>Art Studio</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">2</span>
           </div>
-          <div class="card" style="padding: 10px; text-align: center; font-size: 0.85rem;">
-            <strong>Gallery</strong><br>(5)
+          <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-primary);">
+            <strong>Gallery</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">5</span>
           </div>
-          <div class="card" style="padding: 10px; text-align: center; font-size: 0.85rem;">
-            <strong>Main Building</strong><br>(5)
+          <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-accent);">
+            <strong>Main Building</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">5</span>
           </div>
-          <div class="card" style="padding: 10px; text-align: center; font-size: 0.85rem;">
-            <strong>Cafe / Shop</strong><br>(3)
+          <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-primary);">
+            <strong>Cafe / Shop</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">3</span>
           </div>
-          <div class="card" style="padding: 10px; text-align: center; font-size: 0.85rem;">
-            <strong>Sculpture Garden</strong><br>(2)
+          <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-accent);">
+            <strong>Sculpture Garden</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">2</span>
           </div>
-          <div class="card" style="padding: 10px; text-align: center; font-size: 0.85rem;">
-            <strong>Walking Paths</strong><br>(1)
+          <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-primary);">
+            <strong>Walking Paths</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">1</span>
           </div>
-          <div class="card" style="padding: 10px; text-align: center; font-size: 0.85rem;">
-            <strong>Parking Area</strong><br>(2)
+          <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-accent);">
+            <strong>Parking Area</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">2</span>
           </div>
-          <div class="card" style="padding: 10px; text-align: center; font-size: 0.85rem;">
-            <strong>Bridge / Entrance</strong><br>(3)
+          <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-primary);">
+            <strong>Bridge / Entrance</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">3</span>
           </div>
-          <div class="card" style="padding: 10px; text-align: center; font-size: 0.85rem;">
-            <strong>Supply Storage</strong><br>(2)
+          <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-accent);">
+            <strong>Supply Storage</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">2</span>
           </div>
-          <div class="card" style="padding: 10px; text-align: center; font-size: 0.85rem;">
-            <strong>Amphitheater</strong><br>(8)
+          <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-primary);">
+            <strong>Amphitheater</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">8</span>
           </div>
-          <div class="card" style="padding: 10px; text-align: center; font-size: 0.85rem;">
-            <strong>Student Housing</strong><br>(5)
+          <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-accent);">
+            <strong>Student Housing</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">5</span>
           </div>
-          <div class="card" style="padding: 10px; text-align: center; font-size: 0.85rem;">
-            <strong>Admin Office</strong><br>(3)
+          <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-primary);">
+            <strong>Admin Office</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">3</span>
           </div>
         </div>
-        <p style="text-align: center; font-size: 0.8rem; color: var(--color-text-muted); margin-top: 16px;">Items can be built with Lego OR drawn on paper. Sizes are relative estimates.</p>
+        <p style="text-align: center; font-size: 0.95rem; color: var(--color-text-muted); margin-top: 16px;">Story points are relative estimates. Items can be built with Lego OR drawn on paper.</p>
       </section>
 
       <!-- Slide 24: Sprint Rules -->
       <section>
-        <h2>Sprint Rules</h2>
-        <div class="card--primary" style="margin-bottom: 20px;">
-          <ul style="list-style: none; padding: 0; margin: 0;">
-            <li style="color: #ffffff; margin-bottom: 8px;"><strong>Sprint Planning:</strong> 3&ndash;5 minutes</li>
-            <li style="color: #ffffff; margin-bottom: 8px;"><strong>Build:</strong> 7 minutes</li>
-            <li style="color: #ffffff; margin-bottom: 8px;"><strong>Sprint Review:</strong> 5&ndash;10 minutes</li>
-            <li style="color: #ffffff;"><strong>Sprint Retrospective:</strong> 5&ndash;8 minutes</li>
-          </ul>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-stopwatch"/></svg> Sprint Rules</h2>
+        <div class="grid-2" style="margin-bottom: 20px;">
+          <div class="card" style="border-left: 5px solid var(--color-primary); padding: 12px 16px;">
+            <strong><svg class="slide-icon slide-icon--heading"><use href="#icon-flag"/></svg> Sprint Planning:</strong> 3&ndash;5 minutes
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-accent); padding: 12px 16px;">
+            <strong><svg class="slide-icon slide-icon--heading"><use href="#icon-clock"/></svg> Build:</strong> 7 minutes
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-primary); padding: 12px 16px;">
+            <strong><svg class="slide-icon slide-icon--heading"><use href="#icon-comments"/></svg> Sprint Review:</strong> 5&ndash;10 minutes
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-accent); padding: 12px 16px;">
+            <strong><svg class="slide-icon slide-icon--heading"><use href="#icon-gear"/></svg> Sprint Retrospective:</strong> 5&ndash;8 minutes
+          </div>
         </div>
-        <div class="card--accent">
-          <p style="font-weight: 700; text-align: center;">Hands off when time is up! The timebox is sacred.</p>
+        <div class="card" style="border-left: 5px solid var(--color-accent); text-align: center;">
+          <p style="font-weight: 700; font-size: 1.2rem;"><svg class="slide-icon slide-icon--heading"><use href="#icon-stopwatch"/></svg> Hands off when time is up! The timebox is sacred.</p>
         </div>
       </section>
 
@@ -1191,7 +1232,7 @@
             <li>Select items from the Product Backlog</li>
             <li>How many can your team commit to this Sprint?</li>
             <li>Move selected items to your Sprint Backlog on the wall</li>
-            <li>Do you feel sufficiently uncomfortable with your commitment? Good. Start.</li>
+            <li>Do you feel sufficiently uncomfortable with your commitment?</li>
           </ul>
         </div>
       </section>
@@ -1414,7 +1455,7 @@
             </defs>
           </svg>
         </div>
-        <p style="text-align: center; font-size: 0.85rem; color: var(--color-text-muted); margin-top: 12px;">Each event is an opportunity to inspect and adapt &mdash; the heartbeat of empiricism.</p>
+        <p style="text-align: center; font-size: 1.0rem; color: var(--color-text-muted); margin-top: 12px;">Each event is an opportunity to inspect and adapt &mdash; the heartbeat of empiricism.</p>
       </section>
 
       <!-- Slide 38: Self-Management -->
@@ -1504,7 +1545,7 @@
             <p>The team knows how to verify it&rsquo;s done</p>
           </div>
         </div>
-        <p style="text-align: center; font-size: 0.85rem; color: var(--color-text-muted); margin-top: 16px;">Ready &ne; fully specified. Just enough to start.</p>
+        <p style="text-align: center; font-size: 1.0rem; color: var(--color-text-muted); margin-top: 16px;">Ready &ne; fully specified. Just enough to start.</p>
       </section>
 
       <!-- Slide 44: Monitoring Sprint Progress -->
@@ -1611,7 +1652,7 @@
             <h3>What will we change?</h3>
           </div>
         </div>
-        <p style="text-align: center; font-size: 0.85rem; color: var(--color-text-muted); margin-top: 16px;">Quick retro &mdash; 5 minutes. Then Sprint 2!</p>
+        <p style="text-align: center; font-size: 1.0rem; color: var(--color-text-muted); margin-top: 16px;">Quick retro &mdash; 5 minutes. Then Sprint 2!</p>
       </section>
 
       <!-- Slide 52: Final Presentations -->
