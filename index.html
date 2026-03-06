@@ -330,26 +330,26 @@
        DISCUSSION QUESTION
        ============================================ */
     .reveal .slide-question {
-      background: var(--color-primary);
-      color: var(--color-on-primary);
+      background: var(--color-surface);
+      color: var(--color-text);
       border: var(--border-base);
+      border-left: 5px solid var(--color-primary);
       padding: 10px 16px;
       margin-top: 16px;
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: 1rem;
-      text-align: center;
+      font-size: 0.95rem;
+      text-align: left;
     }
 
     .reveal .slide-question::before {
       content: "DISCUSS ";
-      color: var(--color-on-primary);
+      color: var(--color-primary);
       font-family: var(--font-body);
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      opacity: 0.7;
     }
 
     /* ============================================
@@ -814,7 +814,7 @@
         <p style="text-align: center; font-size: 0.95rem; margin-bottom: 16px;">Every Scrum event is an opportunity to inspect and adapt.</p>
         <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; border: var(--border-base);">
           <thead>
-            <tr style="background: var(--color-primary); color: white;">
+            <tr style="background: var(--color-accent); color: var(--color-on-accent); font-weight: 700;">
               <th style="padding: 8px 10px; text-align: left; border: var(--border-base);">Event</th>
               <th style="padding: 8px 10px; text-align: left; border: var(--border-base);">Transparency</th>
               <th style="padding: 8px 10px; text-align: left; border: var(--border-base);">Inspection</th>
@@ -848,7 +848,7 @@
             </tr>
           </tbody>
         </table>
-        <div class="slide-question">Can you think of a time when skipping one of these pillars caused problems?</div>
+        <div class="slide-question">Which of these three pillars does your team practice today &mdash; and which one is missing?</div>
         <aside class="notes">
           Inspect and adapt. Respect, honesty, discipline, thought, introspection is required to do this.
 
@@ -966,7 +966,7 @@
       <!-- Slide 14: Product Owner -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-crown"/></svg> Product Owner</h2>
-        <div class="card--primary" style="margin-bottom: 16px;">
+        <div class="card" style="margin-bottom: 16px; border-left: 5px solid var(--color-accent);">
           <p style="font-size: 1.1rem; font-weight: 600;">Maximizes the value of the product</p>
         </div>
         <ul>
@@ -984,7 +984,7 @@
       <!-- Slide 15: Developers -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-users"/></svg> Developers</h2>
-        <div class="card--primary" style="margin-bottom: 16px;">
+        <div class="card" style="margin-bottom: 16px; border-left: 5px solid var(--color-primary);">
           <p style="font-size: 1.1rem; font-weight: 600;">Turn Product Backlog items into a usable Increment</p>
         </div>
         <ul>
@@ -999,7 +999,7 @@
       <!-- Slide 16: Scrum Master -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-shield"/></svg> Scrum Master</h2>
-        <div class="card--primary" style="margin-bottom: 16px;">
+        <div class="card" style="margin-bottom: 16px; border-left: 5px solid var(--color-accent);">
           <p style="font-size: 1.1rem; font-weight: 600;">Accountable for establishing Scrum as defined in the Scrum Guide</p>
         </div>
         <ul>
@@ -1019,7 +1019,7 @@
       <!-- Slide 17: The Sprint -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> The Sprint</h2>
-        <div class="card--accent" style="margin-bottom: 16px;">
+        <div class="card" style="margin-bottom: 16px; border-left: 5px solid var(--color-primary);">
           <p style="font-size: 1.1rem; font-weight: 600;">The Sprint is itself an event &mdash; a fixed-length container (1 month or less) for all other events</p>
         </div>
         <ul>
@@ -1040,21 +1040,21 @@
       <section>
         <h2>Sprint Events</h2>
         <div class="grid-2">
-          <div class="card">
-            <h3>Sprint Planning</h3>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3><svg class="slide-icon slide-icon--heading"><use href="#icon-flag"/></svg> Sprint Planning</h3>
             <p>What can we deliver? How will we do it?</p>
             <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 8px;">Up to 8 hours for a 1-month Sprint</p>
           </div>
-          <div class="card">
-            <h3>Daily Scrum</h3>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3><svg class="slide-icon slide-icon--heading"><use href="#icon-clock"/></svg> Daily Scrum</h3>
             <p>15-minute daily sync for Developers. Inspect progress. Adapt the plan.</p>
           </div>
-          <div class="card">
-            <h3>Sprint Review</h3>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3><svg class="slide-icon slide-icon--heading"><use href="#icon-comments"/></svg> Sprint Review</h3>
             <p>Inspect the Increment. Adapt the Product Backlog. Collaborate with stakeholders.</p>
           </div>
-          <div class="card">
-            <h3>Sprint Retrospective</h3>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3><svg class="slide-icon slide-icon--heading"><use href="#icon-gear"/></svg> Sprint Retrospective</h3>
             <p>How to increase quality and effectiveness? Plan improvements for next Sprint.</p>
           </div>
         </div>
@@ -1064,19 +1064,19 @@
       <section>
         <h2>Artifacts &amp; Commitments</h2>
         <div class="grid-3">
-          <div class="card--accent">
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
             <h3>Product Backlog</h3>
-            <p style="font-weight: 700; font-size: 0.85rem;">Commitment: Product Goal</p>
+            <p style="font-weight: 700; font-size: 0.85rem; color: var(--color-primary);">Commitment: Product Goal</p>
             <p>An ordered list of everything needed to improve the product</p>
           </div>
-          <div class="card--accent">
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
             <h3>Sprint Backlog</h3>
-            <p style="font-weight: 700; font-size: 0.85rem;">Commitment: Sprint Goal</p>
+            <p style="font-weight: 700; font-size: 0.85rem; color: var(--color-primary);">Commitment: Sprint Goal</p>
             <p>The Sprint Goal + selected PBIs + plan for delivering them</p>
           </div>
-          <div class="card--accent">
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
             <h3>Increment</h3>
-            <p style="font-weight: 700; font-size: 0.85rem;">Commitment: Definition of Done</p>
+            <p style="font-weight: 700; font-size: 0.85rem; color: var(--color-primary);">Commitment: Definition of Done</p>
             <p>A concrete stepping stone toward the Product Goal</p>
           </div>
         </div>
