@@ -86,5 +86,5 @@ Create a 2-day in-person Scrum training experience for 6-8 people at an art educ
 - [ ] Final user review
 
 ## Timeline Constraint
-- Training is Wednesday next week (March 11, 2026)
-- All materials must be ready by Tuesday evening March 10
+- Training is March 18-19, 2026
+- All materials must be ready by Tuesday evening March 17

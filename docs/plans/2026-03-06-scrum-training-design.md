@@ -3,7 +3,7 @@
 **Author:** Jason Holt (Scrum Master)
 **Date:** 2026-03-06
 **Status:** Pending Approval
-**Delivery:** Wednesday March 11, 2026
+**Delivery:** Wednesday March 18 & Thursday March 19, 2026
 **Audience:** 6-8 non-technical staff at an art education company ("Duolingo of art")
 
 ---

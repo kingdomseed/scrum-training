@@ -3,7 +3,7 @@
 
 ---
 
-## Priority 1: HIGH — Should Fix Before March 11
+## Priority 1: HIGH — Should Fix Before March 18
 
 ### 1. Framework Block is 8 Consecutive Concept Slides (S12-S20)
 **Problem:** Slides 12-20 (Framework Overview through Definition of Done) are 8 back-to-back lecture slides with zero interaction. This is the longest unbroken concept stretch in the entire deck and risks losing the audience mid-morning.
