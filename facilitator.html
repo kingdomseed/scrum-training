@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facilitator Guide &mdash; Scrum Workshop</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       DESIGN TOKENS
+       ============================================ */
+    :root {
+      --color-bg: #ffffff;
+      --color-surface: #f9f9f9;
+      --color-text: #1a1a1a;
+      --color-text-muted: #444444;
+      --color-primary: #0066ff;
+      --color-accent: #ffd700;
+      --color-border: #000000;
+      --border-base: 2px solid var(--color-border);
+      --shadow-base: 6px 6px 0 0 rgba(0,0,0,0.12);
+      --font-display: "Epilogue", system-ui, sans-serif;
+      --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+    }
+
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 11pt;
+      line-height: 1.6;
+      color: var(--color-text);
+      background: var(--color-bg);
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 40px 30px;
+    }
+
+    /* ============================================
+       TYPOGRAPHY
+       ============================================ */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      color: var(--color-text);
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.3em;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.3em;
+      color: var(--color-primary);
+      border-bottom: var(--border-base);
+      padding-bottom: 6px;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.2em;
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.2em;
+    }
+
+    p {
+      margin-bottom: 0.6em;
+    }
+
+    ul, ol {
+      margin-left: 1.4em;
+      margin-bottom: 0.6em;
+    }
+
+    li {
+      margin-bottom: 0.25em;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    /* ============================================
+       COVER
+       ============================================ */
+    .cover {
+      text-align: center;
+      padding: 60px 20px 40px;
+      border: var(--border-base);
+      box-shadow: var(--shadow-base);
+      margin-bottom: 40px;
+      background: var(--color-surface);
+    }
+
+    .cover h1 {
+      font-size: 2.6rem;
+      margin-bottom: 0.1em;
+    }
+
+    .cover .subtitle {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--color-primary);
+      margin-bottom: 0.6em;
+    }
+
+    .cover .meta {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.8;
+    }
+
+    /* ============================================
+       MATERIALS CHECKLIST
+       ============================================ */
+    .checklist {
+      border: var(--border-base);
+      box-shadow: var(--shadow-base);
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      background: var(--color-surface);
+    }
+
+    .checklist h2 {
+      border-bottom: none;
+      margin-bottom: 12px;
+    }
+
+    .checklist ul {
+      list-style: none;
+      margin-left: 0;
+      columns: 2;
+      column-gap: 30px;
+    }
+
+    .checklist li {
+      padding-left: 28px;
+      position: relative;
+      break-inside: avoid;
+    }
+
+    .checklist li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 16px;
+      height: 16px;
+      border: var(--border-base);
+      background: var(--color-bg);
+    }
+
+    /* ============================================
+       DAY HEADER
+       ============================================ */
+    .day-header {
+      background: var(--color-primary);
+      color: #ffffff;
+      padding: 14px 24px;
+      margin: 40px 0 24px;
+      border: var(--border-base);
+      box-shadow: var(--shadow-base);
+    }
+
+    .day-header h2 {
+      color: #ffffff;
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      font-size: 1.5rem;
+    }
+
+    .day-header p {
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 0;
+      font-size: 0.9rem;
+    }
+
+    /* ============================================
+       TIME BLOCK
+       ============================================ */
+    .time-block {
+      border: var(--border-base);
+      box-shadow: var(--shadow-base);
+      margin-bottom: 24px;
+      background: var(--color-bg);
+    }
+
+    .time-block-header {
+      background: var(--color-surface);
+      border-bottom: var(--border-base);
+      padding: 10px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .time-block-header h3 {
+      margin-bottom: 0;
+    }
+
+    .time-block-header .duration {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+
+    .time-block-body {
+      padding: 14px 18px;
+    }
+
+    /* ============================================
+       TALKING POINTS
+       ============================================ */
+    .talking-points {
+      margin-bottom: 10px;
+    }
+
+    .talking-points h4 {
+      color: var(--color-primary);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+
+    /* ============================================
+       EXERCISE BOX
+       ============================================ */
+    .exercise {
+      border: var(--border-base);
+      padding: 12px 16px;
+      margin-bottom: 12px;
+      background: var(--color-surface);
+    }
+
+    .exercise h4 {
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .exercise h4::before {
+      content: "EXERCISE: ";
+      color: var(--color-primary);
+      font-weight: 800;
+    }
+
+    /* ============================================
+       FACILITATOR TIP
+       ============================================ */
+    .tip {
+      background: var(--color-accent);
+      border: var(--border-base);
+      padding: 10px 14px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+    }
+
+    .tip::before {
+      content: "FACILITATOR TIP: ";
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.8rem;
+    }
+
+    /* ============================================
+       TRANSITION NOTE
+       ============================================ */
+    .transition {
+      font-style: italic;
+      color: var(--color-text-muted);
+      border-left: 4px solid var(--color-primary);
+      padding-left: 12px;
+      margin: 10px 0;
+      font-size: 0.9rem;
+    }
+
+    /* ============================================
+       SPRINT BLOCK (nested in time block)
+       ============================================ */
+    .sprint-block {
+      border: var(--border-base);
+      margin-bottom: 14px;
+      background: var(--color-bg);
+    }
+
+    .sprint-block-header {
+      background: var(--color-surface);
+      border-bottom: var(--border-base);
+      padding: 6px 14px;
+    }
+
+    .sprint-block-header h4 {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    .sprint-block-body {
+      padding: 10px 14px;
+    }
+
+    /* ============================================
+       BREAK BLOCK
+       ============================================ */
+    .break-block {
+      background: var(--color-surface);
+      border: var(--border-base);
+      padding: 10px 18px;
+      margin-bottom: 24px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--color-text-muted);
+    }
+
+    /* ============================================
+       PRINT STYLES
+       ============================================ */
+    @media print {
+      body {
+        max-width: 100%;
+        padding: 0;
+        font-size: 10pt;
+      }
+
+      .cover {
+        page-break-after: always;
+        box-shadow: none;
+      }
+
+      .checklist {
+        page-break-after: always;
+        box-shadow: none;
+      }
+
+      .day-header {
+        page-break-before: always;
+        box-shadow: none;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .time-block {
+        page-break-inside: avoid;
+        box-shadow: none;
+      }
+
+      .break-block {
+        page-break-after: auto;
+      }
+
+      .tip {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .sprint-block {
+        page-break-inside: avoid;
+      }
+
+      @page {
+        size: letter;
+        margin: 0.7in 0.6in 1in;
+
+        @bottom-center {
+          content: "Scrum Workshop \2014  Facilitator Guide";
+          font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+          font-size: 8pt;
+          color: #444444;
+        }
+
+        @bottom-right {
+          content: counter(page);
+          font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+          font-size: 8pt;
+          color: #444444;
+        }
+      }
+    }
+
+    /* ============================================
+       FOOTER (screen only)
+       ============================================ */
+    .screen-footer {
+      text-align: center;
+      padding: 30px 0 10px;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      border-top: var(--border-base);
+      margin-top: 50px;
+    }
+
+    @media print {
+      .screen-footer {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       COVER
+       ========================================== -->
+  <div class="cover">
+    <h1>Facilitator Guide</h1>
+    <div class="subtitle">2-Day Scrum Workshop</div>
+    <div class="meta">
+      Facilitator: Jason Holt<br>
+      Day 1: Wednesday, March 11, 2026<br>
+      Day 2: Thursday, March 12, 2026<br>
+      9:00 AM &ndash; 3:30 PM
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MATERIALS CHECKLIST
+       ========================================== -->
+  <div class="checklist">
+    <h2>Physical Materials Checklist</h2>
+    <ul>
+      <li>Sticky notes (multiple colors, at least 200)</li>
+      <li>Markers (thick, for sticky notes &mdash; at least 12)</li>
+      <li>Poster paper or large paper (6&ndash;8 sheets)</li>
+      <li>Lego bricks (~500+ pieces, mixed colors and sizes)</li>
+      <li>Timer (phone or dedicated timer)</li>
+      <li>Painter's tape (for wall displays)</li>
+      <li>Printed handouts (from handouts.html)</li>
+      <li>Projector + laptop for slides</li>
+    </ul>
+  </div>
+
+  <!-- ==========================================
+       DAY 1
+       ========================================== -->
+  <div class="day-header">
+    <h2>DAY 1</h2>
+    <p>Wednesday, March 11, 2026</p>
+  </div>
+
+  <!-- 9:00-9:55 Kickoff -->
+  <div class="time-block">
+    <div class="time-block-header">
+      <h3>9:00 &ndash; 9:55 &mdash; Kickoff</h3>
+      <span class="duration">55 min</span>
+    </div>
+    <div class="time-block-body">
+      <div class="talking-points">
+        <h4>Talking Points</h4>
+        <ul>
+          <li>Welcome everyone; set an informal, energetic tone</li>
+          <li>Introductions round: each person shares name, role, and what they hope to get from the workshop</li>
+          <li>Frame the two days: participatory, hands-on, safe space to experiment</li>
+        </ul>
+      </div>
+
+      <div class="exercise">
+        <h4>Working Agreements (10 min)</h4>
+        <p><strong>Materials:</strong> Sticky notes, markers, wall space</p>
+        <ul>
+          <li>Each person writes 1&ndash;2 agreements on sticky notes (e.g., "phones on silent," "no wrong answers")</li>
+          <li>Post on wall, cluster similar ones together</li>
+          <li>Group agrees to honor them for both days</li>
+        </ul>
+      </div>
+
+      <div class="exercise">
+        <h4>"Great Team" Exercise (15 min)</h4>
+        <p><strong>Materials:</strong> Sticky notes, markers, wall space</p>
+        <ul>
+          <li>Prompt: "Think of a great team you've been on. What made it great?"</li>
+          <li>One characteristic per sticky note</li>
+          <li>Post and cluster into themes on the wall</li>
+          <li>Debrief: "Notice how many of these are about people and interactions, not processes"</li>
+        </ul>
+      </div>
+
+      <div class="tip">Set the tone early &mdash; this is participatory, not a lecture. If you're talking for more than 3 minutes straight, pause and ask a question.</div>
+
+      <div class="transition">Transition: "Now that we know what makes great teams, let's look at a framework designed to help teams be great."</div>
+    </div>
+  </div>
+
+  <!-- 9:55-10:35 Fundamentals -->
+  <div class="time-block">
+    <div class="time-block-header">
+      <h3>9:55 &ndash; 10:35 &mdash; Fundamentals</h3>
+      <span class="duration">40 min</span>
+    </div>
+    <div class="time-block-body">
+      <div class="talking-points">
+        <h4>Talking Points</h4>
+        <ul>
+          <li><strong>What is Scrum?</strong> &mdash; Use the Scrum Guide definition: "a lightweight framework that helps people, teams, and organizations generate value through adaptive solutions for complex problems"</li>
+          <li><strong>Agile Manifesto values</strong> &mdash; Don't just read them. Ask the group: "Which of these resonates with you? Which feels hardest?" Discuss, don't lecture.</li>
+          <li><strong>Cynefin framework</strong> &mdash; "Where does your work live?" Most creative/knowledge work is in the Complex domain. This is why we need an empirical approach.</li>
+          <li><strong>Empiricism</strong> &mdash; Three pillars: Transparency, Inspection, Adaptation. These are the foundation everything else rests on.</li>
+        </ul>
+      </div>
+
+      <div class="tip">Keep this section interactive. Ask questions, don't lecture. Every concept should connect to something they already know.</div>
+
+      <div class="tip">"Plans are worthless, but planning is everything." &mdash; Eisenhower. Use this quote when discussing why Scrum embraces change rather than fighting it.</div>
+
+      <div class="transition">Transition: "These principles need a structure. Let's look at how Scrum puts them into practice."</div>
+    </div>
+  </div>
+
+  <!-- 10:35-10:50 Break -->
+  <div class="break-block">10:35 &ndash; 10:50 &mdash; Break (15 min)</div>
+
+  <!-- 10:50-11:30 The Framework -->
+  <div class="time-block">
+    <div class="time-block-header">
+      <h3>10:50 &ndash; 11:30 &mdash; The Framework</h3>
+      <span class="duration">40 min</span>
+    </div>
+    <div class="time-block-body">
+      <div class="talking-points">
+        <h4>Talking Points</h4>
+        <ul>
+          <li><strong>Scrum Framework overview</strong> &mdash; Show the big picture diagram. Everything fits inside the Sprint container.</li>
+          <li><strong>Three accountabilities:</strong>
+            <ul>
+              <li>Product Owner &mdash; maximizes value, owns the Product Backlog</li>
+              <li>Developers &mdash; create the Increment each Sprint</li>
+              <li>Scrum Master &mdash; serves the team, removes impediments, coaches Scrum</li>
+            </ul>
+          </li>
+          <li><strong>The Sprint</strong> &mdash; A time-box container; everything happens inside Sprints</li>
+          <li><strong>Events overview</strong> &mdash; Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective</li>
+          <li><strong>Artifacts &amp; Commitments</strong> &mdash; Product Backlog (Product Goal), Sprint Backlog (Sprint Goal), Increment (Definition of Done)</li>
+          <li><strong>Definition of Done</strong> &mdash; The shared quality standard. If it doesn't meet the DoD, it's not done.</li>
+        </ul>
+      </div>
+
+      <div class="tip">Connect each concept to their context. Ask: "Who plays these roles in your work now?" and "What would a Sprint look like for your team?"</div>
+
+      <div class="transition">Transition: "You've heard the theory. Now let's experience it. Time to build something."</div>
+    </div>
+  </div>
+
+  <!-- 11:30-12:00 Lego Setup -->
+  <div class="time-block">
+    <div class="time-block-header">
+      <h3>11:30 &ndash; 12:00 &mdash; Lego4Scrum Setup</h3>
+      <span class="duration">30 min</span>
+    </div>
+    <div class="time-block-body">
+      <div class="talking-points">
+        <h4>Talking Points</h4>
+        <ul>
+          <li><strong>Product Vision:</strong> "Art School Campus" &mdash; present it with enthusiasm but deliberate vagueness</li>
+          <li>Show the Product Backlog (12 items with relative sizes)</li>
+          <li>Explain Sprint cadence: Planning (3&ndash;5 min) &rarr; Build (7 min) &rarr; Review (5&ndash;10 min) &rarr; Retro (5&ndash;8 min)</li>
+        </ul>
+      </div>
+
+      <div class="exercise">
+        <h4>Team Formation &amp; Board Setup</h4>
+        <p><strong>Materials:</strong> Lego bricks, poster paper, painter's tape, markers</p>
+        <ul>
+          <li>Teams self-organize into groups of 3&ndash;4</li>
+          <li>Each team sets up a physical Scrum board on the wall with 4 columns: <strong>Product Backlog | Sprint Backlog | Doing | Done</strong></li>
+          <li>Distribute Lego bricks evenly across teams</li>
+          <li>Each team selects someone to facilitate their Daily Scrum (rotate each Sprint)</li>
+        </ul>
+      </div>
+
+      <div class="tip">As PO, be deliberately vague at first. "I want a beautiful campus." Let teams ask questions. This teaches them the value of refinement and PO collaboration.</div>
+
+      <div class="transition">Transition: "Enjoy lunch. When you come back, we build."</div>
+    </div>
+  </div>
+
+  <!-- 12:00-12:45 Lunch -->
+  <div class="break-block">12:00 &ndash; 12:45 &mdash; Lunch (45 min)</div>
+
+  <!-- 12:45-2:30 Lego Sprints -->
+  <div class="time-block">
+    <div class="time-block-header">
+      <h3>12:45 &ndash; 2:30 &mdash; Lego Sprints</h3>
+      <span class="duration">105 min</span>
+    </div>
+    <div class="time-block-body">
+
+      <!-- Sprint 1 -->
+      <div class="sprint-block">
+        <div class="sprint-block-header">
+          <h4>Sprint 1 (~30 min)</h4>
+        </div>
+        <div class="sprint-block-body">
+          <ul>
+            <li><strong>Planning (5 min):</strong> Teams select backlog items and forecast how much they can build. They will overcommit &mdash; that's expected.</li>
+            <li><strong>Build (7 min):</strong> Start the timer. Observe but don't intervene.</li>
+            <li><strong>Review (10 min):</strong> BE HARSH as PO. Reject most work. "Where are the windows?" "This isn't symmetrical." "I didn't ask for that." This is the critical teaching moment.</li>
+            <li><strong>Retro (8 min):</strong> "What went well? What didn't? What will you change?"</li>
+          </ul>
+          <div class="tip">Sprint 1 will be chaos. That's the point. Let them fail. The learning happens in the contrast between Sprint 1 and Sprint 3.</div>
+        </div>
+      </div>
+
+      <!-- Sprint 2 -->
+      <div class="sprint-block">
+        <div class="sprint-block-header">
+          <h4>Sprint 2 (~30 min)</h4>
+        </div>
+        <div class="sprint-block-body">
+          <ul>
+            <li><strong>Planning (3 min):</strong> Should be faster now. Watch for teams adjusting their forecasts.</li>
+            <li><strong>Build (7 min):</strong> Observe improvements in coordination.</li>
+            <li><strong>Review (8 min):</strong> Be more encouraging but still have standards. Accept work that meets your criteria.</li>
+            <li><strong>Retro (5 min):</strong> Look for concrete changes from Sprint 1.</li>
+          </ul>
+          <div class="tip">Watch for improvements in communication, planning, and quality. Call them out during the debrief &mdash; these are the patterns Scrum is designed to create.</div>
+        </div>
+      </div>
+
+      <!-- Sprint 3 -->
+      <div class="sprint-block">
+        <div class="sprint-block-header">
+          <h4>Sprint 3 (~30 min)</h4>
+        </div>
+        <div class="sprint-block-body">
+          <ul>
+            <li><strong>Planning (3 min):</strong> Teams should be confident and realistic.</li>
+            <li><strong>Build (7 min):</strong> Expect better coordination and quality.</li>
+            <li><strong>Review (8 min):</strong> Celebrate progress! Acknowledge the improvement arc.</li>
+            <li><strong>Retro (5 min):</strong> Focus on the learning journey.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Debrief -->
+      <div class="sprint-block">
+        <div class="sprint-block-header">
+          <h4>Debrief (15 min)</h4>
+        </div>
+        <div class="sprint-block-body">
+          <div class="talking-points">
+            <h4>Discussion Prompts</h4>
+            <ul>
+              <li>"What patterns emerged across the three Sprints?"</li>
+              <li>"How did your team improve?"</li>
+              <li>"How did it feel when I rejected your work?" &rarr; This connects to the PO role and the importance of shared understanding</li>
+              <li>"How does this connect to your real work?"</li>
+            </ul>
+          </div>
+          <div class="tip">This debrief is the most important part of the entire simulation. Do not rush it. Let the group make the connections themselves before you add anything.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2:30-2:45 Break -->
+  <div class="break-block">2:30 &ndash; 2:45 &mdash; Break (15 min)</div>
+
+  <!-- 2:45-3:15 Scrum Values -->
+  <div class="time-block">
+    <div class="time-block-header">
+      <h3>2:45 &ndash; 3:15 &mdash; Scrum Values</h3>
+      <span class="duration">30 min</span>
+    </div>
+    <div class="time-block-body">
+      <div class="talking-points">
+        <h4>Talking Points</h4>
+        <ul>
+          <li><strong>Five values:</strong> Commitment, Focus, Openness, Respect, Courage</li>
+          <li>Don't just list them &mdash; connect each value to the Lego experience</li>
+          <li>Ask: "Which value did you experience most during the simulation? Which was hardest?"</li>
+        </ul>
+      </div>
+
+      <div class="exercise">
+        <h4>Feedback Wall</h4>
+        <p><strong>Materials:</strong> Sticky notes, markers, wall space</p>
+        <ul>
+          <li>Three columns: Surprises | Questions | Connections to My Work</li>
+          <li>Each person writes at least one sticky for each column</li>
+          <li>Review together as a group</li>
+        </ul>
+      </div>
+
+      <div class="transition">Transition: "Let's wrap up Day 1 and preview what's coming tomorrow."</div>
+    </div>
+  </div>
+
+  <!-- 3:15-3:30 Day 1 Closing -->
+  <div class="time-block">
+    <div class="time-block-header">
+      <h3>3:15 &ndash; 3:30 &mdash; Day 1 Closing</h3>
+      <span class="duration">15 min</span>
+    </div>
+    <div class="time-block-body">
+      <div class="talking-points">
+        <h4>Talking Points</h4>
+        <ul>
+          <li>Preview tomorrow: deeper dive into planning, estimation, and a new hands-on exercise</li>
+          <li>Optional homework: Read the Scrum Guide (only 13 pages)</li>
+          <li>Review the Parking Lot &mdash; address any unanswered questions or flag for tomorrow</li>
+          <li>Thank everyone for their participation and energy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       DAY 2
+       ========================================== -->
+  <div class="day-header">
+    <h2>DAY 2</h2>
+    <p>Thursday, March 12, 2026</p>
+  </div>
+
+  <!-- 9:00-9:30 Day 2 Opening -->
+  <div class="time-block">
+    <div class="time-block-header">
+      <h3>9:00 &ndash; 9:30 &mdash; Day 2 Opening</h3>
+      <span class="duration">30 min</span>
+    </div>
+    <div class="time-block-body">
+      <div class="talking-points">
+        <h4>Talking Points</h4>
+        <ul>
+          <li>Open with: "What stuck with you overnight?" &mdash; Let people share freely</li>
+          <li>Review the Sprint Events Flow: Planning &rarr; Daily Scrum &rarr; Sprint Review &rarr; Retrospective</li>
+          <li>Discuss self-management: "Scrum Teams are cross-functional and self-managing. What does that mean in practice?"</li>
+        </ul>
+      </div>
+
+      <div class="transition">Transition: "Today we go deeper into the planning side of Scrum."</div>
+    </div>
+  </div>
+
+  <!-- 9:30-10:15 Planning with Scrum -->
+  <div class="time-block">
+    <div class="time-block-header">
+      <h3>9:30 &ndash; 10:15 &mdash; Planning with Scrum</h3>
+      <span class="duration">45 min</span>
+    </div>
+    <div class="time-block-body">
+      <div class="talking-points">
+        <h4>Talking Points</h4>
+        <ul>
+          <li><strong>Estimation:</strong> Relative sizing, not absolute. "Is this bigger or smaller than that?" T-shirt sizes (XS, S, M, L, XL) as an accessible technique.</li>
+          <li><strong>Product Backlog Refinement:</strong> Ongoing activity, not an event. Break big items down, add detail, re-order.</li>
+          <li><strong>Definition of Ready:</strong> Clear, Sized, Testable. An item should meet these criteria before entering Sprint Planning.</li>
+          <li><strong>Monitoring Sprint Progress:</strong> Burndown/burnup charts, transparency of work remaining.</li>
+        </ul>
+      </div>
+
+      <div class="exercise">
+        <h4>Estimation Exercise (10 min)</h4>
+        <p><strong>Materials:</strong> Sticky notes or index cards with work items</p>
+        <ul>
+          <li>Prepare 8&ndash;10 work items relevant to their context</li>
+          <li>Teams estimate using T-shirt sizes</li>
+          <li>Compare and discuss differences &mdash; the conversation matters more than the number</li>
+        </ul>
+      </div>
+
+      <div class="tip">Emphasize that estimation is about shared understanding, not precision. "The conversation is the value, not the number."</div>
+
+      <div class="transition">Transition: "Time for a break, then we'll put this into practice with a new exercise."</div>
+    </div>
+  </div>
+
+  <!-- 10:15-10:30 Break -->
+  <div class="break-block">10:15 &ndash; 10:30 &mdash; Break (15 min)</div>
+
+  <!-- 10:30-10:40 Presentation Sprint Setup -->
+  <div class="time-block">
+    <div class="time-block-header">
+      <h3>10:30 &ndash; 10:40 &mdash; Presentation Sprint Setup</h3>
+      <span class="duration">10 min</span>
+    </div>
+    <div class="time-block-body">
+      <div class="talking-points">
+        <h4>Talking Points</h4>
+        <ul>
+          <li><strong>The Challenge:</strong> Build a presentation selling their product vision</li>
+          <li>Two Sprints to create it; teams pick their own PO this time</li>
+          <li>What to include: problem statement, value proposition, target audience, how it works, call to action</li>
+        </ul>
+      </div>
+
+      <div class="exercise">
+        <h4>Setup</h4>
+        <p><strong>Materials:</strong> Paper, markers, poster boards, phones for reference</p>
+        <ul>
+          <li>Distribute materials to each team</li>
+          <li>Each team selects their own Product Owner</li>
+          <li>Teams define their own Definition of Done for the presentation</li>
+          <li>Remind them to use their Scrum boards</li>
+        </ul>
+      </div>
+
+      <div class="transition">Transition: "You have 80 minutes for Sprint 1. Go."</div>
+    </div>
+  </div>
+
+  <!-- 10:40-12:00 Presentation Sprint 1 -->
+  <div class="time-block">
+    <div class="time-block-header">
+      <h3>10:40 &ndash; 12:00 &mdash; Presentation Sprint 1</h3>
+      <span class="duration">80 min</span>
+    </div>
+    <div class="time-block-body">
+      <ul>
+        <li><strong>Planning (5 min):</strong> Teams decide what they'll accomplish in this Sprint</li>
+        <li><strong>Create (20 min):</strong> Teams work on their presentation</li>
+        <li><strong>Review (10 min):</strong> Each team shows progress; other teams provide feedback too</li>
+        <li><strong>Retro (5 min):</strong> Quick reflection on what to improve for Sprint 2</li>
+      </ul>
+      <p><em>Remaining time is buffer for transitions and discussions.</em></p>
+
+      <div class="tip">This sprint is more open-ended than the Lego exercise. Let teams find their own rhythm. Observe how they apply what they learned yesterday.</div>
+
+      <div class="transition">Transition: "Lunch break. Sprint 2 starts right after."</div>
+    </div>
+  </div>
+
+  <!-- 12:00-12:45 Lunch -->
+  <div class="break-block">12:00 &ndash; 12:45 &mdash; Lunch (45 min)</div>
+
+  <!-- 12:45-2:00 Presentation Sprint 2 -->
+  <div class="time-block">
+    <div class="time-block-header">
+      <h3>12:45 &ndash; 2:00 &mdash; Presentation Sprint 2</h3>
+      <span class="duration">75 min</span>
+    </div>
+    <div class="time-block-body">
+      <ul>
+        <li><strong>Planning (5 min):</strong> Incorporate feedback from Sprint 1 Review</li>
+        <li><strong>Create (20 min):</strong> Polish and complete the presentation</li>
+        <li><strong>Review (10 min):</strong> Final iteration feedback</li>
+        <li><strong>Retro (5 min):</strong> Reflect on the full journey</li>
+      </ul>
+      <p><em>Remaining time is buffer for transitions and final prep.</em></p>
+
+      <div class="transition">Transition: "Now it's showtime. Final presentations."</div>
+    </div>
+  </div>
+
+  <!-- 2:00-3:00 Final Presentations -->
+  <div class="time-block">
+    <div class="time-block-header">
+      <h3>2:00 &ndash; 3:00 &mdash; Final Presentations</h3>
+      <span class="duration">60 min</span>
+    </div>
+    <div class="time-block-body">
+      <div class="talking-points">
+        <h4>Talking Points</h4>
+        <ul>
+          <li>This IS the final Sprint Review &mdash; frame it that way</li>
+          <li>Each team gets 10&ndash;15 minutes to present</li>
+          <li>Encourage feedback from other teams after each presentation</li>
+          <li>Celebrate the work and the improvement from Sprint 1 to the final product</li>
+        </ul>
+      </div>
+
+      <div class="tip">Make this celebratory. The point is not perfection &mdash; it's the iterative improvement and the team's growth through the process.</div>
+
+      <div class="transition">Transition: "You've now experienced Scrum firsthand. Let's talk about taking it home."</div>
+    </div>
+  </div>
+
+  <!-- 3:00-3:30 Getting Started & Closing -->
+  <div class="time-block">
+    <div class="time-block-header">
+      <h3>3:00 &ndash; 3:30 &mdash; Getting Started &amp; Closing</h3>
+      <span class="duration">30 min</span>
+    </div>
+    <div class="time-block-body">
+      <div class="talking-points">
+        <h4>Talking Points</h4>
+        <ul>
+          <li><strong>"Should We Use Scrum?" discussion canvas</strong> &mdash; Facilitate an honest conversation. Scrum isn't for everything. Where does it fit in their work?</li>
+          <li><strong>Identify Scrum Team roles</strong> &mdash; If they were to start a Scrum Team tomorrow, who would fill each accountability?</li>
+        </ul>
+      </div>
+
+      <div class="exercise">
+        <h4>Appreciation Wall</h4>
+        <p><strong>Materials:</strong> Sticky notes, markers, wall space</p>
+        <ul>
+          <li>Each person writes an appreciation for someone else in the workshop</li>
+          <li>Post on the wall; read a few aloud</li>
+        </ul>
+      </div>
+
+      <div class="talking-points">
+        <h4>Wrap-Up</h4>
+        <ul>
+          <li>Suggested reading: <em>Scrum: The Art of Doing Twice the Work in Half the Time</em> by Jeff Sutherland; the Scrum Guide (scrum.org)</li>
+          <li>Thank everyone for their time, participation, and openness</li>
+          <li>Share attributions: Lego4Scrum by Alexey Krivitsky; Scrum Guide by Ken Schwaber &amp; Jeff Sutherland</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       FOOTER (screen only)
+       ========================================== -->
+  <div class="screen-footer">
+    Scrum Workshop &mdash; Facilitator Guide &mdash; Jason Holt
+  </div>
+
+</body>
+</html>
