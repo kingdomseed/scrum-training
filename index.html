@@ -394,6 +394,11 @@
           <li><strong>Framework, not a process:</strong> Provides structure; your team fills in the practices</li>
           <li><strong>Adaptive &amp; Complex:</strong> Built for work where requirements emerge and change</li>
         </ul>
+        <aside class="notes">
+          Scrum solves the problem of helping people understand that the way they work by default is the reason for most project failures. Seeing this and understanding it unlocks the way for you to consider a new way of working.
+
+          We want to answer: how do people ACTUALLY work? This happens in teams that want to create something new. Why did it take so long and take so much effort?
+        </aside>
       </section>
 
       <!-- Slide 8: Agile Manifesto — 4 Values -->
@@ -418,6 +423,9 @@
           </div>
         </div>
         <p style="text-align: center; font-style: italic; font-size: 0.8rem; color: var(--color-text-muted); margin-top: 16px;">While there is value in the items on the right, we value the items on the left more.</p>
+        <aside class="notes">
+          Agile is a statement of values. Scrum is a way to put these values into focus, clarity, and practice. Ideas are easy — execution is hard.
+        </aside>
       </section>
 
       <!-- Slide 9: Cynefin Framework -->
@@ -469,6 +477,13 @@
 </svg>
         </div>
         <p style="text-align: center; font-size: 0.85rem; color: var(--color-text-muted); margin-top: 8px;">Scrum is designed for the <strong>Complex</strong> domain &mdash; where cause and effect can only be understood in retrospect.</p>
+        <aside class="notes">
+          Waterfall and Gantt Charts — this was a World War I organizational idea. Once the plan hits reality it falls apart. People are hired to update the chart — people are being paid to lie to them.
+
+          Reality versus the plan — we must look at actual development. "Plans are worthless, but planning is everything."
+
+          Management wants two things: control and predictability — leads to graphs and charts. All that wanting to know the unknowable doesn't work because every project involves the discovery of problems and bursts of inspiration. Trying to restrict that to charts is doomed to failure. It's not how people work, not how progress happens, not how ideas reach fruition and how great things are made. It leads to frustrated people who don't get what they want.
+        </aside>
       </section>
 
       <!-- Slide 10: Empirical Process Control -->
@@ -518,6 +533,11 @@
   <text x="450" y="75" font-family="Arial, sans-serif" font-weight="bold" font-size="36" text-anchor="middle" fill="#ffffff">SCRUM</text>
 </svg>
         </div>
+        <aside class="notes">
+          All that wanting to know the unknowable doesn't work because every project involves the discovery of problems and bursts of inspiration. Trying to restrict that to charts is doomed to failure.
+
+          Reality versus the plan — we must look at actual development. These three pillars are HOW we look at reality.
+        </aside>
       </section>
 
       <!-- Slide 11: Empiricism in Practice -->
@@ -540,6 +560,11 @@
             <p>Adjust when results deviate from expectations</p>
           </div>
         </div>
+        <aside class="notes">
+          Inspect and adapt. Respect, honesty, discipline, thought, introspection is required to do this.
+
+          End goal: teams improve their productivity and get what they want.
+        </aside>
       </section>
 
       <!-- Slide 12: Section Divider — The Scrum Framework -->
@@ -629,6 +654,9 @@
 </svg>
         </div>
         <p style="text-align: center; font-size: 0.85rem; color: var(--color-text-muted); margin-top: 8px;">One Scrum Team. Three accountabilities. Five events. Three artifacts.</p>
+        <aside class="notes">
+          Framework for team performance: how does the team work together? Careful alignment. Unity of purpose. Clarity of goal.
+        </aside>
       </section>
 
       <!-- Slide 14: Product Owner -->
@@ -643,6 +671,9 @@
           <li>Ensuring the Product Backlog is transparent, visible, and understood</li>
           <li>Representing stakeholder needs</li>
         </ul>
+        <aside class="notes">
+          What brings the most value? 80% of the value of software is in 20% of the features. The PO's job is to find that 20%.
+        </aside>
       </section>
 
       <!-- Slide 15: Developers -->
@@ -671,6 +702,11 @@
           <li>Causing the removal of impediments</li>
           <li>Ensuring events happen and are positive, productive, and timeboxed</li>
         </ul>
+        <aside class="notes">
+          Toyota Production System: production should flow swiftly and calmly throughout the process, and one of management's key tasks is to remove impediments to that flow.
+
+          Everything that stands in the way is waste, and this is morally wrong. Eliminating waste is the first responsibility of management. This requires being honest with yourselves.
+        </aside>
       </section>
 
       <!-- Slide 17: The Sprint -->
@@ -685,6 +721,11 @@
           <li>The Product Backlog is refined as needed</li>
           <li>Scope may be clarified and renegotiated with the PO</li>
         </ul>
+        <aside class="notes">
+          Scrum sets sequential goals — a finished increment of product. Near real-time feedback. These are cycles.
+
+          The team decides. They create a sense of their own velocity. How can we work together better in the next Sprint? Measure the velocity.
+        </aside>
       </section>
 
       <!-- Slide 18: Sprint Events -->
@@ -929,6 +970,9 @@
             <p>Courage to do the right thing and work on tough problems</p>
           </div>
         </div>
+        <aside class="notes">
+          Respect, honesty, discipline, thought, introspection is required to do this. Ideas are easy — execution is hard. These values are what make the execution possible.
+        </aside>
       </section>
 
       <!-- Slide 32: Values Discussion -->
@@ -1072,6 +1116,9 @@
           <p>&ldquo;Scrum Teams are cross-functional, meaning the members have all the skills necessary to create value each Sprint.&rdquo;</p>
           <p class="attribution">&mdash; Scrum Guide (2020)</p>
         </div>
+        <aside class="notes">
+          The team decides. They create a sense of their own velocity. How can we work together better in the next Sprint?
+        </aside>
       </section>
 
       <!-- Slide 39: Section Divider — Planning with Scrum -->
@@ -1339,13 +1386,15 @@
 
   <!-- Reveal.js 5.x from CDN -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.0/plugin/notes/notes.js"></script>
   <script>
     Reveal.initialize({
       hash: true,
       slideNumber: 'c/t',
       center: true,
       width: 1280,
-      height: 720
+      height: 720,
+      plugins: [ RevealNotes ]
     });
   </script>
 </body>
