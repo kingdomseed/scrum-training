@@ -32,19 +32,19 @@ A self-contained **HTML slide deck** and **printable facilitator materials** for
 
 | Block | Time | Duration | Content |
 |-------|------|----------|---------|
-| Kickoff | 9:00-9:55 | 55 min | Welcome, introductions, "Characteristics of a Great Team" sticky exercise, Working Agreements |
-| Fundamentals | 9:55-10:35 | 40 min | Definition of Scrum, Agile Manifesto (4 values), Cynefin, Empirical Process (3 pillars) |
-| Break | 10:35-10:50 | 15 min | |
-| Framework | 10:50-11:30 | 40 min | Roles (PO, Developers, SM), Events, Artifacts, DoD |
-| Lego Setup | 11:30-12:15 | 45 min | Introduce simulation, distribute Lego, teams self-organize, build backlog, estimate, Sprint 1 Planning |
-| Lunch | 12:15-1:30 | 75 min | |
-| Lego Sprint 1 | 1:30-2:05 | 35 min | Build (7m) + Review (10m) + Retro (8m) + Debrief (10m) |
-| Lego Sprint 2 | 2:05-2:45 | 40 min | Planning (10m) + Build (7m) + Review (8m) + Retro (8m) + Debrief (7m) |
-| Break | 2:45-3:00 | 15 min | |
-| Lego Sprint 3 | 3:00-3:50 | 50 min | Planning (8m) + Build (7m) + Review (8m) + Retro (10m) + Full Debrief (17m) |
-| Scrum Values | 3:50-4:20 | 30 min | Deep dive connecting values to Lego experience |
-| Reflection | 4:20-4:45 | 25 min | Feedback Wall (sticky notes) |
-| Closing | 4:45-5:00 | 15 min | Preview Day 2, optional homework: read Scrum Guide (13 pages) |
+| Kickoff | 8:00-8:55 | 55 min | Welcome, introductions, "Characteristics of a Great Team" sticky exercise, Working Agreements |
+| Fundamentals | 8:55-9:45 | 50 min | Definition of Scrum, Agile Manifesto (4 values), Cynefin, Empirical Process (3 pillars) |
+| Break | 9:45-10:00 | 15 min | |
+| Framework | 10:00-10:40 | 40 min | Roles (PO, Developers, SM), Events, Artifacts, DoD |
+| Lego Setup | 10:40-11:30 | 50 min | Introduce simulation, distribute Lego, teams self-organize, build backlog, estimate, Sprint 1 Planning |
+| Lunch | 11:30-12:30 | 60 min | |
+| Lego Sprint 1 | 12:30-1:05 | 35 min | Build (7m) + Review (10m) + Retro (8m) + Debrief (10m) |
+| Lego Sprint 2 | 1:05-1:45 | 40 min | Planning (10m) + Build (7m) + Review (8m) + Retro (8m) + Debrief (7m) |
+| Break | 1:45-2:00 | 15 min | |
+| Lego Sprint 3 | 2:00-2:50 | 50 min | Planning (8m) + Build (7m) + Review (8m) + Retro (10m) + Full Debrief (17m) |
+| Scrum Values | 2:50-3:20 | 30 min | Deep dive connecting values to Lego experience |
+| Reflection | 3:20-3:45 | 25 min | Feedback Wall (sticky notes) |
+| Closing | 3:45-4:00 | 15 min | Preview Day 2, optional homework: read Scrum Guide |
 
 **Day 1 split:** ~80 min slides (19%), ~210 min exercises (50%), ~85 min discussion (20%), ~45 min breaks (11%)
 
@@ -52,21 +52,21 @@ A self-contained **HTML slide deck** and **printable facilitator materials** for
 
 | Block | Time | Duration | Content |
 |-------|------|----------|---------|
-| Opening | 9:00-9:15 | 15 min | Check-in, Day 1 recap, overnight questions |
-| Deeper Dive | 9:15-9:45 | 30 min | Sprint Events flow, Self-Management, Collaboration & Cross-functionality |
-| Planning | 9:45-10:30 | 45 min | Estimation exercise (relative sizing), PB Refinement, "Ready" concept, Monitoring Progress |
-| Break | 10:30-10:45 | 15 min | |
-| Presentation Setup | 10:45-11:15 | 30 min | Introduce exercise: "Build a presentation to sell your product vision." Teams create Product Backlog. A team member steps into PO role. Estimate. |
-| Pres Sprint 1 | 11:15-12:05 | 50 min | Planning (10m) + Work (20m) + Review (10m) + Retro (10m) |
-| Debrief | 12:05-12:15 | 10 min | Compare to Lego sprints |
-| Lunch | 12:15-1:30 | 75 min | |
-| Pres Sprint 2 | 1:30-2:30 | 60 min | Planning (10m) + Work (25m) + Review (15m) + Retro (10m) |
-| Break | 2:30-2:45 | 15 min | |
-| Final Presentations | 2:45-3:15 | 30 min | Each team presents (10-15 min each). Serves as final Sprint Review. |
-| Pres Debrief | 3:15-3:30 | 15 min | How Scrum structured the creative work |
-| Getting Started | 3:30-4:10 | 40 min | "Should we use Scrum?" canvas, org transformation, identify real PO/SM/Developers |
-| Appreciation | 4:10-4:35 | 25 min | Appreciation Wall, personal takeaways |
-| Closing | 4:35-5:00 | 25 min | Suggested reading, next steps, Q&A |
+| Opening | 8:00-8:15 | 15 min | Check-in, Day 1 recap, overnight questions |
+| Deeper Dive | 8:15-8:45 | 30 min | Sprint Events flow, Self-Management, Collaboration & Cross-functionality |
+| Planning | 8:45-9:30 | 45 min | Estimation exercise (relative sizing), PB Refinement, "Ready" concept, Monitoring Progress |
+| Break | 9:30-9:45 | 15 min | |
+| Presentation Setup | 9:45-10:15 | 30 min | Introduce exercise: "Build a presentation to sell your product vision." Teams create Product Backlog. A team member steps into PO role. Estimate. |
+| Pres Sprint 1 | 10:15-11:05 | 50 min | Planning (10m) + Work (20m) + Review (10m) + Retro (10m) |
+| Debrief | 11:05-11:15 | 10 min | Compare to Lego sprints |
+| Lunch | 11:15-12:30 | 75 min | |
+| Pres Sprint 2 | 12:30-1:30 | 60 min | Planning (10m) + Work (25m) + Review (15m) + Retro (10m) |
+| Break | 1:30-1:45 | 15 min | |
+| Final Presentations | 1:45-2:15 | 30 min | Each team presents (10-15 min each). Serves as final Sprint Review. |
+| Pres Debrief | 2:15-2:30 | 15 min | How Scrum structured the creative work |
+| Getting Started | 2:30-3:10 | 40 min | "Should we use Scrum?" canvas, org transformation, identify real PO/SM/Developers |
+| Appreciation | 3:10-3:35 | 25 min | Appreciation Wall, personal takeaways |
+| Closing | 3:35-4:00 | 25 min | Suggested reading, next steps, Q&A |
 
 **Day 2 split:** ~75 min slides (18%), ~195 min exercises (46%), ~100 min discussion (24%), ~50 min breaks (12%)
 
