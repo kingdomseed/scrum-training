@@ -1,0 +1,84 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="900" height="600" fill="#ffffff" />
+  
+  <!-- Container: The Sprint -->
+  <rect x="40" y="40" width="820" height="520" fill="none" stroke="black" stroke-width="3" />
+  <rect x="60" y="25" width="280" height="30" fill="black" />
+  <text x="70" y="46" font-family="Arial, sans-serif" font-weight="bold" font-size="16" fill="white">THE SPRINT (1 MONTH OR LESS)</text>
+
+  <!-- Input: Product Backlog -->
+  <g transform="translate(60, 100)">
+    <rect x="4" y="4" width="160" height="60" fill="rgba(0,0,0,0.12)" />
+    <rect width="160" height="60" fill="#ffd700" stroke="black" stroke-width="3" />
+    <text x="80" y="35" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="black">PRODUCT BACKLOG</text>
+  </g>
+
+  <!-- Arrow: Input to Sprint Planning -->
+  <path d="M 220 130 L 260 130" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Event 1: Sprint Planning -->
+  <g transform="translate(270, 90)">
+    <rect x="4" y="4" width="180" height="80" fill="rgba(0,0,0,0.12)" />
+    <rect width="180" height="80" fill="#0066ff" stroke="black" stroke-width="3" />
+    <text x="90" y="40" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="white">SPRINT PLANNING</text>
+  </g>
+
+  <!-- Output: Sprint Backlog + Goal -->
+  <g transform="translate(480, 100)">
+    <rect x="4" y="4" width="180" height="60" fill="rgba(0,0,0,0.12)" />
+    <rect width="180" height="60" fill="#ffd700" stroke="black" stroke-width="3" />
+    <text x="90" y="25" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle" fill="black">SPRINT BACKLOG</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle" fill="black">+ SPRINT GOAL</text>
+  </g>
+
+  <!-- Arrow: Planning to Daily Scrum Area -->
+  <path d="M 360 170 L 360 240" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Event 2: Daily Scrum (Iterative Loop) -->
+  <g transform="translate(280, 250)">
+    <rect x="4" y="4" width="160" height="100" fill="rgba(0,0,0,0.12)" />
+    <rect width="160" height="100" fill="#0066ff" stroke="black" stroke-width="3" />
+    <text x="80" y="40" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" fill="white">DAILY SCRUM</text>
+    <text x="80" y="70" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">(REPEATING)</text>
+    <!-- Loop Circle -->
+    <path d="M 160 50 A 25 25 0 1 1 160 49" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+  </g>
+
+  <!-- Arrow: Daily Scrum to Review -->
+  <path d="M 360 350 L 360 410" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Event 3: Sprint Review -->
+  <g transform="translate(270, 420)">
+    <rect x="4" y="4" width="180" height="80" fill="rgba(0,0,0,0.12)" />
+    <rect width="180" height="80" fill="#0066ff" stroke="black" stroke-width="3" />
+    <text x="90" y="40" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="white">SPRINT REVIEW</text>
+  </g>
+
+  <!-- Output: Increment -->
+  <g transform="translate(480, 430)">
+    <rect x="4" y="4" width="160" height="60" fill="rgba(0,0,0,0.12)" />
+    <rect width="160" height="60" fill="#ffd700" stroke="black" stroke-width="3" />
+    <text x="80" y="35" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="black">INCREMENT</text>
+  </g>
+
+  <!-- Arrow: Review to Retrospective -->
+  <path d="M 450 460 L 520 460" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Event 4: Sprint Retrospective -->
+  <g transform="translate(530, 420)">
+    <rect x="4" y="4" width="200" height="80" fill="rgba(0,0,0,0.12)" />
+    <rect width="200" height="80" fill="#0066ff" stroke="black" stroke-width="3" />
+    <text x="100" y="40" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="white">SPRINT RETROSPECTIVE</text>
+  </g>
+
+  <!-- Arrow: Back to Planning (Circular Loop) -->
+  <path d="M 730 460 Q 820 460 820 300 Q 820 130 450 130" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead)" stroke-dasharray="8,4" />
+
+  <!-- Definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+    </marker>
+  </defs>
+</svg>

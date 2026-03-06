@@ -1,0 +1,76 @@
+<svg width="1000" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Accountabilities Shadows -->
+  <rect x="104" y="34" width="200" height="60" fill="rgba(0,0,0,0.12)" />
+  <rect x="404" y="34" width="200" height="60" fill="rgba(0,0,0,0.12)" />
+  <rect x="704" y="34" width="200" height="60" fill="rgba(0,0,0,0.12)" />
+  
+  <!-- Accountabilities Boxes -->
+  <rect x="100" y="30" width="200" height="60" fill="#ffffff" stroke="black" stroke-width="3" />
+  <rect x="400" y="30" width="200" height="60" fill="#ffffff" stroke="black" stroke-width="3" />
+  <rect x="700" y="30" width="200" height="60" fill="#ffffff" stroke="black" stroke-width="3" />
+  
+  <text x="200" y="65" font-family="Arial, sans-serif" font-weight="bold" font-size="16" text-anchor="middle">Product Owner</text>
+  <text x="500" y="65" font-family="Arial, sans-serif" font-weight="bold" font-size="16" text-anchor="middle">Developers</text>
+  <text x="800" y="65" font-family="Arial, sans-serif" font-weight="bold" font-size="16" text-anchor="middle">Scrum Master</text>
+
+  <!-- Sprint Container Shadow -->
+  <rect x="204" y="124" width="600" height="420" fill="rgba(0,0,0,0.12)" />
+  <!-- Sprint Container -->
+  <rect x="200" y="120" width="600" height="420" fill="white" stroke="black" stroke-width="3" />
+  <text x="500" y="150" font-family="Arial, sans-serif" font-weight="bold" font-size="20" text-anchor="middle">THE SPRINT</text>
+
+  <!-- Artifacts Shadows -->
+  <rect x="24" y="254" width="160" height="100" fill="rgba(0,0,0,0.12)" />
+  <rect x="424" y="254" width="160" height="100" fill="rgba(0,0,0,0.12)" />
+  <rect x="824" y="254" width="160" height="100" fill="rgba(0,0,0,0.12)" />
+  
+  <!-- Artifacts Boxes -->
+  <rect x="20" y="250" width="160" height="100" fill="#ffd700" stroke="black" stroke-width="3" />
+  <rect x="420" y="250" width="160" height="100" fill="#ffd700" stroke="black" stroke-width="3" />
+  <rect x="820" y="250" width="160" height="100" fill="#ffd700" stroke="black" stroke-width="3" />
+
+  <text x="100" y="290" font-family="Arial, sans-serif" font-weight="bold" font-size="16" text-anchor="middle">Product Backlog</text>
+  <text x="100" y="325" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Commitment:</text>
+  <text x="100" y="340" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle">Product Goal</text>
+
+  <text x="500" y="290" font-family="Arial, sans-serif" font-weight="bold" font-size="16" text-anchor="middle">Sprint Backlog</text>
+  <text x="500" y="325" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Commitment:</text>
+  <text x="500" y="340" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle">Sprint Goal</text>
+
+  <text x="900" y="290" font-family="Arial, sans-serif" font-weight="bold" font-size="16" text-anchor="middle">Increment</text>
+  <text x="900" y="325" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Commitment:</text>
+  <text x="900" y="340" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle">Definition of Done</text>
+
+  <!-- Events Shadows -->
+  <rect x="234" y="174" width="160" height="50" fill="rgba(0,0,0,0.12)" />
+  <rect x="424" y="174" width="160" height="50" fill="rgba(0,0,0,0.12)" />
+  <rect x="614" y="174" width="160" height="50" fill="rgba(0,0,0,0.12)" />
+  <rect x="414" y="444" width="180" height="50" fill="rgba(0,0,0,0.12)" />
+
+  <!-- Events Boxes -->
+  <rect x="230" y="170" width="160" height="50" fill="#0066ff" stroke="black" stroke-width="3" />
+  <rect x="420" y="170" width="160" height="50" fill="#0066ff" stroke="black" stroke-width="3" />
+  <rect x="610" y="170" width="160" height="50" fill="#0066ff" stroke="black" stroke-width="3" />
+  <rect x="410" y="440" width="180" height="50" fill="#0066ff" stroke="black" stroke-width="3" />
+
+  <text x="310" y="200" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" fill="white">Sprint Planning</text>
+  <text x="500" y="200" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" fill="white">Daily Scrum</text>
+  <text x="690" y="200" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" fill="white">Sprint Review</text>
+  <text x="500" y="470" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" fill="white">Sprint Retrospective</text>
+
+  <!-- Artifacts Flow -->
+  <line x1="180" y1="300" x2="420" y2="300" stroke="black" stroke-width="3" marker-end="url(#arrowhead)" />
+  <line x1="580" y1="300" x2="820" y2="300" stroke="black" stroke-width="3" marker-end="url(#arrowhead)" />
+
+  <!-- Connected Events Flow -->
+  <path d="M 390 195 L 420 195" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" fill="none" />
+  <path d="M 580 195 L 610 195" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" fill="none" />
+  <path d="M 770 195 L 785 195 L 785 465 L 590 465" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" fill="none" />
+  <path d="M 410 465 L 215 465 L 215 195 L 230 195" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" fill="none" />
+</svg>
