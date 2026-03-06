@@ -23,7 +23,9 @@
       --color-text: #1a1a1a;
       --color-text-muted: #444444;
       --color-primary: #0066ff;
+      --color-on-primary: #ffffff;
       --color-accent: #ffd700;
+      --color-on-accent: #1a1a1a;
       --color-border: #000000;
       --border-base: 2px solid var(--color-border);
       --border-thick: 3px solid var(--color-border);
@@ -124,7 +126,7 @@
 
     .card--primary {
       background: var(--color-primary);
-      color: #ffffff;
+      color: var(--color-on-primary);
       border: var(--border-base);
       box-shadow: var(--shadow-base);
       padding: 16px;
@@ -132,9 +134,12 @@
       text-align: left;
     }
 
-    .card--primary h3,
-    .card--primary p {
-      color: #ffffff;
+    .reveal .card--primary h3,
+    .reveal .card--primary p,
+    .reveal .card--primary li,
+    .reveal .card--primary span,
+    .reveal .card--primary div {
+      color: var(--color-on-primary);
     }
 
     /* ============================================
@@ -252,11 +257,11 @@
     /* ============================================
        BADGE
        ============================================ */
-    .badge {
+    .reveal .badge {
       display: inline-block;
       padding: 4px 12px;
       background: var(--color-primary);
-      color: #ffffff;
+      color: var(--color-on-primary);
       font-family: var(--font-body);
       font-weight: 700;
       font-size: 0.8rem;
@@ -266,8 +271,95 @@
     }
 
     /* ============================================
-       TIMER DISPLAY
+       BACKGROUND GRID (every slide)
        ============================================ */
+    .reveal .slides section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--color-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .reveal .slides section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ============================================
+       SLIDE LOGO
+       ============================================ */
+    .slide-logo {
+      position: fixed;
+      bottom: 14px;
+      left: 20px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .slide-logo svg {
+      height: 48px;
+      width: 48px;
+    }
+
+    /* ============================================
+       LIVE CLOCK
+       ============================================ */
+    .slide-clock {
+      position: fixed;
+      top: 14px;
+      right: 20px;
+      z-index: 100;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      pointer-events: none;
+    }
+
+    /* ============================================
+       DISCUSSION QUESTION
+       ============================================ */
+    .reveal .slide-question {
+      background: var(--color-primary);
+      color: var(--color-on-primary);
+      border: var(--border-base);
+      padding: 10px 16px;
+      margin-top: 16px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .reveal .slide-question::before {
+      content: "DISCUSS ";
+      color: var(--color-on-primary);
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    /* ============================================
+       INTERACTIVE TIMER
+       ============================================ */
+    .timer-widget {
+      text-align: center;
+      margin: 16px auto;
+    }
+
     .timer-display {
       font-family: var(--font-display);
       font-size: clamp(4rem, 10vw, 8rem);
@@ -277,6 +369,56 @@
       padding: 40px;
       background: var(--color-surface);
       border-radius: 0;
+    }
+
+    .timer-compact {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 900;
+      text-align: center;
+      border: var(--border-thick);
+      padding: 16px 24px;
+      background: var(--color-surface);
+      display: inline-block;
+    }
+
+    .timer-compact.timer-warning {
+      background: var(--color-accent);
+    }
+
+    .timer-compact.timer-done {
+      background: var(--color-primary);
+      color: var(--color-on-primary);
+    }
+
+    .timer-controls {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .timer-btn {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 6px 16px;
+      border: var(--border-base);
+      background: #ffffff;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .timer-btn:hover {
+      background: var(--color-surface);
+      transform: translate(-1px, -1px);
+      box-shadow: var(--shadow-base);
+    }
+
+    .reveal .timer-btn--start {
+      background: var(--color-primary);
+      color: var(--color-on-primary);
     }
 
     /* ============================================
@@ -302,9 +444,63 @@
         page-break-after: always;
       }
     }
+    /* ============================================
+       SLIDE ICONS (Font Awesome Slab)
+       ============================================ */
+    .slide-icon {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.125em;
+      fill: currentColor;
+    }
+
+    .slide-icon--heading {
+      width: 0.85em;
+      height: 0.85em;
+      margin-right: 0.15em;
+      vertical-align: -0.05em;
+    }
+
+    .slide-icon--card {
+      width: 1.2em;
+      height: 1.2em;
+      margin-bottom: 6px;
+      display: block;
+    }
   </style>
+
+  <!-- Font Awesome Slab Icon Sprite (Pro 7.2.0) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="icon-lightbulb" viewBox="0 0 360 540"><path fill="currentColor" d="M126 180c0-29.8 24.2-54 54-54 9.9 0 18-8.1 18-18s-8.1-18-18-18c-49.7 0-90 40.3-90 90 0 9.9 8.1 18 18 18s18-8.1 18-18zM0 180C0 80.6 80.6 0 180 0S360 80.6 360 180l0 36c0 59.1-23 106.7-58.6 151.9-19.1 24.2-31.4 39.8-31.4 64.1l0 18c0 49.7-40.3 90-90 90s-90-40.3-90-90l0-18C90 407.7 77.7 392.1 58.6 367.9 23 322.7 0 275.1 0 216l0-36zM180 36c-79.5 0-144 64.5-144 144 0 57.6 20.1 89.8 41.3 117.3 10.6 13.8 23.3 28.1 33.1 44.7l139.3 0c9.8-16.7 22.5-31 33.1-44.7 21.1-27.5 41.3-59.7 41.3-117.3 0-79.5-64.5-144-144-144zM126 396l0 18c0 29.8 24.2 54 54 54s54-24.2 54-54l0-18c0-6.3.6-12.3 1.7-18l-111.3 0c1.1 5.7 1.7 11.7 1.7 18z"/></symbol>
+    <symbol id="icon-heart" viewBox="0 0 504 540"><path fill="currentColor" d="M36 180c0 32.6 12.9 63.9 36 86.9L226.5 421.5c6.8 6.8 15.9 10.5 25.5 10.5s18.7-3.8 25.5-10.5L432 266.9c23.1-23.1 36-54.3 36-86.9 0-59.6-48.4-108-108-108-39.3 0-73.7 20.9-92.6 52.4-3.3 5.4-9.1 8.7-15.4 8.7s-12.2-3.3-15.4-8.7C217.7 92.9 183.3 72 144 72 84.4 72 36 120.4 36 180zM0 180c0-79.5 64.5-144 144-144 43 0 81.6 18.9 108 48.8 26.4-29.9 65-48.8 108-48.8 79.5 0 144 64.5 144 144l0 36c0 42.1-16.7 82.6-46.5 112.4L302.9 482.9C289.4 496.4 271.1 504 252 504s-37.4-7.6-50.9-21.1L46.5 328.4C16.7 298.6 0 258.1 0 216l0-36z"/></symbol>
+    <symbol id="icon-compass" viewBox="0 0 504 540"><path fill="currentColor" d="M252 279a27 27 0 1 0 0-54 27 27 0 1 0 0 54zm42.2-164.5c27.3-12.4 59.5-6.6 80.7 14.6s27.1 53.4 14.6 80.7l-45 99c-7.2 15.8-19.9 28.5-35.8 35.8l-99 45c-27.3 12.4-59.5 6.6-80.7-14.6s-27.1-53.4-14.6-80.7l45-99c7.2-15.8 19.9-28.5 35.8-35.8l99-45zm55.2 40.1c-10.6-10.6-26.7-13.5-40.4-7.3l-99 45c-7.9 3.6-14.3 10-17.9 17.9l-45 99c-6.2 13.7-3.3 29.7 7.3 40.4s26.7 13.5 40.4 7.3l99-45c7.9-3.6 14.3-10 17.9-17.9l45-99c6.2-13.7 3.3-29.7-7.3-40.4zM0 252C0 112.8 112.8 0 252 0S504 112.8 504 252l0 36c0 139.2-112.8 252-252 252S0 427.2 0 288l0-36zm36 0a216 216 0 1 0 432 0 216 216 0 1 0-432 0z"/></symbol>
+    <symbol id="icon-map" viewBox="0 0 504 540"><path fill="currentColor" d="M0 126C0 95 19.8 67.5 49.2 57.7l108-36c18.1-6 37.9-4.6 55 3.9l117.3 58.7 79.7-26.6c22-7.3 46.1-3.6 64.9 9.9S504 102.9 504 126l0 288c0 31-19.8 58.5-49.2 68.3l-108 36c-18.1 6-37.9 4.6-55-3.9l-117.3-58.7-79.7 26.6c-22 7.3-46.1 3.6-64.9-9.9S0 437.1 0 414L0 126zM162 58.1L60.6 91.8C45.9 96.7 36 110.5 36 126l0 252c0 24.2 24.5 41.8 47.4 34.2l78.6-26.2 0-327.9zm36 333.2l108 54 0-332.5-108-54 0 332.5zm245.4 20.9c14.7-4.9 24.6-18.7 24.6-34.2l0-252c0-24.2-24.5-41.8-47.4-34.2l-78.6 26.2 0 327.9 101.4-33.8z"/></symbol>
+    <symbol id="icon-eye" viewBox="0 0 504 540"><path fill="currentColor" d="M252 162a90 90 0 1 0 0 180 90 90 0 1 0 0-180zm0 144c-23.6 0-43.7-15.2-51-36.3 11.2-20.3 25.9-35.7 51-35.7s39.8 15.5 51 35.7c-7.3 21.1-27.4 36.3-51 36.3zM246.2 54c-63.1 0-123 27.6-164 75.4L17.3 205.1C5.8 218.6 0 235.3 0 252l0 36c0 16.7 5.8 33.4 17.3 46.9l64.9 75.7c41 47.9 100.9 75.4 164 75.4l11.5 0c63.1 0 123-27.6 164-75.4l64.9-75.7C498.2 321.4 504 304.7 504 288l0-36c0-16.7-5.8-33.4-17.3-46.9l-64.9-75.7C380.7 81.6 320.8 54 257.8 54l-11.5 0zM468 252c0 8.4-2.9 16.7-8.7 23.4l-64.9 75.7C360.2 391 310.3 414 257.8 414l-11.5 0c-52.5 0-102.5-23-136.7-62.9L44.7 275.4C38.9 268.7 36 260.4 36 252s2.9-16.7 8.7-23.4l64.9-75.7C143.8 113 193.7 90 246.2 90l11.5 0c52.5 0 102.5 23 136.7 62.9l64.9 75.7c5.8 6.7 8.7 15.1 8.7 23.4z"/></symbol>
+    <symbol id="icon-crown" viewBox="0 0 504 540"><path fill="currentColor" d="M56.2 449.5l-54-216C.7 227.7 0 221.8 0 216l0-36c0-15.9 5.3-31.5 15.2-44.3 13.6-17.5 34.6-27.7 56.8-27.7 29.7 0 58.5-15.1 83.6-36.7 13.6-11.6 26.5-24.9 36.7-39.6 13.4-19.8 35.7-31.7 59.7-31.7s46.3 11.9 59.7 31.7c10.2 14.7 23.1 28 36.7 39.6 25.1 21.5 54 36.7 83.6 36.7 22.2 0 43.1 10.2 56.8 27.7 10 12.8 15.2 28.4 15.2 44.3l0 36c0 5.8-.7 11.7-2.1 17.5l-54 216C439.8 481.5 411 504 378 504l-252 0c-33 0-61.8-22.5-69.9-54.5zM126 432l252 0c16.5 0 30.9-11.2 34.9-27.3l54-216c2.7-10.8.3-22.1-6.6-30.9S443.1 144 432 144c-41.8 0-78.7-21-107.1-45.3-13.8-11.8-26.4-25.1-37.6-39.4-9.2-11.8-18.2-23.2-35.3-23.2s-26.1 11.4-35.3 23.2c-11.2 14.3-23.8 27.6-37.6 39.4-28.3 24.3-65.2 45.3-107.1 45.3-11.1 0-21.6 5.1-28.4 13.8s-9.2 20.1-6.5 30.9l54 216c4 16 18.4 27.3 34.9 27.3z"/></symbol>
+    <symbol id="icon-users" viewBox="0 0 504 540"><path fill="currentColor" d="M432 216c0 14.8-3.6 28.7-9.9 41 36.1 21.2 64 55.8 76.1 98.2 2.8 9.7 5.8 19.2 5.8 29.4l0 36c0 36.1-29.3 65.4-65.4 65.4L66.1 486C29.6 486 0 456.4 0 419.9l0-36c0-11 3.3-21.5 6-32 12.1-48.4 43.3-88.1 84.3-111.8-11.5-17.2-18.2-37.8-18.2-60.1l0-36c0-59.6 48.4-108 108-108 48.5 0 89.5 31.9 103.2 75.9 15.8-13.6 36.3-21.9 58.8-21.9 49.7 0 90 40.3 90 90l0 36zM108 144a72 72 0 1 0 144 0 72 72 0 1 0-144 0zM468 384.6c0-6.7-2.6-13.2-4.4-19.5-16.1-56.3-67.5-95.1-126.1-95.1-9.1 0-18 .9-26.6 2.7 20.4 21.7 35.5 48.7 43.1 79.2 2.6 10.5 6 21.1 6 32 0 10.8-2.6 21.1-7.2 30.1l85.9 0c16.2 0 29.3-13.2 29.4-29.4zM293.9 414c16.6 0 30.1-13.5 30.1-30.1 0-7.9-3-15.8-4.9-23.3-16-63.8-73.3-108.6-139.1-108.6S56.9 296.8 40.9 360.6C39 368.1 36 376.1 36 383.9 36 400.5 49.5 414 66.1 414l227.8 0zM342 126a54 54 0 1 0 0 108 54 54 0 1 0 0-108z"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 432 540"><path fill="currentColor" d="M39.8 97.6C15.4 109.8 0 134.7 0 162l0 36c0 216.8 140.4 298.4 176.9 315.4 14 6.5 27.6 8.6 39.1 8.6s25.1-2 39.1-8.6C291.6 496.4 432 414.8 432 198l0-36c0-27.3-15.4-52.2-39.8-64.4l-144-72c-20.3-10.1-44.1-10.1-64.4 0l-144 72zM234 58.8l142.1 71c12.2 6.1 19.9 18.6 19.9 32.2 0 105.3-50.2 247.9-162 285.1l0-388.4zM198 447.1C86.2 409.9 36 267.3 36 162 36 148.4 43.7 135.9 55.9 129.8l142.1-71 0 388.4z"/></symbol>
+    <symbol id="icon-arrows-rotate" viewBox="0 0 504 540"><path fill="currentColor" d="M252 36c-68.3 0-129.1 31.7-168.6 81-10.7 13.3-15.9 29.3-15.8 45.2l0 36C29.9 200.4 0 231.7 0 270L0 396c0 29.1 17.5 55.4 44.4 66.5 24.4 10.1 52.1 6 72.4-10.2 37 33.2 85.1 51.7 135.1 51.7 68.3 0 129.1-31.7 168.6-81 10.7-13.3 15.8-29.2 15.8-45l0-36.1c37.7-2.3 67.6-33.6 67.6-71.9l0-126c0-29.1-17.5-55.4-44.4-66.5-24.4-10.1-52.1-6-72.4 10.2-37-33.2-85.1-51.7-135.1-51.7z"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 504 540"><path fill="currentColor" d="M0 252c0-18.5 7-36.8 21.1-50.9 28.1-28.1 73.7-28.1 101.8 0L180 258.2 381.1 57.1C409.2 29 454.8 29 482.9 57.1 497 71.1 504 89.6 504 108l0 36c0 18.4-7 36.9-21.1 50.9l-252 252c-28.1 28.1-73.7 28.1-101.8 0l-108-108C7.1 325 .1 306.6 0 288.3L0 252zM457.5 82.5c-14.1-14.1-36.9-14.1-50.9 0L192.7 296.4c-7 7-18.4 7-25.5 0L97.5 226.5c-14.1-14.1-36.9-14.1-50.9 0-7 7-10.5 16.3-10.5 25.5 0 9.2 3.5 18.4 10.5 25.4l108 108c14.1 14.1 36.9 14.1 50.9 0l252-252c14.1-14.1 14.1-36.9 0-50.9z"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 504 540"><path fill="currentColor" d="M319 45.3C308.1 17.9 281.6 0 252.2 0s-55.9 17.9-66.9 45.3l-29.6 74-79.5 5.3c-29.4 2-54.6 21.6-63.7 49.6-2.3 7.2-3.5 14.6-3.5 21.9l0 36.6c.1 20.9 9.3 41.2 25.9 55.1l53.7 44.7-12 47.5c-1.5 5.9-2.2 11.9-2.2 17.9l0 35.5c-.1 22.8 10.7 44.7 29.7 58.5 23.8 17.3 55.8 18.4 80.7 2.7l67.4-42.5 67.4 42.5c24.9 15.7 56.9 14.6 80.7-2.7 19-13.8 29.8-35.7 29.7-58.5l0-35.5c0-6-.7-12-2.2-17.9l-12-47.5 53.7-44.7c16.6-13.9 25.8-34.2 25.9-55.1l0-36.6c0-7.3-1.2-14.7-3.5-21.9-9.1-28-34.3-47.6-63.7-49.6l-79.5-5.3-29.6-74z"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 504 540"><path fill="currentColor" d="M270 108c0-9.9-8.1-18-18-18s-18 8.1-18 18l0 129.1c0 14.3 5.7 28.1 15.8 38.2l61.5 61.5c7 7 18.4 7 25.5 0s7-18.4 0-25.5l-61.5-61.5c-3.4-3.4-5.3-8-5.3-12.7L270 108zM252 0C112.8 0 0 112.8 0 252l0 36C0 427.2 112.8 540 252 540S504 427.2 504 288l0-36C504 112.8 391.2 0 252 0zm0 468a216 216 0 1 1 0-432 216 216 0 1 1 0 432z"/></symbol>
+    <symbol id="icon-stopwatch" viewBox="0 0 468 540"><path fill="currentColor" d="M108 72c0-39.8 32.2-72 72-72H288c39.8 0 72 32.2 72 72l0 36c0 11.8-2.8 22.9-7.8 32.7l3.9-2.6c33.1-22.1 77.8-13.1 99.8 20 8.4 12.6 12.3 26.8 12.1 40.8l0 36c-.3 22.1-13.4 53.3-36.2 61.1.2 3.3.2 6.7.2 10l0 36c0 109.4-88.6 198-198 198S36 451.4 36 342l0-36c0-66.2 32.5-124.8 82.4-160.8-6.6-10.9-10.4-23.6-10.4-37.2l0-36z"/></symbol>
+    <symbol id="icon-comments" viewBox="0 0 540 540"><path fill="currentColor" d="M0 180C0 75.1 90.3 0 189 0 256.4 0 319.3 34.7 352.9 90 450.9 91 540 165.8 540 270l0 36c0 50.4-21.1 94.3-54 126l0 35.4c.2 20.2-8.2 40-23.7 54-21.2 19.2-51.8 24-77.8 12.2L278.3 485.9c-31.5-14.2-57.9-35.9-77.6-62.6l-45.1 20.3c-26.1 11.7-56.6 6.9-77.8-12.2-15.5-14-23.9-33.8-23.7-54L54 342C21.1 310.3 0 266.4 0 216l0-36z"/></symbol>
+    <symbol id="icon-trophy" viewBox="0 0 540 540"><path fill="currentColor" d="M540 201.6c0 26.6-14.7 51-38.1 63.5L400.1 319.4c-6 9.4-12.3 18-18.8 25.8 29.4 9.1 50.7 36.4 50.7 68.8l0 36c0 39.8-32.2 72-72 72l-180 0c-39.8 0-72-32.2-72-72l0-36c0-32.3 21.3-59.7 50.7-68.8-6.5-7.8-12.8-16.4-18.8-25.8L38.1 265.1C14.7 252.6 0 228.2 0 201.6L0 144c0-39.8 32.2-72 72-72l20.2.1C100.2 41 128.4 18 162 18l216 0c33.6 0 61.8 23 69.8 54.1L468 72c39.8 0 72 32.2 72 72l0 57.6z"/></symbol>
+    <symbol id="icon-flag" viewBox="0 0 432 540"><path fill="currentColor" d="M92.1 30.6c48.9-9.8 99.4-6.6 146.7 9.1 23.5 7.8 48.6 9.4 72.9 4.5l34.2-6.8C389.7 28.6 432 63.3 432 108l0 216c0 34.3-24.2 63.9-57.9 70.6l-34.2 6.8c-48.9 9.8-99.4 6.6-146.7-9.1-15.9-5.3-32.6-7.7-49.2-7.2l0 64.9c0 39.8-32.2 72-72 72S0 489.8 0 450L0 108C0 73.7 24.2 44.1 57.9 37.4l34.2-6.8z"/></symbol>
+    <symbol id="icon-palette" viewBox="0 0 504 540"><path fill="currentColor" d="M252 144a27 27 0 1 0 0-54 27 27 0 1 0 0 54zM90 252a27 27 0 1 1 54 0 27 27 0 1 1-54 0zm238.4-76.4a27 27 0 1 0 38.2-38.2 27 27 0 1 0-38.2 38.2zM137.4 328.4a27 27 0 1 1 38.2 38.2 27 27 0 1 1-38.2-38.2zm0-152.7a27 27 0 1 0 38.2-38.2 27 27 0 1 0-38.2 38.2zM252 0C112.8 0 0 112.8 0 252l0 36C0 427.2 112.8 540 252 540l18 0c31.7 0 59.7-20.8 68.9-51.1 2-6.6 3-13.5 3.1-20.2l0-35.8c.3-23.9-11.4-47-32.1-60.8l-12.2-8.2c3.5-2.4 7.5-3.9 12.1-3.9H432c39.8 0 72-32.2 72-72l0-36C504 112.8 391.2 0 252 0z"/></symbol>
+    <symbol id="icon-gear" viewBox="0 0 468 540"><path fill="currentColor" d="M155.4 61.1C160.8 25.9 191 0 226.6 0h15.3c35.5 0 65.8 25.9 71.2 61.1l4.9 31.5c4.3 2.2 8.4 4.7 12.5 7.2l29.8-11.6c33.1-12.9 70.7.3 88.5 31.1l7.7 13.3c6.6 11.5 9.8 24.1 9.6 36.6l0 35.8c-.2 21-9.5 41.8-26.9 55.8l-11.5 9.2 11.5 9.2c17.7 14.2 27.1 35.3 26.9 56.7l0 35c.1 12.4-3.1 25-9.6 36.4l-7.7 13.3c-17.8 30.8-55.3 44-88.5 31.1l-29.8-11.6c-4.1 2.6-8.2 5-12.5 7.2l-4.9 31.5c-5.4 35.1-35.6 61.1-71.2 61.1h-15.3c-35.5 0-65.8-25.9-71.2-61.1l-4.9-31.5c-4.3-2.2-8.4-4.7-12.5-7.2l-29.8 11.6c-33.1 12.9-70.7-.3-88.5-31.1l-7.7-13.3C5.6 396 2.4 383.4 2.5 371l0-35c-.2-21.4 9.2-42.5 26.9-56.7l11.5-9.2-11.5-9.2C12 246.8 2.7 226 2.5 205l0-35.8c-.1-12.5 3-25.1 9.6-36.6l7.7-13.3c17.8-30.8 55.3-44 88.5-31.1L138 99.8c4.1-2.6 8.2-5 12.5-7.2l4.9-31.5z"/></symbol>
+  </svg>
 </head>
 <body>
+  <!-- JH Digital Logo Watermark -->
+  <div class="slide-logo">
+    <svg fill="none" viewBox="0 0 258 258" xmlns="http://www.w3.org/2000/svg"><mask id="a" fill="#000" height="129" maskUnits="userSpaceOnUse" width="54" x="36" y="37"><path d="m36 37h54v129h-54z" fill="#fff"/><path d="m39.396 163v-20.5h7.052c5.248 0 9.4027-1.476 12.464-4.428 3.1707-3.061 4.756-7.107 4.756-12.136v-85.116h22.468v84.296c0 7.544-1.64 14.159-4.92 19.844-3.1707 5.685-7.7627 10.113-13.776 13.284-5.904 3.171-12.9013 4.756-20.992 4.756z" fill="#000"/></mask><mask id="b" fill="#000" height="129" maskUnits="userSpaceOnUse" width="104" x="103" y="37"><path d="m103 37h104v129h-104z" fill="#fff"/><path d="m106.808 163v-122.18h22.304v53.3h51.988v-53.3h22.468v122.18h-22.468v-49.2h-51.988v49.2z" fill="#000"/></mask><path d="m8 8h250v250h-250z" fill="#06f"/><path d="m0 0h250v250h-250z" fill="#fff"/><g fill="#333"><path d="m39.396 163v-20.5h7.052c5.248 0 9.4027-1.476 12.464-4.428 3.1707-3.061 4.756-7.107 4.756-12.136v-85.116h22.468v84.296c0 7.544-1.64 14.159-4.92 19.844-3.1707 5.685-7.7627 10.113-13.776 13.284-5.904 3.171-12.9013 4.756-20.992 4.756z"/><path d="m39.396 163h-3v3h3zm0-20.5v-3h-3v3zm19.516-4.428 2.0824 2.16.0014-.002zm4.756-97.252v-3h-3v3zm22.468 0h3v-3h-3zm-4.92 104.14-2.5986-1.499-.0109.019-.0106.019zm-13.776 13.284-1.3992-2.654-.0101.006-.0101.005zm-28.044 4.756h3v-20.5h-3-3v20.5zm0-20.5v3h7.052v-3-3h-7.052zm7.052 0v3c5.833 0 10.8016-1.657 14.5464-5.268l-2.0824-2.16-2.0824-2.16c-2.3779 2.293-5.7186 3.588-10.3816 3.588zm12.464-4.428 2.0838 2.158c3.8407-3.708 5.6722-8.576 5.6722-14.294h-3-3c0 4.341-1.3392 7.563-3.8398 9.978zm4.756-12.136h3v-85.116h-3-3v85.116zm0-85.116v3h22.468v-3-3h-22.468zm22.468 0h-3v84.296h3 3v-84.296zm0 84.296h-3c0 7.097-1.5387 13.18-4.5186 18.345l2.5986 1.499 2.5986 1.499c3.5801-6.205 5.3214-13.352 5.3214-21.343zm-4.92 19.844-2.6201-1.461c-2.8748 5.155-7.0316 9.179-12.5551 12.091l1.3992 2.654 1.3992 2.654c6.5032-3.429 11.5304-8.261 14.9969-14.477zm-13.776 13.284-1.4194-2.643c-5.3858 2.892-11.8753 4.399-19.5726 4.399v3 3c8.484 0 15.9892-1.664 22.4114-5.113zm-20.992 4.756v-3h-7.052v3 3h7.052z" mask="url(#a)"/><path d="m106.808 163v-122.18h22.304v53.3h51.988v-53.3h22.468v122.18h-22.468v-49.2h-51.988v49.2z"/><path d="m106.808 163h-3v3h3zm0-122.18v-3h-3v3zm22.304 0h3v-3h-3zm0 53.3h-3v3h3zm51.988 0v3h3v-3zm0-53.3v-3h-3v3zm22.468 0h3v-3h-3zm0 122.18v3h3v-3zm-22.468 0h-3v3h3zm0-49.2h3v-3h-3zm-51.988 0v-3h-3v3zm0 49.2v3h3v-3zm-22.304 0h3v-122.18h-3-3v122.18zm0-122.18v3h22.304v-3-3h-22.304zm22.304 0h-3v53.3h3 3v-53.3zm0 53.3v3h51.988v-3-3h-51.988zm51.988 0h3v-53.3h-3-3v53.3zm0-53.3v3h22.468v-3-3h-22.468zm22.468 0h-3v122.18h3 3v-122.18zm0 122.18v-3h-22.468v3 3h22.468zm-22.468 0h3v-49.2h-3-3v49.2zm0-49.2v-3h-51.988v3 3h51.988zm-51.988 0h-3v49.2h3 3v-49.2zm0 49.2v-3h-22.304v3 3h22.304z" mask="url(#b)"/><path d="m71.664 207v-27.565h5.032v27.565zm27.465.444c-1.9733 0-3.7987-.358-5.476-1.073s-3.145-1.714-4.403-2.997-2.2447-2.787-2.96-4.514c-.6907-1.727-1.036-3.614-1.036-5.661s.333-3.934.999-5.661c.6907-1.751 1.6527-3.256 2.886-4.514 1.258-1.283 2.7257-2.269 4.403-2.96 1.6773-.715 3.5027-1.073 5.476-1.073 1.973 0 3.737.333 5.291.999 1.579.666 2.911 1.554 3.996 2.664 1.085 1.085 1.862 2.282 2.331 3.589l-4.477 2.146c-.518-1.431-1.394-2.59-2.627-3.478s-2.738-1.332-4.514-1.332c-1.7267 0-3.256.407-4.588 1.221-1.3073.814-2.331 1.936-3.071 3.367-.7153 1.431-1.073 3.108-1.073 5.032s.37 3.614 1.11 5.069c.7647 1.431 1.813 2.553 3.145 3.367s2.8613 1.221 4.588 1.221c1.406 0 2.701-.271 3.885-.814 1.184-.567 2.134-1.357 2.849-2.368.715-1.036 1.073-2.257 1.073-3.663v-2.109l2.294 1.998h-10.212v-4.255h12.95v2.775c0 2.121-.358 3.996-1.073 5.624s-1.69 2.997-2.923 4.107c-1.209 1.085-2.578 1.912-4.107 2.479-1.529.543-3.108.814-4.736.814zm20.891-.444v-27.565h5.032v27.565z"/></g><path d="m34.6607 182.429v22.142c0 .462.3691.831.8304.831s.8303-.369.8303-.831v-22.142c0-.609.4982-1.108 1.1072-1.108h11.0714c.4613 0 .8303-.369.8303-.83s-.369-.83-.8303-.83h-11.0714c-1.5316 0-2.7679 1.236-2.7679 2.768zm7.1964 20.205c0 .461.3691.83.8304.83h5.8125c5.505 0 9.9643-4.459 9.9643-9.964 0-.461-.3691-.83-.8304-.83s-.8303.369-.8303.83c0 4.588-3.7151 8.304-8.3036 8.304h-5.8125c-.4613 0-.8304.369-.8304.83z" fill="#ffd700"/><path d="m37.4286 178c-2.448 0-4.4286 1.981-4.4286 4.429v22.142c0 2.448 1.9806 4.429 4.4286 4.429h11.0714c8.5619 0 15.5-6.938 15.5-15.5s-6.9381-15.5-15.5-15.5zm4.4285 9.964c0-.609.4983-1.107 1.1072-1.107h5.5357c3.6659 0 6.6429 2.977 6.6429 6.643s-2.977 6.643-6.6429 6.643h-5.5357c-.6089 0-1.1072-.498-1.1072-1.107zm-5.5357-5.535v22.142c0 .462-.369.831-.8303.831s-.8304-.369-.8304-.831v-22.142c0-1.532 1.2363-2.768 2.7679-2.768h11.0714c.4613 0 .8304.369.8304.83s-.3691.83-.8304.83h-11.0714c-.609 0-1.1072.499-1.1072 1.108zm22.1429 11.071c0 5.505-4.4593 9.964-9.9643 9.964h-5.8125c-.4613 0-.8304-.369-.8304-.83s.3691-.83.8304-.83h5.8125c4.5885 0 8.3036-3.716 8.3036-8.304 0-.461.369-.83.8303-.83s.8304.369.8304.83z" fill="#333"/><path d="m129.661 182.429c0 .461.369.83.83.83s.83-.369.83-.83c0-.609.499-1.108 1.108-1.108h22.142c.462 0 .831-.369.831-.83s-.369-.83-.831-.83h-22.142c-1.532 0-2.768 1.236-2.768 2.768zm11.071 5.535v16.607c0 .462.369.831.83.831.462 0 .831-.369.831-.831v-16.607c0-.461-.369-.83-.831-.83-.461 0-.83.369-.83.83z" fill="#06f"/><path d="m128 182.429c0-2.448 1.981-4.429 4.429-4.429h22.142c2.448 0 4.429 1.981 4.429 4.429s-1.981 4.428-4.429 4.428h-5.535c-.609 0-1.107.498-1.107 1.107v16.607c0 2.448-1.981 4.429-4.429 4.429s-4.429-1.981-4.429-4.429v-16.607c0-.609-.498-1.107-1.107-1.107h-5.535c-2.448 0-4.429-1.98-4.429-4.428zm3.321 0c0-.609.499-1.108 1.108-1.108h22.142c.462 0 .831-.369.831-.83s-.369-.83-.831-.83h-22.142c-1.532 0-2.768 1.236-2.768 2.768 0 .461.369.83.83.83s.83-.369.83-.83zm11.072 5.535c0-.461-.369-.83-.83-.83-.462 0-.831.369-.831.83v16.607c0 .462.369.831.831.831.461 0 .83-.369.83-.831z" fill="#333"/><path d="m156.407 207 9.509-27.565h6.512l9.509 27.565h-5.476l-1.961-5.92h-10.656l-1.998 5.92zm8.88-10.36h7.77l-4.588-13.727h1.406zm23.788 10.36v-27.565h5.032v23.125h11.803v4.44z" fill="#333"/><path d="m6 6h238v238h-238z" stroke="#333" stroke-width="12"/></svg>
+  </div>
+
+  <!-- Live Clock -->
+  <div class="slide-clock" id="liveClock"></div>
+
   <div class="reveal">
     <div class="slides">
 
@@ -384,7 +580,7 @@
 
       <!-- Slide 7: Definition of Scrum -->
       <section>
-        <h2>What Is Scrum?</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-lightbulb"/></svg> What Is Scrum?</h2>
         <div class="quote-card">
           <p>&ldquo;Scrum is a lightweight framework that helps people, teams and organizations generate value through adaptive solutions for complex problems.&rdquo;</p>
           <p class="attribution">&mdash; The Scrum Guide (2020)</p>
@@ -394,6 +590,7 @@
           <li><strong>Framework, not a process:</strong> Provides structure; your team fills in the practices</li>
           <li><strong>Adaptive &amp; Complex:</strong> Built for work where requirements emerge and change</li>
         </ul>
+        <div class="slide-question">What makes a problem &ldquo;complex&rdquo; vs. just &ldquo;complicated&rdquo;?</div>
         <aside class="notes">
           Scrum solves the problem of helping people understand that the way they work by default is the reason for most project failures. Seeing this and understanding it unlocks the way for you to consider a new way of working.
 
@@ -403,7 +600,7 @@
 
       <!-- Slide 8: Agile Manifesto — 4 Values -->
       <section>
-        <h2>The Agile Manifesto</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-heart"/></svg> The Agile Manifesto</h2>
         <div class="grid-2">
           <div class="card">
             <p style="font-size: 1.15rem; font-weight: 700;">Individuals &amp; Interactions</p>
@@ -422,62 +619,87 @@
             <p style="color: var(--color-text-muted); font-size: 0.85rem;">over Following a Plan</p>
           </div>
         </div>
-        <p style="text-align: center; font-style: italic; font-size: 0.8rem; color: var(--color-text-muted); margin-top: 16px;">While there is value in the items on the right, we value the items on the left more.</p>
+        <p style="text-align: center; font-style: italic; font-size: 0.8rem; color: var(--color-text-muted); margin-top: 16px;">While there is value in the items below, we value the items <strong>above</strong> more.</p>
+        <div class="slide-question">Which of these values resonates most with you today?</div>
         <aside class="notes">
           Agile is a statement of values. Scrum is a way to put these values into focus, clarity, and practice. Ideas are easy — execution is hard.
         </aside>
       </section>
 
-      <!-- Slide 9: Cynefin Framework -->
+      <!-- Slide 9: Complexity of Product Development (Stacey Matrix) -->
       <section>
-        <h2>Where Does Scrum Live?</h2>
-        <div style="max-width: 620px; margin: 0 auto;">
-          <svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-  <!-- Quadrants -->
-  <rect x="0" y="0" width="400" height="300" fill="#f9f9f9" stroke="black" stroke-width="3" />
-  <rect x="400" y="0" width="400" height="300" fill="#0066ff" stroke="black" stroke-width="3" />
-  <rect x="0" y="300" width="400" height="300" fill="#f9f9f9" stroke="black" stroke-width="3" />
-  <rect x="400" y="300" width="400" height="300" fill="#f9f9f9" stroke="black" stroke-width="3" />
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-compass"/></svg> The Complexity of Product Development</h2>
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: start;">
+          <!-- Stacey Matrix Diagram -->
+          <div>
+            <svg viewBox="0 0 520 430" xmlns="http://www.w3.org/2000/svg">
+              <!-- Plot area: x=80..480, y=10..340 (400×330) -->
 
-  <!-- Disorder Center -->
-  <rect x="320" y="220" width="160" height="160" fill="#ffd700" stroke="black" stroke-width="3" />
+              <!-- Zone fills (back to front) -->
+              <!-- Complex (large middle-right area) -->
+              <path d="M 80 340 Q 80 120 240 75 Q 340 48 480 10 L 480 340 Z" fill="#e0e0e0" stroke="none"/>
+              <!-- Chaos (top-right wedge — drawn ON TOP of complex) -->
+              <path d="M 480 10 L 480 150 Q 380 80 260 35 L 260 10 Z" fill="#f0d0d0" stroke="none"/>
+              <!-- Complicated (middle band) -->
+              <path d="M 80 340 Q 80 190 190 170 Q 320 150 370 340 Z" fill="#d0e4d0" stroke="none"/>
+              <!-- Simple (bottom-left corner) -->
+              <path d="M 80 340 Q 80 280 135 265 Q 210 250 250 340 Z" fill="#bfe0bf" stroke="none"/>
 
-  <!-- Labels -->
-  <g font-family="Arial, sans-serif" font-weight="bold" text-anchor="middle" fill="black">
-    <!-- Complicated (Top-Left) -->
-    <text x="200" y="110" font-size="26">COMPLICATED</text>
-    <text x="200" y="150" font-size="18">Sense-Analyze-Respond</text>
-    <text x="200" y="180" font-size="18">Good Practice</text>
+              <!-- Zone labels -->
+              <g font-family="Arial, sans-serif" font-weight="bold" text-anchor="middle" fill="#333">
+                <text x="150" y="325" font-size="15">Simple</text>
+                <text x="200" y="248" font-size="15">Complicated</text>
+                <text x="360" y="210" font-size="15">Complex</text>
+                <text x="420" y="55" font-size="14" fill="#993333">Chaos</text>
+              </g>
 
-    <!-- Complex (Top-Right) - Highlighted -->
-    <g fill="white">
-      <text x="600" y="110" font-size="26">COMPLEX</text>
-      <text x="600" y="150" font-size="18">Probe-Sense-Respond</text>
-      <text x="600" y="180" font-size="18">Emergent Practice</text>
-    </g>
+              <!-- Scrum callout -->
+              <rect x="310" y="148" width="145" height="30" fill="#ffd700" stroke="black" stroke-width="2"/>
+              <text x="382" y="168" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle" fill="black">Scrum Thrives Here</text>
 
-    <!-- Scrum Specific Label -->
-    <rect x="510" y="225" width="180" height="40" fill="white" stroke="black" stroke-width="3" />
-    <text x="600" y="251" font-size="16" fill="black">★ Scrum lives here</text>
+              <!-- Axes -->
+              <line x1="80" y1="340" x2="80" y2="5" stroke="black" stroke-width="3"/>
+              <line x1="80" y1="340" x2="490" y2="340" stroke="black" stroke-width="3"/>
 
-    <!-- Clear (Bottom-Left) -->
-    <text x="200" y="410" font-size="26">CLEAR</text>
-    <text x="200" y="450" font-size="18">Sense-Categorize-Respond</text>
-    <text x="200" y="480" font-size="18">Best Practice</text>
+              <!-- Y-axis: REQUIREMENTS -->
+              <text x="28" y="175" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="black" text-anchor="middle" transform="rotate(-90, 28, 175)">REQUIREMENTS</text>
+              <text x="74" y="18" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="end">Far from</text>
+              <text x="74" y="30" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="end">Agreement</text>
+              <text x="74" y="310" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="end">Close to</text>
+              <text x="74" y="322" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="end">Agreement</text>
 
-    <!-- Chaotic (Bottom-Right) -->
-    <text x="600" y="410" font-size="26">CHAOTIC</text>
-    <text x="600" y="450" font-size="18">Act-Sense-Respond</text>
-    <text x="600" y="480" font-size="18">Novel Practice</text>
+              <!-- X-axis: TECHNOLOGY -->
+              <text x="280" y="380" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="black" text-anchor="middle">TECHNOLOGY</text>
+              <text x="90" y="356" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="start">Close to Certainty</text>
+              <text x="480" y="356" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="end">Far from Certainty</text>
 
-    <!-- Confused / Disorder -->
-    <text x="400" y="295" font-size="18">CONFUSED /</text>
-    <text x="400" y="325" font-size="18">DISORDER</text>
-  </g>
-</svg>
+              <!-- Attribution -->
+              <text x="280" y="400" font-family="Arial, sans-serif" font-size="9" fill="#999" text-anchor="middle">Stacey, 1996</text>
+            </svg>
+          </div>
+          <!-- Complexity levels -->
+          <div style="padding-top: 10px;">
+            <div class="card" style="padding: 10px 14px; margin-bottom: 10px;">
+              <h3 style="margin-bottom: 2px;">Simple</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Everything is known &mdash; follow the recipe</p>
+            </div>
+            <div class="card" style="padding: 10px 14px; margin-bottom: 10px;">
+              <h3 style="margin-bottom: 2px;">Complicated</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">More is known than unknown &mdash; call the experts</p>
+            </div>
+            <div class="card--accent" style="padding: 10px 14px; margin-bottom: 10px; border: var(--border-thick);">
+              <h3 style="margin-bottom: 2px;">Complex</h3>
+              <p style="font-size: 0.85rem;"><strong>More is unknown than known</strong> &mdash; experiment &amp; adapt</p>
+            </div>
+            <div class="card" style="padding: 10px 14px;">
+              <h3 style="margin-bottom: 2px;">Chaotic</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Very little is known &mdash; act first, make sense later</p>
+            </div>
+          </div>
         </div>
-        <p style="text-align: center; font-size: 0.85rem; color: var(--color-text-muted); margin-top: 8px;">Scrum is designed for the <strong>Complex</strong> domain &mdash; where cause and effect can only be understood in retrospect.</p>
         <aside class="notes">
+          DISCUSS: Where does your current work fall on this map?
+
           Waterfall and Gantt Charts — this was a World War I organizational idea. Once the plan hits reality it falls apart. People are hired to update the chart — people are being paid to lie to them.
 
           Reality versus the plan — we must look at actual development. "Plans are worthless, but planning is everything."
@@ -486,9 +708,55 @@
         </aside>
       </section>
 
-      <!-- Slide 10: Empirical Process Control -->
+      <!-- Slide 10: Cynefin Framework -->
       <section>
-        <h2>The Three Pillars of Empiricism</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-map"/></svg> The Cynefin Framework</h2>
+        <div style="max-width: 620px; margin: 0 auto;">
+          <svg width="800" height="520" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg">
+  <!-- Quadrants -->
+  <rect x="0" y="0" width="400" height="250" fill="#f9f9f9" stroke="black" stroke-width="3" />
+  <rect x="400" y="0" width="400" height="250" fill="#0066ff" stroke="black" stroke-width="3" />
+  <rect x="0" y="250" width="400" height="250" fill="#f9f9f9" stroke="black" stroke-width="3" />
+  <rect x="400" y="250" width="400" height="250" fill="#f9f9f9" stroke="black" stroke-width="3" />
+
+  <!-- Labels -->
+  <g font-family="Arial, sans-serif" font-weight="bold" text-anchor="middle" fill="black">
+    <text x="200" y="95" font-size="24">COMPLICATED</text>
+    <text x="200" y="130" font-size="15" font-weight="normal" fill="#444">Sense &rarr; Analyze &rarr; Respond</text>
+    <text x="200" y="155" font-size="14" fill="#444">Good Practice</text>
+
+    <g fill="white">
+      <text x="600" y="95" font-size="24">COMPLEX</text>
+      <text x="600" y="130" font-size="15" font-weight="normal">Probe &rarr; Sense &rarr; Respond</text>
+      <text x="600" y="155" font-size="14">Emergent Practice</text>
+    </g>
+
+    <rect x="510" y="185" width="180" height="36" fill="#ffd700" stroke="black" stroke-width="2" />
+    <text x="600" y="209" font-size="14" fill="black">Scrum lives here</text>
+
+    <text x="200" y="345" font-size="24">CLEAR</text>
+    <text x="200" y="380" font-size="15" font-weight="normal" fill="#444">Sense &rarr; Categorize &rarr; Respond</text>
+    <text x="200" y="405" font-size="14" fill="#444">Best Practice</text>
+
+    <text x="600" y="345" font-size="24">CHAOTIC</text>
+    <text x="600" y="380" font-size="15" font-weight="normal" fill="#444">Act &rarr; Sense &rarr; Respond</text>
+    <text x="600" y="405" font-size="14" fill="#444">Novel Practice</text>
+  </g>
+
+  <!-- Attribution -->
+  <text x="790" y="510" font-family="Arial, sans-serif" font-size="10" fill="#999" text-anchor="end">Cynefin Framework &mdash; Dave Snowden, 1999</text>
+</svg>
+        </div>
+        <aside class="notes">
+          DISCUSS: How does each domain change the way you should make decisions?
+
+          The Cynefin framework helps teams recognize what kind of problem they're facing so they can respond appropriately. In the Complex domain (where Scrum lives), you can't analyze your way to an answer — you have to probe (try something), sense (see what happens), and respond (adapt). This is fundamentally different from Complicated problems where experts can analyze and predict.
+        </aside>
+      </section>
+
+      <!-- Slide 11: Empirical Process Control -->
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-eye"/></svg> The Three Pillars of Empiricism</h2>
         <div style="max-width: 700px; margin: 0 auto;">
           <svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
   <!-- Shadows (Hard Offset) -->
@@ -540,26 +808,47 @@
         </aside>
       </section>
 
-      <!-- Slide 11: Empiricism in Practice -->
+      <!-- Slide 11: Empiricism in Practice — How Events Map to Pillars -->
       <section>
-        <h2>Empiricism in Practice</h2>
-        <div class="card--primary" style="margin-bottom: 20px;">
-          <p style="text-align: center; font-size: 1.1rem; font-weight: 600;">Every Scrum event is an opportunity to inspect and adapt.</p>
-        </div>
-        <div class="grid-3">
-          <div class="card">
-            <h3>Transparency</h3>
-            <p>The work and process are visible to everyone</p>
-          </div>
-          <div class="card">
-            <h3>Inspection</h3>
-            <p>Frequently check artifacts and progress toward goals</p>
-          </div>
-          <div class="card">
-            <h3>Adaptation</h3>
-            <p>Adjust when results deviate from expectations</p>
-          </div>
-        </div>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-eye"/></svg> How Scrum Events Use Empiricism</h2>
+        <p style="text-align: center; font-size: 0.95rem; margin-bottom: 16px;">Every Scrum event is an opportunity to inspect and adapt.</p>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; border: var(--border-base);">
+          <thead>
+            <tr style="background: var(--color-primary); color: white;">
+              <th style="padding: 8px 10px; text-align: left; border: var(--border-base);">Event</th>
+              <th style="padding: 8px 10px; text-align: left; border: var(--border-base);">Transparency</th>
+              <th style="padding: 8px 10px; text-align: left; border: var(--border-base);">Inspection</th>
+              <th style="padding: 8px 10px; text-align: left; border: var(--border-base);">Adaptation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 6px 10px; font-weight: 700; border: var(--border-base);">Sprint Planning</td>
+              <td style="padding: 6px 10px; border: var(--border-base);">Backlog is visible</td>
+              <td style="padding: 6px 10px; border: var(--border-base);">Examine what can be done</td>
+              <td style="padding: 6px 10px; border: var(--border-base);">Create the Sprint plan</td>
+            </tr>
+            <tr style="background: var(--color-surface);">
+              <td style="padding: 6px 10px; font-weight: 700; border: var(--border-base);">Daily Scrum</td>
+              <td style="padding: 6px 10px; border: var(--border-base);">Progress is shared</td>
+              <td style="padding: 6px 10px; border: var(--border-base);">Check progress toward goal</td>
+              <td style="padding: 6px 10px; border: var(--border-base);">Adjust the day&rsquo;s plan</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px 10px; font-weight: 700; border: var(--border-base);">Sprint Review</td>
+              <td style="padding: 6px 10px; border: var(--border-base);">Increment is shown</td>
+              <td style="padding: 6px 10px; border: var(--border-base);">Evaluate what was built</td>
+              <td style="padding: 6px 10px; border: var(--border-base);">Update the Backlog</td>
+            </tr>
+            <tr style="background: var(--color-surface);">
+              <td style="padding: 6px 10px; font-weight: 700; border: var(--border-base);">Retrospective</td>
+              <td style="padding: 6px 10px; border: var(--border-base);">Process is discussed</td>
+              <td style="padding: 6px 10px; border: var(--border-base);">Examine how the team worked</td>
+              <td style="padding: 6px 10px; border: var(--border-base);">Commit to improvements</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="slide-question">Can you think of a time when skipping one of these pillars caused problems?</div>
         <aside class="notes">
           Inspect and adapt. Respect, honesty, discipline, thought, introspection is required to do this.
 
@@ -572,96 +861,111 @@
         <h2>The Scrum Framework</h2>
       </section>
 
-      <!-- Slide 13: Scrum Framework Overview -->
+      <!-- Slide 13: Scrum Framework Overview — Circular Flow -->
       <section>
-        <h2>The Big Picture</h2>
-        <div style="max-width: 800px; margin: 0 auto;">
-          <svg width="1000" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="black" />
-    </marker>
-  </defs>
+        <h2>Fitting the Pieces Together</h2>
+        <div style="max-width: 900px; margin: 0 auto;">
+          <svg viewBox="0 0 960 500" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arr-fw" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+              </marker>
+              <marker id="arr-fw-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="#0066ff"/>
+              </marker>
+            </defs>
 
-  <!-- Accountabilities Shadows -->
-  <rect x="104" y="34" width="200" height="60" fill="rgba(0,0,0,0.12)" />
-  <rect x="404" y="34" width="200" height="60" fill="rgba(0,0,0,0.12)" />
-  <rect x="704" y="34" width="200" height="60" fill="rgba(0,0,0,0.12)" />
+            <!-- Product Goal label -->
+            <text x="60" y="30" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#444">Product Goal</text>
 
-  <!-- Accountabilities Boxes -->
-  <rect x="100" y="30" width="200" height="60" fill="#ffffff" stroke="black" stroke-width="3" />
-  <rect x="400" y="30" width="200" height="60" fill="#ffffff" stroke="black" stroke-width="3" />
-  <rect x="700" y="30" width="200" height="60" fill="#ffffff" stroke="black" stroke-width="3" />
+            <!-- Product Backlog (tall stack) -->
+            <rect x="44" y="48" width="92" height="180" fill="rgba(0,0,0,0.12)"/>
+            <rect x="40" y="44" width="92" height="180" fill="#ffd700" stroke="black" stroke-width="3"/>
+            <text x="86" y="130" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle" fill="black">Product</text>
+            <text x="86" y="148" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle" fill="black">Backlog</text>
 
-  <text x="200" y="65" font-family="Arial, sans-serif" font-weight="bold" font-size="16" text-anchor="middle">Product Owner</text>
-  <text x="500" y="65" font-family="Arial, sans-serif" font-weight="bold" font-size="16" text-anchor="middle">Developers</text>
-  <text x="800" y="65" font-family="Arial, sans-serif" font-weight="bold" font-size="16" text-anchor="middle">Scrum Master</text>
+            <!-- Arrow: PB → Sprint Planning -->
+            <line x1="132" y1="134" x2="178" y2="134" stroke="black" stroke-width="3" marker-end="url(#arr-fw)"/>
 
-  <!-- Sprint Container Shadow -->
-  <rect x="204" y="124" width="600" height="420" fill="rgba(0,0,0,0.12)" />
-  <!-- Sprint Container -->
-  <rect x="200" y="120" width="600" height="420" fill="white" stroke="black" stroke-width="3" />
-  <text x="500" y="150" font-family="Arial, sans-serif" font-weight="bold" font-size="20" text-anchor="middle">THE SPRINT</text>
+            <!-- Sprint Planning -->
+            <rect x="190" y="108" width="105" height="52" fill="#0066ff" stroke="black" stroke-width="3"/>
+            <text x="242" y="132" font-family="Arial, sans-serif" font-weight="bold" font-size="11" text-anchor="middle" fill="white">Sprint</text>
+            <text x="242" y="148" font-family="Arial, sans-serif" font-weight="bold" font-size="11" text-anchor="middle" fill="white">Planning</text>
 
-  <!-- Artifacts Shadows -->
-  <rect x="24" y="254" width="160" height="100" fill="rgba(0,0,0,0.12)" />
-  <rect x="424" y="254" width="160" height="100" fill="rgba(0,0,0,0.12)" />
-  <rect x="824" y="254" width="160" height="100" fill="rgba(0,0,0,0.12)" />
+            <!-- Arrow: Planning → Sprint Backlog -->
+            <line x1="295" y1="134" x2="330" y2="134" stroke="black" stroke-width="3" marker-end="url(#arr-fw)"/>
 
-  <!-- Artifacts Boxes -->
-  <rect x="20" y="250" width="160" height="100" fill="#ffd700" stroke="black" stroke-width="3" />
-  <rect x="420" y="250" width="160" height="100" fill="#ffd700" stroke="black" stroke-width="3" />
-  <rect x="820" y="250" width="160" height="100" fill="#ffd700" stroke="black" stroke-width="3" />
+            <!-- Sprint Backlog + Sprint Goal -->
+            <text x="380" y="102" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#444">Sprint Goal</text>
+            <rect x="340" y="112" width="80" height="44" fill="#ffd700" stroke="black" stroke-width="3"/>
+            <text x="380" y="133" font-family="Arial, sans-serif" font-weight="bold" font-size="10" text-anchor="middle" fill="black">Sprint</text>
+            <text x="380" y="147" font-family="Arial, sans-serif" font-weight="bold" font-size="10" text-anchor="middle" fill="black">Backlog</text>
 
-  <text x="100" y="290" font-family="Arial, sans-serif" font-weight="bold" font-size="16" text-anchor="middle">Product Backlog</text>
-  <text x="100" y="325" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Commitment:</text>
-  <text x="100" y="340" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle">Product Goal</text>
+            <!-- Arrow: SB → Sprint circle -->
+            <line x1="420" y1="134" x2="460" y2="190" stroke="black" stroke-width="2.5" marker-end="url(#arr-fw)"/>
 
-  <text x="500" y="290" font-family="Arial, sans-serif" font-weight="bold" font-size="16" text-anchor="middle">Sprint Backlog</text>
-  <text x="500" y="325" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Commitment:</text>
-  <text x="500" y="340" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle">Sprint Goal</text>
+            <!-- THE SPRINT — large circular area -->
+            <circle cx="560" cy="270" r="125" fill="#e8f0ff" stroke="#0066ff" stroke-width="4"/>
+            <text x="560" y="205" font-family="Arial, sans-serif" font-weight="900" font-size="18" text-anchor="middle" fill="#0066ff">SPRINT</text>
 
-  <text x="900" y="290" font-family="Arial, sans-serif" font-weight="bold" font-size="16" text-anchor="middle">Increment</text>
-  <text x="900" y="325" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Commitment:</text>
-  <text x="900" y="340" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle">Definition of Done</text>
+            <!-- Team inside sprint -->
+            <rect x="504" y="228" width="52" height="38" fill="#fff" stroke="black" stroke-width="2"/>
+            <text x="530" y="244" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="black">Developers</text>
+            <text x="530" y="260" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">&#x1F469;&#x200D;&#x1F4BB;&#x1F468;&#x200D;&#x1F4BB;</text>
 
-  <!-- Events Shadows -->
-  <rect x="234" y="174" width="160" height="50" fill="rgba(0,0,0,0.12)" />
-  <rect x="424" y="174" width="160" height="50" fill="rgba(0,0,0,0.12)" />
-  <rect x="614" y="174" width="160" height="50" fill="rgba(0,0,0,0.12)" />
-  <rect x="414" y="444" width="180" height="50" fill="rgba(0,0,0,0.12)" />
+            <rect x="564" y="228" width="52" height="38" fill="#fff" stroke="black" stroke-width="2"/>
+            <text x="590" y="244" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="black">Product</text>
+            <text x="590" y="254" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="black">Owner</text>
 
-  <!-- Events Boxes -->
-  <rect x="230" y="170" width="160" height="50" fill="#0066ff" stroke="black" stroke-width="3" />
-  <rect x="420" y="170" width="160" height="50" fill="#0066ff" stroke="black" stroke-width="3" />
-  <rect x="610" y="170" width="160" height="50" fill="#0066ff" stroke="black" stroke-width="3" />
-  <rect x="410" y="440" width="180" height="50" fill="#0066ff" stroke="black" stroke-width="3" />
+            <rect x="534" y="274" width="52" height="38" fill="#fff" stroke="black" stroke-width="2"/>
+            <text x="560" y="290" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="black">Scrum</text>
+            <text x="560" y="300" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="black">Master</text>
 
-  <text x="310" y="200" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" fill="white">Sprint Planning</text>
-  <text x="500" y="200" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" fill="white">Daily Scrum</text>
-  <text x="690" y="200" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" fill="white">Sprint Review</text>
-  <text x="500" y="470" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" fill="white">Sprint Retrospective</text>
+            <!-- Daily Scrum -->
+            <rect x="526" y="320" width="68" height="26" fill="#0066ff" stroke="black" stroke-width="2"/>
+            <text x="560" y="337" font-family="Arial, sans-serif" font-weight="bold" font-size="9" text-anchor="middle" fill="white">Daily Scrum</text>
 
-  <!-- Artifacts Flow -->
-  <line x1="180" y1="300" x2="420" y2="300" stroke="black" stroke-width="3" marker-end="url(#arrowhead)" />
-  <line x1="580" y1="300" x2="820" y2="300" stroke="black" stroke-width="3" marker-end="url(#arrowhead)" />
+            <!-- Arrow: Sprint → Increment -->
+            <line x1="685" y1="270" x2="730" y2="270" stroke="black" stroke-width="3" marker-end="url(#arr-fw)"/>
 
-  <!-- Connected Events Flow -->
-  <path d="M 390 195 L 420 195" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" fill="none" />
-  <path d="M 580 195 L 610 195" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" fill="none" />
-  <path d="M 770 195 L 785 195 L 785 465 L 590 465" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" fill="none" />
-  <path d="M 410 465 L 215 465 L 215 195 L 230 195" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" fill="none" />
-</svg>
+            <!-- Increment -->
+            <text x="775" y="234" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#444" text-anchor="middle">Done</text>
+            <rect x="740" y="248" width="70" height="44" fill="#ffd700" stroke="black" stroke-width="3"/>
+            <text x="775" y="274" font-family="Arial, sans-serif" font-weight="bold" font-size="11" text-anchor="middle" fill="black">Increment</text>
+
+            <!-- Arrow: Increment → Sprint Review -->
+            <line x1="810" y1="270" x2="850" y2="270" stroke="black" stroke-width="3" marker-end="url(#arr-fw)"/>
+
+            <!-- Sprint Review -->
+            <rect x="858" y="248" width="70" height="44" fill="#0066ff" stroke="black" stroke-width="3"/>
+            <text x="893" y="267" font-family="Arial, sans-serif" font-weight="bold" font-size="10" text-anchor="middle" fill="white">Sprint</text>
+            <text x="893" y="281" font-family="Arial, sans-serif" font-weight="bold" font-size="10" text-anchor="middle" fill="white">Review</text>
+
+            <!-- Sprint Retrospective (top) -->
+            <rect x="515" y="32" width="92" height="40" fill="#0066ff" stroke="black" stroke-width="3"/>
+            <text x="561" y="50" font-family="Arial, sans-serif" font-weight="bold" font-size="9" text-anchor="middle" fill="white">Sprint</text>
+            <text x="561" y="63" font-family="Arial, sans-serif" font-weight="bold" font-size="9" text-anchor="middle" fill="white">Retrospective</text>
+
+            <!-- Loop: Review → up → Retro -->
+            <path d="M 893 248 L 893 52 L 607 52" stroke="#0066ff" stroke-width="2.5" fill="none" marker-end="url(#arr-fw-blue)" stroke-dasharray="6,3"/>
+
+            <!-- Loop: Retro → back to Planning -->
+            <path d="M 515 52 L 242 52 L 242 108" stroke="#0066ff" stroke-width="2.5" fill="none" marker-end="url(#arr-fw-blue)" stroke-dasharray="6,3"/>
+
+            <!-- Feedback: Review → Product Backlog -->
+            <path d="M 858 270 L 858 440 L 86 440 L 86 224" stroke="black" stroke-width="2" fill="none" marker-end="url(#arr-fw)" stroke-dasharray="8,4"/>
+            <text x="400" y="460" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#444">Feedback updates the Product Backlog</text>
+          </svg>
         </div>
-        <p style="text-align: center; font-size: 0.85rem; color: var(--color-text-muted); margin-top: 8px;">One Scrum Team. Three accountabilities. Five events. Three artifacts.</p>
+        <p style="text-align: center; font-size: 0.85rem; color: var(--color-text-muted); margin-top: 4px;">One Scrum Team &middot; Three accountabilities &middot; Five events &middot; Three artifacts</p>
         <aside class="notes">
-          Framework for team performance: how does the team work together? Careful alignment. Unity of purpose. Clarity of goal.
+          Framework for team performance: how does the team work together? Careful alignment. Unity of purpose. Clarity of goal. The Sprint is a container event — everything happens within it. Notice how the feedback loop from Review goes all the way back to the Product Backlog.
         </aside>
       </section>
 
       <!-- Slide 14: Product Owner -->
       <section>
-        <h2>Product Owner</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-crown"/></svg> Product Owner</h2>
         <div class="card--primary" style="margin-bottom: 16px;">
           <p style="font-size: 1.1rem; font-weight: 600;">Maximizes the value of the product</p>
         </div>
@@ -671,6 +975,7 @@
           <li>Ensuring the Product Backlog is transparent, visible, and understood</li>
           <li>Representing stakeholder needs</li>
         </ul>
+        <div class="slide-question">Who in your organization is closest to this role today?</div>
         <aside class="notes">
           What brings the most value? 80% of the value of software is in 20% of the features. The PO's job is to find that 20%.
         </aside>
@@ -678,7 +983,7 @@
 
       <!-- Slide 15: Developers -->
       <section>
-        <h2>Developers</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-users"/></svg> Developers</h2>
         <div class="card--primary" style="margin-bottom: 16px;">
           <p style="font-size: 1.1rem; font-weight: 600;">Turn Product Backlog items into a usable Increment</p>
         </div>
@@ -688,11 +993,12 @@
           <li>Adapting their plan each day toward the Sprint Goal</li>
           <li>Holding each other accountable as professionals</li>
         </ul>
+        <div class="slide-question">In Scrum, &ldquo;Developers&rdquo; means anyone doing the work &mdash; not just coders. Who are the developers on your team?</div>
       </section>
 
       <!-- Slide 16: Scrum Master -->
       <section>
-        <h2>Scrum Master</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-shield"/></svg> Scrum Master</h2>
         <div class="card--primary" style="margin-bottom: 16px;">
           <p style="font-size: 1.1rem; font-weight: 600;">Accountable for establishing Scrum as defined in the Scrum Guide</p>
         </div>
@@ -702,6 +1008,7 @@
           <li>Causing the removal of impediments</li>
           <li>Ensuring events happen and are positive, productive, and timeboxed</li>
         </ul>
+        <div class="slide-question">What are the biggest impediments your team faces today?</div>
         <aside class="notes">
           Toyota Production System: production should flow swiftly and calmly throughout the process, and one of management's key tasks is to remove impediments to that flow.
 
@@ -711,9 +1018,9 @@
 
       <!-- Slide 17: The Sprint -->
       <section>
-        <h2>The Sprint</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> The Sprint</h2>
         <div class="card--accent" style="margin-bottom: 16px;">
-          <p style="font-size: 1.1rem; font-weight: 600;">A fixed-length container (1 month or less) for all other events</p>
+          <p style="font-size: 1.1rem; font-weight: 600;">The Sprint is itself an event &mdash; a fixed-length container (1 month or less) for all other events</p>
         </div>
         <ul>
           <li>No changes that endanger the Sprint Goal</li>
@@ -721,6 +1028,7 @@
           <li>The Product Backlog is refined as needed</li>
           <li>Scope may be clarified and renegotiated with the PO</li>
         </ul>
+        <div class="slide-question">What would change if your team committed to delivering something every two weeks?</div>
         <aside class="notes">
           Scrum sets sequential goals — a finished increment of product. Near real-time feedback. These are cycles.
 
@@ -776,7 +1084,7 @@
 
       <!-- Slide 20: Definition of Done -->
       <section>
-        <h2>Definition of Done</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-check"/></svg> Definition of Done</h2>
         <div class="quote-card" style="margin-bottom: 16px;">
           <p>&ldquo;A formal description of the state of the Increment when it meets the quality measures required for the product.&rdquo;</p>
           <p class="attribution">&mdash; Scrum Guide (2020)</p>
@@ -789,6 +1097,7 @@
             <li>If multiple teams work on one product, they must share a DoD</li>
           </ul>
         </div>
+        <div class="slide-question">What does &ldquo;Done&rdquo; look like for your team&rsquo;s work right now?</div>
       </section>
 
       <!-- Slide 21: Section Divider — Lego Sprint Simulation -->
@@ -876,7 +1185,7 @@
 
       <!-- Slide 25: Sprint Planning -->
       <section>
-        <h2>Sprint Planning</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-flag"/></svg> Sprint Planning</h2>
         <div class="exercise-card">
           <ul>
             <li>Select items from the Product Backlog</li>
@@ -889,13 +1198,20 @@
 
       <!-- Slide 26: Build! -->
       <section>
-        <div class="timer-display">7:00</div>
-        <p style="text-align: center; font-size: 1.4rem; font-weight: 700; margin-top: 24px;">BUILD! Hands off when time is up.</p>
+        <h2 style="margin-bottom: 8px;">Build!</h2>
+        <div class="timer-widget" data-minutes="7">
+          <div class="timer-compact">7:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
+        <p style="text-align: center; font-size: 1.2rem; font-weight: 700; margin-top: 16px;">Hands off when time is up!</p>
       </section>
 
       <!-- Slide 27: Sprint Review -->
       <section>
-        <h2>Sprint Review</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-comments"/></svg> Sprint Review</h2>
         <div class="card--primary" style="margin-bottom: 20px;">
           <p style="font-size: 1.2rem; font-weight: 700; text-align: center;">&ldquo;Show me my campus!&rdquo;</p>
         </div>
@@ -910,7 +1226,7 @@
 
       <!-- Slide 28: Sprint Retrospective -->
       <section>
-        <h2>Sprint Retrospective</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-gear"/></svg> Sprint Retrospective</h2>
         <div class="grid-3" style="margin-bottom: 20px;">
           <div class="card">
             <h3>What went well?</h3>
@@ -947,7 +1263,7 @@
 
       <!-- Slide 31: Five Scrum Values -->
       <section>
-        <h2>Five Scrum Values</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-star"/></svg> Five Scrum Values</h2>
         <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
           <div class="card" style="flex: 1; min-width: 150px; max-width: 200px;">
             <h3>Commitment</h3>
@@ -977,7 +1293,7 @@
 
       <!-- Slide 32: Values Discussion -->
       <section>
-        <h2>Connect Values to Experience</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-star"/></svg> Connect Values to Experience</h2>
         <div class="exercise-card">
           <p>Which Scrum value did you experience most during the Lego simulation? Write the value and a specific example on a sticky note.</p>
         </div>
@@ -1025,7 +1341,7 @@
 
       <!-- Slide 37: Sprint Events Flow -->
       <section>
-        <h2>The Sprint as a Learning Loop</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> The Sprint as a Learning Loop</h2>
         <div style="max-width: 700px; margin: 0 auto;">
           <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
             <!-- Background -->
@@ -1163,7 +1479,7 @@
         <ul>
           <li>An ongoing activity, <strong>NOT</strong> a formal Scrum event</li>
           <li>Adding detail, estimates, and order to items</li>
-          <li>Usually no more than 10% of Sprint capacity</li>
+          <li>The Scrum Team decides how and when refinement is done</li>
           <li>Makes future Sprint Planning smoother</li>
         </ul>
         <div class="card--accent" style="margin-top: 20px;">
@@ -1244,7 +1560,7 @@
 
       <!-- Slide 48: Presentation Sprint Planning -->
       <section>
-        <h2>Sprint Planning</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-flag"/></svg> Sprint Planning</h2>
         <div class="exercise-card">
           <ol>
             <li>Select a Product Owner for your team</li>
@@ -1257,13 +1573,20 @@
 
       <!-- Slide 49: Create! -->
       <section>
-        <div class="timer-display">20:00</div>
+        <h2 style="margin-bottom: 8px;">Create!</h2>
+        <div class="timer-widget" data-minutes="20">
+          <div class="timer-compact">20:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
         <p style="text-align: center; font-size: 1.4rem; font-weight: 700; margin-top: 20px;">CREATE! Build your presentation.</p>
       </section>
 
       <!-- Slide 50: Presentation Sprint Review -->
       <section>
-        <h2>Sprint Review</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-comments"/></svg> Sprint Review</h2>
         <div class="exercise-card">
           <ul>
             <li>Show what you have so far</li>
@@ -1276,7 +1599,7 @@
 
       <!-- Slide 51: Sprint Retrospective -->
       <section>
-        <h2>Sprint Retrospective</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-gear"/></svg> Sprint Retrospective</h2>
         <div class="grid-3">
           <div class="card">
             <h3>What went well?</h3>
@@ -1396,6 +1719,56 @@
       height: 720,
       plugins: [ RevealNotes ]
     });
+
+    /* ---- Interactive Timer ---- */
+    class SlideTimer {
+      constructor(el) {
+        this.el = el;
+        this.totalSeconds = parseInt(el.dataset.minutes, 10) * 60;
+        this.remaining = this.totalSeconds;
+        this.interval = null;
+        this.display = el.querySelector('.timer-compact');
+        this.startBtn = el.querySelector('.timer-btn--start');
+        this.resetBtn = el.querySelector('.timer-btn--reset');
+        this.render();
+        this.startBtn.addEventListener('click', () => this.toggle());
+        this.resetBtn.addEventListener('click', () => this.reset());
+      }
+      render() {
+        const m = Math.floor(this.remaining / 60);
+        const s = this.remaining % 60;
+        this.display.textContent = m + ':' + String(s).padStart(2, '0');
+        this.display.classList.toggle('timer-warning', this.remaining > 0 && this.remaining <= 60);
+        this.display.classList.toggle('timer-done', this.remaining === 0);
+      }
+      toggle() {
+        if (this.interval) { clearInterval(this.interval); this.interval = null; this.startBtn.textContent = 'Start'; }
+        else { this.interval = setInterval(() => this.tick(), 1000); this.startBtn.textContent = 'Pause'; }
+      }
+      tick() {
+        if (this.remaining > 0) { this.remaining--; this.render(); }
+        else { clearInterval(this.interval); this.interval = null; this.startBtn.textContent = 'Start'; }
+      }
+      reset() {
+        clearInterval(this.interval); this.interval = null;
+        this.remaining = this.totalSeconds;
+        this.startBtn.textContent = 'Start';
+        this.render();
+      }
+    }
+    document.querySelectorAll('.timer-widget').forEach(el => new SlideTimer(el));
+
+    /* ---- Live Clock ---- */
+    function updateClock() {
+      const now = new Date();
+      const h = now.getHours();
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const ampm = h >= 12 ? 'PM' : 'AM';
+      const h12 = h % 12 || 12;
+      document.getElementById('liveClock').textContent = h12 + ':' + m + ' ' + ampm;
+    }
+    updateClock();
+    setInterval(updateClock, 15000);
   </script>
 </body>
 </html>
