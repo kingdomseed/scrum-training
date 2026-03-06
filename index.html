@@ -103,6 +103,14 @@
       background: transparent;
     }
 
+    .reveal .progress {
+      background: transparent;
+      height: 3px;
+    }
+    .reveal .progress span {
+      background: var(--color-primary);
+    }
+
     /* ============================================
        CARD COMPONENTS
        ============================================ */
@@ -334,6 +342,7 @@
       color: var(--color-text);
       border: var(--border-base);
       border-left: 5px solid var(--color-primary);
+      box-shadow: var(--shadow-base);
       padding: 10px 16px;
       margin-top: 16px;
       font-family: var(--font-display);
@@ -344,6 +353,30 @@
 
     .reveal .slide-question::before {
       content: "DISCUSS ";
+      color: var(--color-primary);
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .reveal .slide-think-write {
+      background: var(--color-surface);
+      color: var(--color-text);
+      border: var(--border-base);
+      border-left: 5px solid var(--color-accent);
+      box-shadow: var(--shadow-base);
+      padding: 10px 16px;
+      margin-top: 16px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-align: left;
+    }
+
+    .reveal .slide-think-write::before {
+      content: "THINK & WRITE ";
       color: var(--color-primary);
       font-family: var(--font-body);
       font-size: 0.65rem;
@@ -544,7 +577,7 @@
       <section>
         <h2>Let&rsquo;s Meet</h2>
         <div class="exercise-card">
-          <p>Go around the room. Share: <strong>your name</strong>, <strong>your role</strong>, and <strong>one thing you&rsquo;re hoping to get</strong> from this workshop.</p>
+          <p>Go around the room. Share: <strong>your name</strong>, <strong>your role</strong>, and <strong>one creative project you&rsquo;re proud of</strong> &mdash; from your classroom or your own practice.</p>
         </div>
       </section>
 
@@ -566,7 +599,7 @@
       <section>
         <h2>Characteristics of a Great Team</h2>
         <div class="exercise-card">
-          <p>Think of an <strong>AMAZING team</strong> you were on &mdash; a sports team, project team, band, anything.</p>
+          <p>Think of an <strong>AMAZING team</strong> you were on &mdash; a collaborative art project, a department team, a band, a theater production &mdash; any group.</p>
           <p>What made it great? Write <strong>one characteristic per sticky note.</strong></p>
           <p style="font-weight: 700; color: var(--color-text-muted); margin-top: 12px;">Time: 5 minutes</p>
           <p>Then we&rsquo;ll cluster themes on the wall.</p>
@@ -663,11 +696,12 @@
 
       <!-- Slide 9: Complexity of Product Development (Stacey Matrix) -->
       <section>
-        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-compass"/></svg> The Complexity of Product Development</h2>
-        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: start;">
+        <h2 style="margin-bottom: 2px;"><svg class="slide-icon slide-icon--heading"><use href="#icon-compass"/></svg> The Complexity of Product Development</h2>
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 12px; align-items: start;">
           <!-- Stacey Matrix Diagram -->
           <div>
-            <svg viewBox="0 0 520 430" xmlns="http://www.w3.org/2000/svg">
+            <p style="text-align: center; font-size: 0.75rem; color: var(--color-text-muted); margin-bottom: 2px;">Stacey, 1996</p>
+            <svg viewBox="0 0 520 375" xmlns="http://www.w3.org/2000/svg">
               <!-- Plot area: x=80..480, y=10..340 (400×330) -->
 
               <!-- Zone fills (back to front) -->
@@ -704,32 +738,32 @@
               <text x="74" y="322" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="end">Agreement</text>
 
               <!-- X-axis: TECHNOLOGY -->
-              <text x="280" y="380" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="black" text-anchor="middle">TECHNOLOGY</text>
+              <text x="280" y="362" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="black" text-anchor="middle">TECHNOLOGY</text>
               <text x="90" y="356" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="start">Close to Certainty</text>
               <text x="480" y="356" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="end">Far from Certainty</text>
-
-              <!-- Attribution -->
-              <text x="280" y="400" font-family="Arial, sans-serif" font-size="9" fill="#999" text-anchor="middle">Stacey, 1996</text>
             </svg>
           </div>
-          <!-- Complexity levels — 2x2 grid -->
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding-top: 10px;">
-            <div class="card" style="padding: 8px 12px; border-left: 5px solid var(--color-accent);">
-              <h3 style="margin-bottom: 2px; font-size: 0.95rem;">Simple</h3>
-              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Follow the recipe</p>
+          <!-- Complexity levels — 2x2 grid + question -->
+          <div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <div class="card" style="padding: 10px 14px; border-left: 5px solid var(--color-accent);">
+                <h3 style="margin-bottom: 4px;">Simple</h3>
+                <p style="font-size: 0.95rem; color: var(--color-text-muted);">Everything is known &mdash; follow the recipe</p>
+              </div>
+              <div class="card" style="padding: 10px 14px; border-left: 5px solid var(--color-primary);">
+                <h3 style="margin-bottom: 4px;">Complicated</h3>
+                <p style="font-size: 0.95rem; color: var(--color-text-muted);">More is known than unknown &mdash; call the experts</p>
+              </div>
+              <div class="card" style="padding: 10px 14px; border-left: 5px solid var(--color-accent); border-width: 2px 2px 2px 5px;">
+                <h3 style="margin-bottom: 4px;">Complex</h3>
+                <p style="font-size: 0.95rem;"><strong>More is unknown than known</strong> &mdash; experiment &amp; adapt</p>
+              </div>
+              <div class="card" style="padding: 10px 14px; border-left: 5px solid var(--color-primary);">
+                <h3 style="margin-bottom: 4px;">Chaotic</h3>
+                <p style="font-size: 0.95rem; color: var(--color-text-muted);">Very little is known &mdash; act first, make sense later</p>
+              </div>
             </div>
-            <div class="card" style="padding: 8px 12px; border-left: 5px solid var(--color-primary);">
-              <h3 style="margin-bottom: 2px; font-size: 0.95rem;">Complicated</h3>
-              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Call the experts</p>
-            </div>
-            <div class="card" style="padding: 8px 12px; border-left: 5px solid var(--color-accent); border-width: 2px 2px 2px 5px;">
-              <h3 style="margin-bottom: 2px; font-size: 0.95rem;">Complex</h3>
-              <p style="font-size: 0.85rem;"><strong>Experiment &amp; adapt</strong></p>
-            </div>
-            <div class="card" style="padding: 8px 12px; border-left: 5px solid var(--color-primary);">
-              <h3 style="margin-bottom: 2px; font-size: 0.95rem;">Chaotic</h3>
-              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Act first, sense later</p>
-            </div>
+            <div class="slide-think-write" style="margin-top: 10px; font-size: 0.9rem;">What is one task from your work that falls into each zone? Write one example for Simple, Complicated, Complex, and Chaotic.</div>
           </div>
         </div>
         <aside class="notes">
@@ -746,8 +780,8 @@
       <!-- Slide 10: Cynefin Framework -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-map"/></svg> The Cynefin Framework</h2>
-        <div style="max-width: 620px; margin: 0 auto;">
-          <svg width="800" height="520" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg">
+        <div style="max-width: 750px; margin: 0 auto;">
+          <svg width="100%" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg">
   <!-- Quadrants: Complex (TL), Complicated (TR), Chaotic (BL), Clear (BR) -->
   <rect x="0" y="0" width="400" height="250" fill="#0066ff" stroke="black" stroke-width="3" />
   <rect x="400" y="0" width="400" height="250" fill="#f9f9f9" stroke="black" stroke-width="3" />
@@ -792,8 +826,8 @@
       <!-- Slide 11: Empirical Process Control -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-eye"/></svg> The Three Pillars of Empiricism</h2>
-        <div style="max-width: 700px; margin: 0 auto;">
-          <svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+        <div style="max-width: 900px; margin: 0 auto;">
+          <svg width="100%" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
   <!-- Shadows (Hard Offset) -->
   <rect x="54" y="104" width="220" height="280" fill="rgba(0,0,0,0.12)" />
   <rect x="344" y="104" width="220" height="280" fill="rgba(0,0,0,0.12)" />
@@ -1020,7 +1054,7 @@
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-users"/></svg> Developers</h2>
         <div class="card" style="margin-bottom: 16px; border-left: 5px solid var(--color-primary);">
-          <p style="font-size: 1.25rem; font-weight: 600;">Turn Product Backlog items into a usable Increment</p>
+          <p style="font-size: 1.25rem; font-weight: 600;">Turn Product Backlog items into a usable Increment (the teachers, designers, and coordinators who do the hands-on work)</p>
         </div>
         <ul>
           <li>Creating the Sprint Backlog (a plan for the Sprint)</li>
@@ -1043,7 +1077,7 @@
           <li>Causing the removal of impediments</li>
           <li>Ensuring events happen and are positive, productive, and timeboxed</li>
         </ul>
-        <div class="slide-question">What are the biggest impediments your team faces today?</div>
+        <div class="slide-question">Think about the last time a student project stalled. What was actually blocking them &mdash; and whose job was it to remove that block?</div>
         <aside class="notes">
           Toyota Production System: production should flow swiftly and calmly throughout the process, and one of management's key tasks is to remove impediments to that flow.
 
@@ -1063,7 +1097,7 @@
           <li>The Product Backlog is refined as needed</li>
           <li>Scope may be clarified and renegotiated with the PO</li>
         </ul>
-        <div class="slide-question">What would change if your team committed to delivering something every two weeks?</div>
+        <div class="slide-question">Imagine your department had to show a finished piece of curriculum every two weeks instead of finalizing it all at semester&rsquo;s end. What would you do differently?</div>
         <aside class="notes">
           Scrum sets sequential goals — a finished increment of product. Near real-time feedback. These are cycles.
 
@@ -1133,12 +1167,15 @@
           </ul>
         </div>
         <div class="slide-question">What does &ldquo;Done&rdquo; look like for your team&rsquo;s work right now?</div>
+        <aside class="notes">
+          FACILITATION TIP: Keep this slide brief (2 minutes). The real DoD learning will happen organically during the Lego Sprint 1 retrospective when teams experience the pain of not having one.
+        </aside>
       </section>
 
       <!-- Slide 21: Section Divider — Lego Sprint Simulation -->
       <section class="section-divider">
         <h2>Lego Sprint Simulation</h2>
-        <p style="font-size: 1.2rem; font-weight: 600;">Learn Scrum by Building</p>
+        <p style="font-size: 1.2rem; font-weight: 600;">Time to stand up. You&rsquo;re building an Art School Campus out of Lego.</p>
       </section>
 
       <!-- Slide 22: The Product Vision -->
@@ -1293,8 +1330,13 @@
             <li>What surprised you?</li>
             <li>How did it feel when the PO rejected work?</li>
             <li>How does this connect to real work?</li>
+            <li>When did you start asking the Product Owner questions? Why not earlier?</li>
+            <li>Think about how your students feel during their first art critique. How is that similar to what you experienced today?</li>
           </ul>
         </div>
+        <aside class="notes">
+          FACILITATION TIP: Budget 15-20 minutes minimum for the debrief. Go around the room so everyone speaks at least once. Ask 'What did you OBSERVE?' before 'What did you LEARN?' Connect observations to real-world Scrum.
+        </aside>
       </section>
 
       <!-- Slide 30: Section Divider — Scrum Values -->
@@ -1362,6 +1404,7 @@
             <li><strong>Bring questions</strong> from today</li>
           </ul>
         </div>
+        <p style="font-size: 1.1rem; color: var(--color-text-muted); margin-top: 16px;">Tomorrow you&rsquo;ll apply everything you learned to YOUR actual work &mdash; the thing you came here to figure out.</p>
       </section>
 
       <!-- Slide 35: Section Divider — Day 2 -->
@@ -1376,83 +1419,104 @@
           <p><strong>Quick Recap:</strong> What stuck with you from yesterday?</p>
         </div>
         <div class="exercise-card" style="margin-top: 20px;">
-          <p>Share one thing you remember, learned, or are still thinking about.</p>
+          <p>Turn to your neighbor. In 2 minutes, explain what Scrum is to someone who wasn&rsquo;t here yesterday. Then share: <strong>one thing that surprised you</strong> and <strong>one thing you want to understand better today</strong>.</p>
         </div>
       </section>
 
       <!-- Slide 37: Sprint Events Flow -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> The Sprint as a Learning Loop</h2>
-        <div style="max-width: 700px; margin: 0 auto;">
-          <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
-            <!-- Background -->
-            <rect width="900" height="600" fill="#ffffff" />
-            <!-- Container: The Sprint -->
-            <rect x="40" y="40" width="820" height="520" fill="none" stroke="black" stroke-width="3" />
-            <rect x="60" y="25" width="280" height="30" fill="black" />
-            <text x="70" y="46" font-family="Arial, sans-serif" font-weight="bold" font-size="16" fill="white">THE SPRINT (1 MONTH OR LESS)</text>
-            <!-- Input: Product Backlog -->
-            <g transform="translate(60, 100)">
-              <rect x="4" y="4" width="160" height="60" fill="rgba(0,0,0,0.12)" />
-              <rect width="160" height="60" fill="#ffd700" stroke="black" stroke-width="3" />
-              <text x="80" y="35" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="black">PRODUCT BACKLOG</text>
-            </g>
-            <!-- Arrow: Input to Sprint Planning -->
-            <path d="M 220 130 L 260 130" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead-sf)" />
-            <!-- Event 1: Sprint Planning -->
-            <g transform="translate(270, 90)">
-              <rect x="4" y="4" width="180" height="80" fill="rgba(0,0,0,0.12)" />
-              <rect width="180" height="80" fill="#0066ff" stroke="black" stroke-width="3" />
-              <text x="90" y="40" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="white">SPRINT PLANNING</text>
-            </g>
-            <!-- Output: Sprint Backlog + Goal -->
-            <g transform="translate(480, 100)">
-              <rect x="4" y="4" width="180" height="60" fill="rgba(0,0,0,0.12)" />
-              <rect width="180" height="60" fill="#ffd700" stroke="black" stroke-width="3" />
-              <text x="90" y="25" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle" fill="black">SPRINT BACKLOG</text>
-              <text x="90" y="45" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle" fill="black">+ SPRINT GOAL</text>
-            </g>
-            <!-- Arrow: Planning to Daily Scrum Area -->
-            <path d="M 360 170 L 360 240" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead-sf)" />
-            <!-- Event 2: Daily Scrum (Iterative Loop) -->
-            <g transform="translate(280, 250)">
-              <rect x="4" y="4" width="160" height="100" fill="rgba(0,0,0,0.12)" />
-              <rect width="160" height="100" fill="#0066ff" stroke="black" stroke-width="3" />
-              <text x="80" y="40" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" fill="white">DAILY SCRUM</text>
-              <text x="80" y="70" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">(REPEATING)</text>
-              <!-- Loop Circle -->
-              <path d="M 160 50 A 25 25 0 1 1 160 49" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead-sf)" />
-            </g>
-            <!-- Arrow: Daily Scrum to Review -->
-            <path d="M 360 350 L 360 410" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead-sf)" />
-            <!-- Event 3: Sprint Review -->
-            <g transform="translate(270, 420)">
-              <rect x="4" y="4" width="180" height="80" fill="rgba(0,0,0,0.12)" />
-              <rect width="180" height="80" fill="#0066ff" stroke="black" stroke-width="3" />
-              <text x="90" y="40" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="white">SPRINT REVIEW</text>
-            </g>
-            <!-- Output: Increment -->
-            <g transform="translate(480, 430)">
-              <rect x="4" y="4" width="160" height="60" fill="rgba(0,0,0,0.12)" />
-              <rect width="160" height="60" fill="#ffd700" stroke="black" stroke-width="3" />
-              <text x="80" y="35" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="black">INCREMENT</text>
-            </g>
-            <!-- Arrow: Review to Retrospective -->
-            <path d="M 450 460 L 520 460" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead-sf)" />
-            <!-- Event 4: Sprint Retrospective -->
-            <g transform="translate(530, 420)">
-              <rect x="4" y="4" width="200" height="80" fill="rgba(0,0,0,0.12)" />
-              <rect width="200" height="80" fill="#0066ff" stroke="black" stroke-width="3" />
-              <text x="100" y="40" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="white">SPRINT RETROSPECTIVE</text>
-            </g>
-            <!-- Arrow: Back to Planning (Circular Loop) -->
-            <path d="M 730 460 Q 820 460 820 300 Q 820 130 450 130" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead-sf)" stroke-dasharray="8,4" />
-            <!-- Definitions -->
+        <div style="max-width: 900px; margin: 0 auto;">
+          <svg viewBox="0 0 960 500" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <marker id="arrowhead-sf" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+              <marker id="arr-fw2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+              </marker>
+              <marker id="arr-fw2-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="#0066ff"/>
               </marker>
             </defs>
+
+            <!-- Product Goal label -->
+            <text x="60" y="30" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#444">Product Goal</text>
+
+            <!-- Product Backlog (tall stack) -->
+            <rect x="44" y="48" width="92" height="180" fill="rgba(0,0,0,0.12)"/>
+            <rect x="40" y="44" width="92" height="180" fill="#ffd700" stroke="black" stroke-width="3"/>
+            <text x="86" y="130" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle" fill="black">Product</text>
+            <text x="86" y="148" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle" fill="black">Backlog</text>
+
+            <!-- Arrow: PB → Sprint Planning -->
+            <line x1="132" y1="134" x2="178" y2="134" stroke="black" stroke-width="3" marker-end="url(#arr-fw2)"/>
+
+            <!-- Sprint Planning -->
+            <rect x="190" y="108" width="105" height="52" fill="#0066ff" stroke="black" stroke-width="3"/>
+            <text x="242" y="132" font-family="Arial, sans-serif" font-weight="bold" font-size="11" text-anchor="middle" fill="white">Sprint</text>
+            <text x="242" y="148" font-family="Arial, sans-serif" font-weight="bold" font-size="11" text-anchor="middle" fill="white">Planning</text>
+
+            <!-- Arrow: Planning → Sprint Backlog -->
+            <line x1="295" y1="134" x2="330" y2="134" stroke="black" stroke-width="3" marker-end="url(#arr-fw2)"/>
+
+            <!-- Sprint Backlog + Sprint Goal -->
+            <text x="380" y="102" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#444">Sprint Goal</text>
+            <rect x="340" y="112" width="80" height="44" fill="#ffd700" stroke="black" stroke-width="3"/>
+            <text x="380" y="133" font-family="Arial, sans-serif" font-weight="bold" font-size="10" text-anchor="middle" fill="black">Sprint</text>
+            <text x="380" y="147" font-family="Arial, sans-serif" font-weight="bold" font-size="10" text-anchor="middle" fill="black">Backlog</text>
+
+            <!-- Arrow: SB → Sprint circle -->
+            <line x1="420" y1="134" x2="460" y2="190" stroke="black" stroke-width="2.5" marker-end="url(#arr-fw2)"/>
+
+            <!-- THE SPRINT — large circular area -->
+            <circle cx="560" cy="270" r="125" fill="#e8f0ff" stroke="#0066ff" stroke-width="4"/>
+            <text x="560" y="205" font-family="Arial, sans-serif" font-weight="900" font-size="18" text-anchor="middle" fill="#0066ff">SPRINT</text>
+
+            <!-- Team inside sprint -->
+            <rect x="504" y="228" width="52" height="38" fill="#fff" stroke="black" stroke-width="2"/>
+            <text x="530" y="244" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="black">Developers</text>
+            <text x="530" y="260" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">&#x1F469;&#x200D;&#x1F4BB;&#x1F468;&#x200D;&#x1F4BB;</text>
+
+            <rect x="564" y="228" width="52" height="38" fill="#fff" stroke="black" stroke-width="2"/>
+            <text x="590" y="244" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="black">Product</text>
+            <text x="590" y="254" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="black">Owner</text>
+
+            <rect x="534" y="274" width="52" height="38" fill="#fff" stroke="black" stroke-width="2"/>
+            <text x="560" y="290" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="black">Scrum</text>
+            <text x="560" y="300" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="black">Master</text>
+
+            <!-- Daily Scrum -->
+            <rect x="526" y="320" width="68" height="26" fill="#0066ff" stroke="black" stroke-width="2"/>
+            <text x="560" y="337" font-family="Arial, sans-serif" font-weight="bold" font-size="9" text-anchor="middle" fill="white">Daily Scrum</text>
+
+            <!-- Arrow: Sprint → Increment -->
+            <line x1="685" y1="270" x2="730" y2="270" stroke="black" stroke-width="3" marker-end="url(#arr-fw2)"/>
+
+            <!-- Increment -->
+            <text x="775" y="234" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#444" text-anchor="middle">Done</text>
+            <rect x="740" y="248" width="70" height="44" fill="#ffd700" stroke="black" stroke-width="3"/>
+            <text x="775" y="274" font-family="Arial, sans-serif" font-weight="bold" font-size="11" text-anchor="middle" fill="black">Increment</text>
+
+            <!-- Arrow: Increment → Sprint Review -->
+            <line x1="810" y1="270" x2="850" y2="270" stroke="black" stroke-width="3" marker-end="url(#arr-fw2)"/>
+
+            <!-- Sprint Review -->
+            <rect x="858" y="248" width="70" height="44" fill="#0066ff" stroke="black" stroke-width="3"/>
+            <text x="893" y="267" font-family="Arial, sans-serif" font-weight="bold" font-size="10" text-anchor="middle" fill="white">Sprint</text>
+            <text x="893" y="281" font-family="Arial, sans-serif" font-weight="bold" font-size="10" text-anchor="middle" fill="white">Review</text>
+
+            <!-- Sprint Retrospective (top) -->
+            <rect x="515" y="32" width="92" height="40" fill="#0066ff" stroke="black" stroke-width="3"/>
+            <text x="561" y="50" font-family="Arial, sans-serif" font-weight="bold" font-size="9" text-anchor="middle" fill="white">Sprint</text>
+            <text x="561" y="63" font-family="Arial, sans-serif" font-weight="bold" font-size="9" text-anchor="middle" fill="white">Retrospective</text>
+
+            <!-- Loop: Review → up → Retro -->
+            <path d="M 893 248 L 893 52 L 607 52" stroke="#0066ff" stroke-width="2.5" fill="none" marker-end="url(#arr-fw2-blue)" stroke-dasharray="6,3"/>
+
+            <!-- Loop: Retro → back to Planning -->
+            <path d="M 515 52 L 242 52 L 242 108" stroke="#0066ff" stroke-width="2.5" fill="none" marker-end="url(#arr-fw2-blue)" stroke-dasharray="6,3"/>
+
+            <!-- Feedback: Review → Product Backlog -->
+            <path d="M 858 270 L 858 440 L 86 440 L 86 224" stroke="black" stroke-width="2" fill="none" marker-end="url(#arr-fw2)" stroke-dasharray="8,4"/>
+            <text x="400" y="460" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#444">Feedback updates the Product Backlog</text>
           </svg>
         </div>
         <p style="text-align: center; font-size: 1.0rem; color: var(--color-text-muted); margin-top: 12px;">Each event is an opportunity to inspect and adapt &mdash; the heartbeat of empiricism.</p>
@@ -1473,6 +1537,7 @@
           <p>&ldquo;Scrum Teams are cross-functional, meaning the members have all the skills necessary to create value each Sprint.&rdquo;</p>
           <p class="attribution">&mdash; Scrum Guide (2020)</p>
         </div>
+        <div class="slide-question">Where in your school or department do teams already self-manage? Where does someone else decide the who, what, or how?</div>
         <aside class="notes">
           The team decides. They create a sense of their own velocity. How can we work together better in the next Sprint?
         </aside>
@@ -1485,17 +1550,17 @@
 
       <!-- Slide 40: Estimation -->
       <section>
-        <h2>Estimation</h2>
-        <div class="card--accent">
-          <p>Estimation is a team activity, not a management tool.</p>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-compass"/></svg> Estimation</h2>
+        <div class="card" style="border-left: 5px solid var(--color-accent);">
+          <p style="font-size: 1.15rem; font-weight: 600;">Estimation is a team activity, not a management tool.</p>
         </div>
         <div class="grid-2" style="margin-top: 20px;">
-          <div class="card">
-            <h3>Relative Sizing</h3>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3><svg class="slide-icon"><use href="#icon-compass"/></svg> Relative Sizing</h3>
             <p>Compare items to each other, not to hours. Use T-shirt sizes: XS, S, M, L, XL</p>
           </div>
-          <div class="card">
-            <h3>Why Relative?</h3>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3><svg class="slide-icon"><use href="#icon-lightbulb"/></svg> Why Relative?</h3>
             <p>Humans are bad at absolute estimates. We&rsquo;re great at comparing: &ldquo;This is about twice as big as that.&rdquo;</p>
           </div>
         </div>
@@ -1516,33 +1581,35 @@
 
       <!-- Slide 42: Product Backlog Refinement -->
       <section>
-        <h2>Product Backlog Refinement</h2>
-        <ul>
-          <li>An ongoing activity, <strong>NOT</strong> a formal Scrum event</li>
-          <li>Adding detail, estimates, and order to items</li>
-          <li>The Scrum Team decides how and when refinement is done</li>
-          <li>Makes future Sprint Planning smoother</li>
-        </ul>
-        <div class="card--accent" style="margin-top: 20px;">
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-gear"/></svg> Product Backlog Refinement</h2>
+        <div class="card" style="border-left: 5px solid var(--color-primary);">
+          <ul>
+            <li>An ongoing activity, <strong>NOT</strong> a formal Scrum event</li>
+            <li>Adding detail, estimates, and order to items</li>
+            <li>The Scrum Team decides how and when refinement is done</li>
+            <li>Makes future Sprint Planning smoother</li>
+          </ul>
+        </div>
+        <div class="card" style="margin-top: 20px; border-left: 5px solid var(--color-accent);">
           <p>Think of it as &ldquo;grooming the queue&rdquo; &mdash; keeping the backlog ready for the next Sprint.</p>
         </div>
       </section>
 
       <!-- Slide 43: Definition of Ready -->
       <section>
-        <h2>When Is a Backlog Item &ldquo;Ready&rdquo;?</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-check"/></svg> When Is a Backlog Item &ldquo;Ready&rdquo;?</h2>
         <div class="grid-3">
-          <div class="card">
-            <h3>Clear</h3>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3><svg class="slide-icon"><use href="#icon-eye"/></svg> Clear</h3>
             <p>The team understands what is being asked</p>
           </div>
-          <div class="card--accent">
-            <h3>Sized</h3>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3><svg class="slide-icon"><use href="#icon-compass"/></svg> Sized</h3>
             <p>The team has estimated the relative effort</p>
           </div>
-          <div class="card">
-            <h3>Testable</h3>
-            <p>The team knows how to verify it&rsquo;s done</p>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3><svg class="slide-icon"><use href="#icon-check"/></svg> Testable</h3>
+            <p>You can describe what &lsquo;finished&rsquo; looks like &mdash; like a rubric for a student project</p>
           </div>
         </div>
         <p style="text-align: center; font-size: 1.0rem; color: var(--color-text-muted); margin-top: 16px;">Ready &ne; fully specified. Just enough to start.</p>
@@ -1550,8 +1617,8 @@
 
       <!-- Slide 44: Monitoring Sprint Progress -->
       <section>
-        <h2>Monitoring Sprint Progress</h2>
-        <div class="card">
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-eye"/></svg> Monitoring Sprint Progress</h2>
+        <div class="card" style="border-left: 5px solid var(--color-primary);">
           <ul>
             <li>The Sprint Backlog makes progress visible</li>
             <li>Developers inspect progress at least daily (Daily Scrum)</li>
@@ -1573,22 +1640,22 @@
 
       <!-- Slide 46: The Challenge -->
       <section>
-        <h2>The Challenge</h2>
-        <div class="card--primary">
-          <p>Build a presentation that sells the vision of your product to stakeholders.</p>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-flag"/></svg> The Challenge</h2>
+        <div class="card" style="border-left: 5px solid var(--color-primary);">
+          <p style="font-size: 1.25rem; font-weight: 600;">Build a presentation that sells the vision of your product to stakeholders.</p>
         </div>
-        <ul>
-          <li>You have 2 Sprints</li>
-          <li>Teams create their own Product Backlog</li>
-          <li>A team member becomes Product Owner</li>
-          <li>Materials: paper, markers, poster boards. Phones for reference.</li>
-        </ul>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px;">
+          <div class="card" style="padding: 12px 14px; border-left: 5px solid var(--color-accent);"><svg class="slide-icon"><use href="#icon-arrows-rotate"/></svg> You have <strong>2 Sprints</strong></div>
+          <div class="card" style="padding: 12px 14px; border-left: 5px solid var(--color-primary);"><svg class="slide-icon"><use href="#icon-map"/></svg> Teams create their own <strong>Product Backlog</strong></div>
+          <div class="card" style="padding: 12px 14px; border-left: 5px solid var(--color-primary);"><svg class="slide-icon"><use href="#icon-crown"/></svg> A team member becomes <strong>Product Owner</strong></div>
+          <div class="card" style="padding: 12px 14px; border-left: 5px solid var(--color-accent);"><svg class="slide-icon"><use href="#icon-palette"/></svg> Materials: paper, markers, poster boards</div>
+        </div>
       </section>
 
       <!-- Slide 47: What to Include -->
       <section>
-        <h2>What to Include</h2>
-        <div class="card--accent">
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-lightbulb"/></svg> What to Include</h2>
+        <div class="card" style="border-left: 5px solid var(--color-accent);">
           <ul>
             <li><strong>Problem statement</strong> &mdash; What pain does your product solve?</li>
             <li><strong>Value proposition</strong> &mdash; Why is YOUR solution the best?</li>
@@ -1642,14 +1709,14 @@
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-gear"/></svg> Sprint Retrospective</h2>
         <div class="grid-3">
-          <div class="card">
-            <h3>What went well?</h3>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3><svg class="slide-icon"><use href="#icon-check"/></svg> What went well?</h3>
           </div>
-          <div class="card--accent">
-            <h3>What could improve?</h3>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3><svg class="slide-icon"><use href="#icon-gear"/></svg> What could improve?</h3>
           </div>
-          <div class="card--primary">
-            <h3>What will we change?</h3>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3><svg class="slide-icon"><use href="#icon-flag"/></svg> What will we change?</h3>
           </div>
         </div>
         <p style="text-align: center; font-size: 1.0rem; color: var(--color-text-muted); margin-top: 16px;">Quick retro &mdash; 5 minutes. Then Sprint 2!</p>
@@ -1657,23 +1724,24 @@
 
       <!-- Slide 52: Final Presentations -->
       <section>
-        <h2>Final Presentations</h2>
-        <div class="card--primary">
-          <p>Each team: 10&ndash;15 minutes to present your product vision.</p>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-trophy"/></svg> Final Presentations</h2>
+        <div class="card" style="border-left: 5px solid var(--color-primary);">
+          <p style="font-size: 1.25rem; font-weight: 600;">Each team: 10&ndash;15 minutes to present your product vision.</p>
         </div>
-        <div class="card--accent" style="margin-top: 20px;">
-          <p>This is your final Sprint Review. Sell it!</p>
+        <div class="card" style="margin-top: 20px; border-left: 5px solid var(--color-accent);">
+          <p style="font-size: 1.1rem; font-weight: 600;">This is your final Sprint Review. Sell it!</p>
         </div>
       </section>
 
       <!-- Slide 53: Section Divider — Getting Started -->
       <section class="section-divider">
         <h1>Getting Started with Scrum</h1>
+        <p style="font-size: 1.2rem; color: var(--color-text-muted);">Taking Scrum Back to Your Classroom and Department</p>
       </section>
 
       <!-- Slide 54: Should We Use Scrum? -->
       <section>
-        <h2>Should We Use Scrum?</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-compass"/></svg> Should We Use Scrum?</h2>
         <div class="exercise-card">
           <ul>
             <li>What&rsquo;s not working for us right now?</li>
@@ -1686,26 +1754,27 @@
 
       <!-- Slide 55: Identify Your Scrum Team -->
       <section>
-        <h2>Identify Your Scrum Team</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-users"/></svg> Identify Your Scrum Team</h2>
         <div class="grid-3">
-          <div class="card--primary">
-            <h3>Product Owner</h3>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3><svg class="slide-icon"><use href="#icon-crown"/></svg> Product Owner</h3>
             <p>Who understands the business, customers, and can make priority decisions?</p>
           </div>
-          <div class="card--accent">
-            <h3>Scrum Master</h3>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3><svg class="slide-icon"><use href="#icon-shield"/></svg> Scrum Master</h3>
             <p>Who can coach, facilitate, and help the team grow?</p>
           </div>
-          <div class="card">
-            <h3>Developers</h3>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3><svg class="slide-icon"><use href="#icon-users"/></svg> Developers</h3>
             <p>Who has the skills to create the product?</p>
           </div>
         </div>
+        <div class="slide-question">For your real team back at work: Who would fill each role? Write names on sticky notes.</div>
       </section>
 
       <!-- Slide 56: Appreciation Wall -->
       <section>
-        <h2>Appreciation Wall</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-heart"/></svg> Appreciation Wall</h2>
         <div class="exercise-card">
           <p>Write a statement of appreciation about someone in this workshop or about the experience itself. Post it on the wall.</p>
         </div>
@@ -1713,22 +1782,22 @@
 
       <!-- Slide 57: Suggested Reading -->
       <section>
-        <h2>Continue Learning</h2>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-lightbulb"/></svg> Continue Learning</h2>
         <div class="grid-2">
-          <div class="card">
-            <h3>The Scrum Guide</h3>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3><svg class="slide-icon"><use href="#icon-star"/></svg> The Scrum Guide</h3>
             <p>scrumguides.org &mdash; The definitive 13-page source. Free.</p>
           </div>
-          <div class="card">
-            <h3>Scrum: A Pocket Guide</h3>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3><svg class="slide-icon"><use href="#icon-star"/></svg> Scrum: A Pocket Guide</h3>
             <p>Gunther Verheyen &mdash; Clear, practical companion to the Scrum Guide</p>
           </div>
-          <div class="card">
-            <h3>Agile Estimating &amp; Planning</h3>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3><svg class="slide-icon"><use href="#icon-star"/></svg> Agile Estimating &amp; Planning</h3>
             <p>Mike Cohn &mdash; Deep dive into planning techniques</p>
           </div>
-          <div class="card">
-            <h3>lego4scrum.com</h3>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3><svg class="slide-icon"><use href="#icon-star"/></svg> lego4scrum.com</h3>
             <p>More Lego simulation ideas and resources</p>
           </div>
         </div>
@@ -1738,6 +1807,7 @@
       <section class="section-divider">
         <h1>Thank You!</h1>
         <p>Keep inspecting and adapting.</p>
+        <p style="font-size: 1.1rem; font-style: italic; color: var(--color-text-muted); margin-top: 16px;">Every great work of art is an iteration. Keep inspecting and adapting.</p>
         <p style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 40px; line-height: 1.6;">
           Based on the Scrum Guide (2020) by Ken Schwaber &amp; Jeff Sutherland &mdash; CC BY-SA 4.0<br>
           Lego exercise inspired by Lego4Scrum by Alexey Krivitsky &mdash; CC BY 3.0<br>
@@ -1798,6 +1868,63 @@
       }
     }
     document.querySelectorAll('.timer-widget').forEach(el => new SlideTimer(el));
+
+    /* ---- Click-to-Navigate Slide Number ---- */
+    Reveal.on('ready', () => {
+      const slideNumberEl = document.querySelector('.reveal .slide-number');
+      if (!slideNumberEl) return;
+      slideNumberEl.style.cursor = 'pointer';
+
+      slideNumberEl.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const total = Reveal.getTotalSlides();
+        const current = Reveal.getSlidePastCount() + 1;
+
+        const input = document.createElement('input');
+        input.type = 'number';
+        input.min = 1;
+        input.max = total;
+        input.value = current;
+        Object.assign(input.style, {
+          position: 'fixed',
+          bottom: '12px',
+          right: '60px',
+          width: '80px',
+          padding: '6px 10px',
+          fontSize: '16px',
+          fontFamily: 'var(--font-body)',
+          fontWeight: '700',
+          border: 'var(--border-base)',
+          boxShadow: 'var(--shadow-base)',
+          background: '#fff',
+          zIndex: '100',
+          textAlign: 'center',
+          borderRadius: '0'
+        });
+
+        document.body.appendChild(input);
+        input.focus();
+        input.select();
+
+        function go() {
+          const n = parseInt(input.value, 10);
+          if (n >= 1 && n <= total) Reveal.slide(n - 1);
+          cleanup();
+        }
+        function cleanup() {
+          input.removeEventListener('keydown', onKey);
+          input.removeEventListener('blur', go);
+          if (input.parentNode) input.parentNode.removeChild(input);
+        }
+        function onKey(ev) {
+          if (ev.key === 'Enter') { ev.preventDefault(); go(); }
+          if (ev.key === 'Escape') { ev.preventDefault(); cleanup(); }
+          ev.stopPropagation();
+        }
+        input.addEventListener('keydown', onKey);
+        input.addEventListener('blur', go);
+      });
+    });
 
     /* ---- Live Clock ---- */
     function updateClock() {
