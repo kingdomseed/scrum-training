@@ -455,6 +455,90 @@
     }
 
     /* ============================================
+       DRAG & DROP EXERCISE
+       ============================================ */
+    .drag-exercise {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .drop-zone {
+      min-height: 140px;
+      border: var(--border-base);
+      padding: 8px;
+      background: var(--color-surface);
+    }
+    .drop-zone h3 {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-align: center;
+      margin: 0 0 8px 0;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #000;
+    }
+    .drop-zone--po h3 { color: var(--color-primary); }
+    .drop-zone--dev h3 { color: #222; }
+    .drop-zone--sm h3 { color: var(--color-primary); }
+    .drop-zone.drag-over {
+      background: #f0f4ff;
+      box-shadow: inset 0 0 0 2px var(--color-primary);
+    }
+    .drag-card {
+      background: #fff;
+      border: var(--border-base);
+      box-shadow: var(--shadow-base);
+      padding: 6px 10px;
+      margin: 4px 0;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      cursor: grab;
+      user-select: none;
+      transition: opacity 0.15s;
+    }
+    .drag-card:active { cursor: grabbing; }
+    .drag-card.dragging { opacity: 0.4; }
+    .drag-card.correct {
+      border-left: 4px solid #22c55e;
+      background: #f0fdf4;
+    }
+    .drag-card.incorrect {
+      border-left: 4px solid #ef4444;
+      background: #fef2f2;
+    }
+    .drag-source {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+      margin-bottom: 10px;
+      min-height: 40px;
+      padding: 6px;
+      border: 2px dashed var(--color-text-muted);
+    }
+    .drag-source .drag-card { margin: 0; }
+    .drag-check-btn {
+      display: block;
+      margin: 8px auto 0;
+      padding: 8px 24px;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 800;
+      border: var(--border-base);
+      box-shadow: var(--shadow-base);
+      background: var(--color-primary);
+      color: #fff;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .drag-check-btn:hover {
+      transform: translate(-1px, -1px);
+    }
+
+    /* ============================================
        PRINT STYLES
        ============================================ */
     @media print {
@@ -542,6 +626,12 @@
         <h1>Scrum Workshop</h1>
         <p style="font-size: 1.4rem; font-weight: 600;">Jason Holt &middot; Scrum Master</p>
         <p class="badge">March 2026</p>
+        <aside class="notes">
+          - Welcome everyone as they settle in; set an informal, energetic tone
+          - "This is a participatory workshop, not a lecture — you'll be building things, not just listening"
+          - Frame the two days: hands-on, safe space to experiment, learn by doing
+          - Transition: move quickly to the agenda so people know what to expect
+        </aside>
       </section>
 
       <!-- Slide 2: Agenda — Day at a Glance -->
@@ -571,6 +661,13 @@
             </ul>
           </div>
         </div>
+        <aside class="notes">
+          - Timing: ~2 minutes — quick orientation, don't linger
+          - Walk through the two-day structure at a high level; point out the Lego simulation on Day 1 and Presentation Sprints on Day 2 to build anticipation
+          - Emphasize: "Day 1 is learn by building. Day 2 is apply to your own work."
+          - Watch for: anxious faces at "Lego Sprints" — reassure them it's fun
+          - Transition: "Before we dive in, let's get to know each other"
+        </aside>
       </section>
 
       <!-- Slide 3: Introductions -->
@@ -579,6 +676,14 @@
         <div class="exercise-card">
           <p>Go around the room. Share: <strong>your name</strong>, <strong>your role</strong>, and <strong>one creative project you&rsquo;re proud of</strong> &mdash; from your classroom or your own practice.</p>
         </div>
+        <aside class="notes">
+          - Timing: ~15 minutes (depends on group size)
+          - Go first to model the format and set the tone — keep yours brief and genuine
+          - Each person: name, role, one creative project they're proud of
+          - Listen for: what people hope to get from the workshop — note these for Day 2 closing
+          - Tip: if the group is large (10+), keep to 60 seconds per person; gently redirect storytellers
+          - Transition: "Great — now let's agree on how we'll work together these two days"
+        </aside>
       </section>
 
       <!-- Slide 4: Working Agreements -->
@@ -593,6 +698,23 @@
           <div class="sticky-note">No bad ideas</div>
           <div class="sticky-note">Respect the timebox</div>
         </div>
+        <div class="timer-widget" data-minutes="5">
+          <div class="timer-compact">5:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
+        <aside class="notes">
+          - Timing: ~10 minutes (5 min writing + 5 min clustering and agreement)
+          - Materials: sticky notes, markers, wall space
+          - Each person writes 1-2 ground rules on sticky notes (one idea per note)
+          - Post on wall, cluster similar ones together, read them aloud
+          - Group agrees to honor them for both days — this is a social contract
+          - Examples on slide are prompts, not prescriptions — let the group own it
+          - Tip: if group is quiet, seed with "phones on silent" and "be present" then step back
+          - Transition: "Now that we know HOW we'll work, let's talk about what makes a great team"
+        </aside>
       </section>
 
       <!-- Slide 5: Characteristics of a Great Team -->
@@ -666,6 +788,37 @@
         </aside>
       </section>
 
+      <!-- Slide 8: What Is a Product? -->
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-lightbulb"/></svg> What Is a Product?</h2>
+        <div class="card" style="margin-bottom: 16px; border-left: 5px solid var(--color-primary);">
+          <p style="font-size: 1.15rem; font-weight: 600;">A product is a vehicle to deliver value. It has customers, users, and stakeholders.</p>
+        </div>
+        <p style="text-align: center; font-weight: 600; margin-bottom: 12px;">In education, your &ldquo;product&rdquo; might be&hellip;</p>
+        <div class="grid-2">
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3>A curriculum</h3>
+            <p>A semester-long ceramics course designed for beginners</p>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3>A program</h3>
+            <p>An after-school arts enrichment program for the district</p>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3>An event</h3>
+            <p>The annual student art exhibition</p>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3>A process</h3>
+            <p>The way your department reviews and adopts new materials</p>
+          </div>
+        </div>
+        <div class="slide-think-write">What is YOUR product? What value does it deliver, and to whom?</div>
+        <aside class="notes">
+          This is a critical framing slide for non-tech audiences. Scrum talks about "the product" constantly — if participants don't identify what their product IS, the rest of the framework feels abstract. Let them write for 60 seconds, then take 2-3 answers aloud. Validate creative answers.
+        </aside>
+      </section>
+
       <!-- Slide 8: Agile Manifesto — 4 Values -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-heart"/></svg> The Agile Manifesto</h2>
@@ -675,7 +828,7 @@
             <p style="color: var(--color-text-muted); font-size: 1.0rem;">over Processes &amp; Tools</p>
           </div>
           <div class="card" style="border-left: 5px solid var(--color-accent);">
-            <p style="font-size: 1.3rem; font-weight: 700;">Working Product</p>
+            <p style="font-size: 1.3rem; font-weight: 700;">Working Product*</p>
             <p style="color: var(--color-text-muted); font-size: 1.0rem;">over Comprehensive Documentation</p>
           </div>
           <div class="card" style="border-left: 5px solid var(--color-accent);">
@@ -688,13 +841,24 @@
           </div>
         </div>
         <p style="text-align: center; font-style: italic; font-size: 1.0rem; color: var(--color-text-muted); margin-top: 16px;">While there is value in the items below, we value the items <strong>above</strong> more.</p>
+        <p style="text-align: center; font-size: 0.7rem; color: var(--color-text-muted); margin-top: 4px;">*The Manifesto says &ldquo;Working Software&rdquo; &mdash; we read &ldquo;software&rdquo; as &ldquo;product&rdquo; for our context.</p>
         <div class="slide-question">Which of these values resonates most with you today?</div>
         <aside class="notes">
           Agile is a statement of values. Scrum is a way to put these values into focus, clarity, and practice. Ideas are easy — execution is hard.
         </aside>
       </section>
 
-      <!-- Slide 9: Complexity of Product Development (Stacey Matrix) -->
+      <!-- Slide 9: Bridge — Why Complexity Matters -->
+      <section>
+        <h2 style="line-height: 1.3; max-width: 700px; margin: 0 auto;">The Manifesto tells us <span style="color: var(--color-primary); font-size: inherit;">what</span> to value.</h2>
+        <h2 style="line-height: 1.3; max-width: 700px; margin: 16px auto 0;">Complexity tells us <span style="color: var(--color-primary); font-size: inherit;">why.</span></h2>
+        <div class="quote-card" style="margin-top: 32px; max-width: 650px; margin-left: auto; margin-right: auto;">
+          <p>&ldquo;Every project involves the discovery of problems and bursts of inspiration. Trying to restrict that to charts is doomed to failure.&rdquo;</p>
+          <p class="attribution">&mdash; Jeff Sutherland, <em>Scrum: The Art of Doing Twice the Work in Half the Time</em></p>
+        </div>
+      </section>
+
+      <!-- Slide 9b: Complexity of Product Development (Stacey Matrix) -->
       <section>
         <h2 style="margin-bottom: 2px;"><svg class="slide-icon slide-icon--heading"><use href="#icon-compass"/></svg> The Complexity of Product Development</h2>
         <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 12px; align-items: start;">
@@ -928,6 +1092,7 @@
       <!-- Slide 12: Section Divider — The Scrum Framework -->
       <section class="section-divider">
         <h2>The Scrum Framework</h2>
+        <p style="font-size: 1.2rem; font-weight: 600; color: var(--color-text-muted); margin-top: 8px;">Accountabilities, Events, and Artifacts</p>
       </section>
 
       <!-- Slide 13: Scrum Framework Overview — Circular Flow -->
@@ -1082,6 +1247,38 @@
           Toyota Production System: production should flow swiftly and calmly throughout the process, and one of management's key tasks is to remove impediments to that flow.
 
           Everything that stands in the way is waste, and this is morally wrong. Eliminating waste is the first responsibility of management. This requires being honest with yourselves.
+        </aside>
+      </section>
+
+      <!-- Slide 16b: Match the Accountability Exercise -->
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-people-group"/></svg> Match the Accountability</h2>
+        <p style="text-align: center; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;">Drag each scenario to the accountability responsible.</p>
+        <div class="drag-source" id="drag-source">
+          <div class="drag-card" draggable="true" data-answer="po">Decides what to build next</div>
+          <div class="drag-card" draggable="true" data-answer="dev">Figures out HOW to build it</div>
+          <div class="drag-card" draggable="true" data-answer="sm">Notices the team is stuck and helps remove the blocker</div>
+          <div class="drag-card" draggable="true" data-answer="po">Says &ldquo;no&rdquo; to a stakeholder request</div>
+          <div class="drag-card" draggable="true" data-answer="dev">Decides who works on which task</div>
+          <div class="drag-card" draggable="true" data-answer="sm">Coaches the team on self-management</div>
+        </div>
+        <div class="drag-exercise">
+          <div class="drop-zone drop-zone--po" data-role="po">
+            <h3><svg class="slide-icon"><use href="#icon-compass"/></svg> Product Owner</h3>
+          </div>
+          <div class="drop-zone drop-zone--dev" data-role="dev">
+            <h3><svg class="slide-icon"><use href="#icon-gear"/></svg> Developers</h3>
+          </div>
+          <div class="drop-zone drop-zone--sm" data-role="sm">
+            <h3><svg class="slide-icon"><use href="#icon-shield"/></svg> Scrum Master</h3>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 8px;">
+          <button class="drag-check-btn" id="drag-check-btn" style="display: inline-block; margin: 0 4px;">Check Answers</button>
+          <button class="drag-check-btn" id="drag-reset-btn" style="display: inline-block; margin: 0 4px; background: var(--color-surface); color: var(--color-text);">Reset</button>
+        </div>
+        <aside class="notes">
+          INTERACTIVE BREAK — This exercise breaks up the 8-slide concept run. Let participants work in pairs or small groups. After checking answers, briefly discuss any surprises. Key teaching point: "Decides who works on which task" belongs to Developers (self-management), not the Scrum Master.
         </aside>
       </section>
 
@@ -1261,7 +1458,15 @@
         </div>
       </section>
 
-      <!-- Slide 25: Sprint Planning -->
+      <!-- ======== SPRINT 1 ======== -->
+      <section>
+        <h2 style="font-size: 2.5rem;"><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> Sprint 1</h2>
+        <p style="text-align: center; font-size: 1.2rem; font-weight: 600; color: var(--color-text-muted);">Your first attempt. Expect chaos.</p>
+        <div class="card" style="max-width: 500px; margin: 20px auto; border-left: 5px solid var(--color-primary);">
+          <p style="font-weight: 700;">Plan &rarr; Build &rarr; Review &rarr; Retro</p>
+        </div>
+      </section>
+
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-flag"/></svg> Sprint Planning</h2>
         <div class="exercise-card">
@@ -1269,12 +1474,17 @@
             <li>Select items from the Product Backlog</li>
             <li>How many can your team commit to this Sprint?</li>
             <li>Move selected items to your Sprint Backlog on the wall</li>
-            <li>Do you feel sufficiently uncomfortable with your commitment?</li>
           </ul>
+        </div>
+        <div class="timer-widget" data-minutes="5">
+          <div class="timer-compact">5:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
         </div>
       </section>
 
-      <!-- Slide 26: Build! -->
       <section>
         <h2 style="margin-bottom: 8px;">Build!</h2>
         <div class="timer-widget" data-minutes="7">
@@ -1287,7 +1497,6 @@
         <p style="text-align: center; font-size: 1.2rem; font-weight: 700; margin-top: 16px;">Hands off when time is up!</p>
       </section>
 
-      <!-- Slide 27: Sprint Review -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-comments"/></svg> Sprint Review</h2>
         <div class="card--primary" style="margin-bottom: 20px;">
@@ -1297,51 +1506,224 @@
           <ul>
             <li>What is Done according to your Definition of Done?</li>
             <li>Does it meet the PO&rsquo;s expectations?</li>
-            <li>PO may say: &ldquo;I like symmetry&rdquo;, &ldquo;Buildings need windows&rdquo;, &ldquo;Where are the paths?&rdquo;</li>
           </ul>
+        </div>
+        <div class="timer-widget" data-minutes="10">
+          <div class="timer-compact">10:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
         </div>
       </section>
 
-      <!-- Slide 28: Sprint Retrospective -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-gear"/></svg> Sprint Retrospective</h2>
         <div class="grid-3" style="margin-bottom: 20px;">
-          <div class="card">
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
             <h3>What went well?</h3>
           </div>
-          <div class="card--accent">
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
             <h3>What could improve?</h3>
           </div>
-          <div class="card--primary">
-            <h3>What will we change next Sprint?</h3>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3>What will we change?</h3>
           </div>
         </div>
         <p style="text-align: center; font-weight: 600;">Select 1&ndash;3 actionable improvements for the next Sprint.</p>
+        <div class="timer-widget" data-minutes="5">
+          <div class="timer-compact">5:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
       </section>
 
-      <!-- Slide 29: Lego Debrief -->
+      <!-- ======== SPRINT 2 ======== -->
       <section>
-        <h2>Lego Debrief</h2>
-        <div class="card">
-          <h3>After All 3 Sprints</h3>
+        <h2 style="font-size: 2.5rem;"><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> Sprint 2</h2>
+        <p style="text-align: center; font-size: 1.2rem; font-weight: 600; color: var(--color-text-muted);">Apply what you learned. Ask better questions.</p>
+        <div class="card" style="max-width: 500px; margin: 20px auto; border-left: 5px solid var(--color-accent);">
+          <p style="font-weight: 700;">Plan &rarr; Build &rarr; Review &rarr; Retro</p>
+        </div>
+      </section>
+
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-flag"/></svg> Sprint Planning</h2>
+        <div class="exercise-card">
           <ul>
-            <li>What patterns emerged across the 3 sprints?</li>
-            <li>How did your team improve?</li>
-            <li>What surprised you?</li>
-            <li>How did it feel when the PO rejected work?</li>
-            <li>How does this connect to real work?</li>
-            <li>When did you start asking the Product Owner questions? Why not earlier?</li>
-            <li>Think about how your students feel during their first art critique. How is that similar to what you experienced today?</li>
+            <li>What feedback did the PO give you?</li>
+            <li>What will you do differently this Sprint?</li>
+            <li>Update your Sprint Backlog</li>
           </ul>
         </div>
+        <div class="timer-widget" data-minutes="3">
+          <div class="timer-compact">3:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 style="margin-bottom: 8px;">Build!</h2>
+        <div class="timer-widget" data-minutes="7">
+          <div class="timer-compact">7:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
+        <p style="text-align: center; font-size: 1.2rem; font-weight: 700; margin-top: 16px;">Hands off when time is up!</p>
+      </section>
+
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-comments"/></svg> Sprint Review</h2>
+        <div class="exercise-card">
+          <ul>
+            <li>Show the PO what you&rsquo;ve built</li>
+            <li>What improved since Sprint 1?</li>
+            <li>What still doesn&rsquo;t meet the PO&rsquo;s vision?</li>
+          </ul>
+        </div>
+        <div class="timer-widget" data-minutes="8">
+          <div class="timer-compact">8:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-gear"/></svg> Sprint Retrospective</h2>
+        <div class="grid-3" style="margin-bottom: 20px;">
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3>What went well?</h3>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3>What could improve?</h3>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3>What will we change?</h3>
+          </div>
+        </div>
+        <p style="text-align: center; font-weight: 600;">One sprint left &mdash; make it count!</p>
+        <div class="timer-widget" data-minutes="5">
+          <div class="timer-compact">5:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== SPRINT 3 ======== -->
+      <section>
+        <h2 style="font-size: 2.5rem;"><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> Sprint 3</h2>
+        <p style="text-align: center; font-size: 1.2rem; font-weight: 600; color: var(--color-text-muted);">Show what a team can do when it inspects and adapts.</p>
+        <div class="card" style="max-width: 500px; margin: 20px auto; border-left: 5px solid var(--color-primary);">
+          <p style="font-weight: 700;">Plan &rarr; Build &rarr; Review &rarr; Retro</p>
+        </div>
+      </section>
+
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-flag"/></svg> Sprint Planning</h2>
+        <div class="exercise-card">
+          <ul>
+            <li>Final sprint &mdash; what will make the campus complete?</li>
+            <li>What does the PO most want to see?</li>
+            <li>Update your Sprint Backlog</li>
+          </ul>
+        </div>
+        <div class="timer-widget" data-minutes="3">
+          <div class="timer-compact">3:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 style="margin-bottom: 8px;">Build!</h2>
+        <div class="timer-widget" data-minutes="7">
+          <div class="timer-compact">7:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
+        <p style="text-align: center; font-size: 1.2rem; font-weight: 700; margin-top: 16px;">Hands off when time is up!</p>
+      </section>
+
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-comments"/></svg> Sprint Review</h2>
+        <div class="exercise-card">
+          <ul>
+            <li>Final campus review</li>
+            <li>How does this compare to Sprint 1?</li>
+            <li>Celebrate what your team accomplished!</li>
+          </ul>
+        </div>
+        <div class="timer-widget" data-minutes="8">
+          <div class="timer-compact">8:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== DEBRIEF ======== -->
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-lightbulb"/></svg> Lego Debrief</h2>
+        <p style="text-align: center; font-size: 1.0rem; font-weight: 600; margin-bottom: 12px;">Grab sticky notes. We&rsquo;ll go in three rounds.</p>
+        <div class="grid-3">
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3><svg class="slide-icon"><use href="#icon-compass"/></svg> Observe</h3>
+            <p>Write one thing you <strong>noticed</strong> change from Sprint 1 to Sprint 3.</p>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3><svg class="slide-icon"><use href="#icon-lightbulb"/></svg> Learn</h3>
+            <p>Write the <strong>biggest lesson</strong> from the simulation.</p>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3><svg class="slide-icon"><use href="#icon-gear"/></svg> Connect</h3>
+            <p>Write one way this connects to <strong>your real work.</strong></p>
+          </div>
+        </div>
+        <p style="text-align: center; font-weight: 600; margin-top: 16px;">Post your notes on the wall. Then we&rsquo;ll discuss as a group.</p>
+        <div class="timer-widget" data-minutes="5">
+          <div class="timer-compact">5:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
         <aside class="notes">
-          FACILITATION TIP: Budget 15-20 minutes minimum for the debrief. Go around the room so everyone speaks at least once. Ask 'What did you OBSERVE?' before 'What did you LEARN?' Connect observations to real-world Scrum.
+          FACILITATION: Give 5 minutes for writing, then 15-20 for discussion. Go around the room — everyone shares at least one note. Ask "What did you OBSERVE?" before "What did you LEARN?"
+
+          Key questions to weave in during discussion:
+          - "When did you start asking the PO questions? Why not earlier?"
+          - "How did it feel when I rejected your work?"
+          - "Think about how your students feel during their first art critique. How is that similar?"
+          - "Did anyone feel like a Scrum Master was needed?"
+
+          The debrief is where 70% of the learning happens. Do not rush it.
         </aside>
       </section>
 
       <!-- Slide 30: Section Divider — Scrum Values -->
       <section class="section-divider">
         <h1>The Scrum Values</h1>
+        <aside class="notes">
+          - Transition from Lego debrief: "You just lived these values. Now let's name them."
+          - Connect each value back to what teams experienced during the simulation
+          - This section is about reflection, not lecture
+        </aside>
       </section>
 
       <!-- Slide 31: Five Scrum Values -->
@@ -1381,6 +1763,13 @@
           <p>Which Scrum value did you experience most during the Lego simulation? Write the value and a specific example on a sticky note.</p>
         </div>
         <p style="text-align: center; font-weight: 600; margin-top: 20px;">Share with the group.</p>
+        <div class="timer-widget" data-minutes="5">
+          <div class="timer-compact">5:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
       </section>
 
       <!-- Slide 33: Feedback Wall -->
@@ -1392,6 +1781,13 @@
           <p><strong>How does this connect to our work?</strong></p>
         </div>
         <p style="text-align: center; margin-top: 20px;">Write each answer on a separate sticky note. Post on the wall.</p>
+        <div class="timer-widget" data-minutes="5">
+          <div class="timer-compact">5:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
       </section>
 
       <!-- Slide 34: Day 1 Closing -->
@@ -1546,6 +1942,8 @@
       <!-- Slide 39: Section Divider — Planning with Scrum -->
       <section class="section-divider">
         <h1>Planning with Scrum</h1>
+        <p style="font-size: 1.3rem; font-style: italic; color: var(--color-text-muted); margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">&ldquo;Plans are worthless, but planning is everything.&rdquo;</p>
+        <p style="font-size: 1.0rem; color: var(--color-text-muted); margin-top: 8px;">&mdash; Dwight D. Eisenhower</p>
       </section>
 
       <!-- Slide 40: Estimation -->
@@ -1722,6 +2120,36 @@
         <p style="text-align: center; font-size: 1.0rem; color: var(--color-text-muted); margin-top: 16px;">Quick retro &mdash; 5 minutes. Then Sprint 2!</p>
       </section>
 
+      <!-- Slide 51b: Sprint 2 -->
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> Sprint 2</h2>
+        <div class="card" style="margin-bottom: 16px; border-left: 5px solid var(--color-primary);">
+          <p style="font-size: 1.15rem; font-weight: 600;">Incorporate your retro feedback. Refine and improve.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3><svg class="slide-icon"><use href="#icon-list-check"/></svg> Sprint Planning</h3>
+            <p>What will you improve? What feedback will you incorporate? (5 min)</p>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3><svg class="slide-icon"><use href="#icon-gear"/></svg> Create</h3>
+            <p>Polish and complete your presentation. (20 min)</p>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3><svg class="slide-icon"><use href="#icon-comments"/></svg> Sprint Review</h3>
+            <p>Present iteration to another team for feedback. (10 min)</p>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3><svg class="slide-icon"><use href="#icon-gear"/></svg> Retro</h3>
+            <p>Final reflection before presenting. (5 min)</p>
+          </div>
+        </div>
+        <p style="text-align: center; font-weight: 600; margin-top: 12px;">Remember your Definition of Done!</p>
+        <aside class="notes">
+          This is the second iteration of the Presentation Sprint. Teams should be noticeably better at planning and incorporating feedback. Draw the parallel to the Lego sprints: "Notice how you're doing the same thing you did with Lego — inspecting and adapting."
+        </aside>
+      </section>
+
       <!-- Slide 52: Final Presentations -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-trophy"/></svg> Final Presentations</h2>
@@ -1869,6 +2297,69 @@
     }
     document.querySelectorAll('.timer-widget').forEach(el => new SlideTimer(el));
 
+    /* ---- Drag & Drop Exercise ---- */
+    (function() {
+      let dragged = null;
+      document.querySelectorAll('.drag-card').forEach(card => {
+        card.addEventListener('dragstart', e => {
+          dragged = card;
+          card.classList.add('dragging');
+          e.dataTransfer.effectAllowed = 'move';
+        });
+        card.addEventListener('dragend', () => {
+          if (dragged) dragged.classList.remove('dragging');
+          dragged = null;
+          document.querySelectorAll('.drop-zone').forEach(z => z.classList.remove('drag-over'));
+        });
+      });
+      document.querySelectorAll('.drop-zone').forEach(zone => {
+        zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
+        zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+        zone.addEventListener('drop', e => {
+          e.preventDefault();
+          zone.classList.remove('drag-over');
+          if (dragged) {
+            zone.appendChild(dragged);
+            dragged.classList.remove('dragging', 'correct', 'incorrect');
+            dragged = null;
+          }
+        });
+      });
+      const src = document.getElementById('drag-source');
+      if (src) {
+        src.addEventListener('dragover', e => e.preventDefault());
+        src.addEventListener('drop', e => {
+          e.preventDefault();
+          if (dragged) {
+            src.appendChild(dragged);
+            dragged.classList.remove('dragging', 'correct', 'incorrect');
+            dragged = null;
+          }
+        });
+      }
+      const checkBtn = document.getElementById('drag-check-btn');
+      if (checkBtn) {
+        checkBtn.addEventListener('click', () => {
+          document.querySelectorAll('.drop-zone').forEach(zone => {
+            const role = zone.dataset.role;
+            zone.querySelectorAll('.drag-card').forEach(card => {
+              card.classList.remove('correct', 'incorrect');
+              card.classList.add(card.dataset.answer === role ? 'correct' : 'incorrect');
+            });
+          });
+        });
+      }
+      const resetBtn = document.getElementById('drag-reset-btn');
+      if (resetBtn && src) {
+        resetBtn.addEventListener('click', () => {
+          document.querySelectorAll('.drag-card').forEach(card => {
+            card.classList.remove('correct', 'incorrect');
+            src.appendChild(card);
+          });
+        });
+      }
+    })();
+
     /* ---- Click-to-Navigate Slide Number ---- */
     Reveal.on('ready', () => {
       const slideNumberEl = document.querySelector('.reveal .slide-number');
@@ -1887,8 +2378,9 @@
         input.value = current;
         Object.assign(input.style, {
           position: 'fixed',
-          bottom: '12px',
-          right: '60px',
+          bottom: '32px',
+          left: '50%',
+          transform: 'translateX(-50%)',
           width: '80px',
           padding: '6px 10px',
           fontSize: '16px',
