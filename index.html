@@ -32,7 +32,7 @@
 
   body {
     font-family: var(--font-body);
-    background: var(--color-surface);
+    background: var(--color-bg);
     color: var(--color-text);
     line-height: 1.6;
     min-height: 100vh;
@@ -151,18 +151,81 @@
   }
 
   /* ── FOOTER ── */
-  .footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 0.76rem;
-    color: var(--color-text-muted);
-    border-top: 1px solid #e0e0e0;
+  .site-footer {
+    margin-top: 48px;
+    border-top: 4px solid var(--color-border);
+    background: #ffffff;
+    position: relative;
   }
 
-  .footer a {
-    color: var(--color-primary);
+  .site-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-image:
+      linear-gradient(var(--color-border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .footer-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 28px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .f-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     text-decoration: none;
-    font-weight: 600;
+    color: inherit;
+  }
+
+  .f-brand:hover .f-brand-name { text-decoration: underline; }
+
+  .f-brand-logo {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-accent);
+    border: var(--border-thick);
+    font-family: var(--font-display);
+    font-weight: 900;
+    box-shadow: var(--shadow-base);
+    transition: transform 0.15s ease;
+  }
+
+  .f-brand:hover .f-brand-logo { transform: translate(-2px, -2px); }
+
+  .f-brand-logo .logo-main { font-size: 11px; line-height: 1; letter-spacing: -0.02em; }
+  .f-brand-logo .logo-sub { font-size: 5.5px; line-height: 1; letter-spacing: 0.05em; font-weight: 700; margin-top: 1px; }
+
+  .f-brand-name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: var(--color-text);
+  }
+
+  .f-legal {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
   }
 
   /* ── RESPONSIVE ── */
@@ -170,6 +233,11 @@
     .header { padding: 24px 16px 22px; }
     .logo svg { height: 72px; width: 72px; }
     .link-card { padding: 18px 16px; }
+    .footer-inner {
+      flex-direction: column;
+      text-align: center;
+      padding: 24px 16px;
+    }
   }
 </style>
 </head>
@@ -218,11 +286,21 @@
     </div>
   </a>
 
-  <div class="footer">
-    <a href="https://jasonholtdigital.com" target="_blank" rel="noopener">jasonholtdigital.com</a>
-  </div>
 
 </div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="https://jasonholtdigital.com" target="_blank" rel="noopener" class="f-brand">
+      <div class="f-brand-logo">
+        <span class="logo-main">JH</span>
+        <span class="logo-sub">DIGITAL</span>
+      </div>
+      <span class="f-brand-name">Jason Holt Digital</span>
+    </a>
+    <small class="f-legal">&copy; 2026 Jason Holt Digital</small>
+  </div>
+</footer>
 
 </body>
 </html>
