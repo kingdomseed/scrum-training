@@ -123,6 +123,26 @@
     outline-offset: 2px;
   }
 
+  /* ── DISABLED CARDS ── */
+  .card-disabled .link-card {
+    opacity: 0.45;
+    cursor: default;
+  }
+
+  .card-disabled .link-card:hover {
+    box-shadow: var(--shadow-base);
+    transform: none;
+  }
+
+  .card-disabled .card-title::after {
+    content: " — Coming soon";
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0;
+  }
+
   /* ── CARD ICONS ── */
   .card-icon {
     display: inline-block;
@@ -224,13 +244,13 @@
 
 <div class="container">
 
-  <a href="slides.html" class="card-link">
+  <div class="card-link card-disabled">
     <div class="link-card">
       <svg class="card-icon"><use href="#icon-desktop"/></svg>
       <div class="card-title">View Slides</div>
       <div class="card-desc">Follow along or revisit the workshop deck.</div>
     </div>
-  </a>
+  </div>
 
   <a href="intake.html" class="card-link">
     <div class="link-card">
@@ -240,13 +260,13 @@
     </div>
   </a>
 
-  <a href="handouts.html" class="card-link">
+  <div class="card-link card-disabled">
     <div class="link-card">
       <svg class="card-icon"><use href="#icon-book-open"/></svg>
       <div class="card-title">Resources</div>
       <div class="card-desc">Notes, handouts, and reference material.</div>
     </div>
-  </a>
+  </div>
 
 
 </div>
