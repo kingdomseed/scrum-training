@@ -1,10 +1,12 @@
 # Scrum Training Slide Deck — Implementation Plan
 
+> **Note:** This is a historical planning document. The final implementation diverged in several areas — see inline annotations marked [IMPLEMENTED DIFFERENTLY].
+
 > **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
 **Goal:** Build a self-contained HTML slide deck and printable materials for a 2-day in-person Scrum workshop in JHD neobrutalist style.
 
-**Architecture:** Single-file Reveal.js slide deck (`index.html`) with inlined CSS theme. Separate `facilitator.html` and `handouts.html` for print materials. All diagrams as inline SVG. No build step, no dependencies beyond CDN fonts.
+**Architecture:** Single-file Reveal.js slide deck (`index.html`) with inlined CSS theme. [IMPLEMENTED DIFFERENTLY: Slide deck is slides.html; index.html is the landing page] Separate `facilitator.html` and `handouts.html` for print materials. All diagrams as inline SVG. No build step, no dependencies beyond CDN fonts.
 
 **Tech Stack:** Reveal.js 5.x (CDN), HTML/CSS/SVG, Google Fonts (Epilogue + Plus Jakarta Sans)
 
@@ -17,7 +19,7 @@
 ## Task 1: Scaffold — Reveal.js with Neobrutalist Theme
 
 **Files:**
-- Create: `index.html`
+- Create: `index.html` [IMPLEMENTED DIFFERENTLY: Slide deck is slides.html; index.html is the landing page]
 
 **Step 1: Create the HTML scaffold**
 
@@ -226,7 +228,7 @@ git add index.html && git commit -m "feat: add Scrum Values and Day 1 closing sl
 39. **Collaboration & Cross-functionality** — T-shaped people concept. Why cross-functionality matters. Brief discussion prompt.
 40. **Section divider** — "Planning with Scrum"
 41. **Estimation** — "Estimation is a team activity, not a management tool." Relative sizing (T-shirt sizes: XS, S, M, L, XL). Interactive exercise: estimate real items from their domain.
-42. **Product Backlog Refinement** — Ongoing activity, not an event. Adding detail, estimates, order. Up to 10% of Sprint capacity.
+42. **Product Backlog Refinement** — Ongoing activity, not an event. Adding detail, estimates, order. Up to 10% of Sprint capacity. [IMPLEMENTED DIFFERENTLY: Slides say "The Scrum Team decides how and when refinement is done" — no percentage mentioned, per 2020 Scrum Guide]
 43. **Definition of "Ready"** — A PBI is "ready" when it can reasonably be completed within a Sprint. Attributes: clear, sized, testable.
 44. **Monitoring Sprint Progress** — Sprint Backlog makes progress visible. Burndown/burnup charts (simple SVG example). Who monitors? Developers. Where? Daily Scrum.
 
@@ -245,7 +247,7 @@ git add index.html && git commit -m "feat: add Day 2 deeper dive and planning sl
 
 **Step 1: Build presentation sprint and closing slides**
 
-45. **Section divider** — "Presentation Sprint: Sell Your Vision"
+45. **Section divider** — "Presentation Sprint: Sell Your Vision" [IMPLEMENTED DIFFERENTLY: Renamed to "Product Sprint" with open format — spec, pitch, prototype, or whatever serves the product]
 46. **The Challenge** — "Build a presentation that sells the vision of your product to stakeholders. You have 2 Sprints." / Teams create their own Product Backlog / A team member becomes Product Owner
 47. **What to Include** — Prompt card: Problem statement, Value proposition, Target audience, How it works, Call to action. "Use paper, markers, poster boards. Phones for reference. Be creative."
 48. **Presentation Sprint Planning** — Same structure as Lego but for creative work
@@ -257,7 +259,7 @@ git add index.html && git commit -m "feat: add Day 2 deeper dive and planning sl
 54. **"Should We Use Scrum?"** — Canvas exercise: What's not working now? What will happen if we don't change? What does the future look like? (Reference the original APS canvas from the Team Mural)
 55. **Identify Your Scrum Team** — Who is the Product Owner? Scrum Master? Developers? Discussion prompts for each role: "What skills and traits are you looking for?"
 56. **Appreciation Wall** — "Write a statement of appreciation about someone or about the workshop."
-57. **Suggested Reading** — 4-6 book/resource cards: The Scrum Guide, Scrum: A Pocket Guide (Verheyen), Agile Estimating and Planning (Cohn), scrumguides.org, lego4scrum.com
+57. **Suggested Reading** — 4-6 book/resource cards: The Scrum Guide, Scrum: A Pocket Guide (Verheyen), Agile Estimating and Planning (Cohn), scrumguides.org, lego4scrum.com [IMPLEMENTED DIFFERENTLY: Final reading list includes Scrum Guide, Pocket Guide (Verheyen), and Sutherland's book only]
 58. **Closing** — "Thank you" / Key takeaway / Attribution: "Based on the Scrum Guide (2020) by Ken Schwaber & Jeff Sutherland" / "Lego exercise inspired by Lego4Scrum by Alexey Krivitsky (CC BY 3.0)"
 
 **Step 2: Verify and commit**

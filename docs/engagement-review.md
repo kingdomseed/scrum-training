@@ -1,6 +1,8 @@
 # Slide Engagement Review — Consolidated Agent Findings
 ## For Art Education Audience | March 2026
 
+> **Note:** This is a historical review document from mid-development. Several issues identified here were subsequently resolved — see inline annotations marked [RESOLVED] and [IMPLEMENTED DIFFERENTLY].
+
 ---
 
 ## Highest-Impact Recommendations (Top 10)
@@ -162,7 +164,7 @@
 - Replace prescriptive list with 2-min pair brainstorm, then reveal as validation
 - Or add: "Think of this like an artist's statement paired with a portfolio"
 
-### Slide 48 (Presentation Sprint Planning)
+### Slide 48 (Presentation Sprint Planning) [IMPLEMENTED DIFFERENTLY: Renamed to "Product Sprint"]
 - Add step: "Agree on your Definition of Done" -- callbacks to Lego lesson
 - Add presenter note: "Remember Sprint 1 when you didn't have a DoD?"
 
@@ -196,6 +198,6 @@
 - Add: "Every great work of art is an iteration. Keep inspecting and adapting."
 
 ### Cross-Cutting (S46-58)
-- No presenter notes anywhere in slides 46-58 -- add to at least S46, S50, S52, S54, S55
+- No presenter notes anywhere in slides 46-58 -- add to at least S46, S50, S52, S54, S55 [RESOLVED: All slides now have speaker notes]
 - Sprint 2 cycle is invisible -- needs at minimum one transitional slide
 - No debrief after Presentation Sprint (Lego had one; this exercise deserves one too)

@@ -1,5 +1,7 @@
 # Design: Two-Day Scrum Training — Slide Deck & Materials
 
+> **Note:** This is a historical planning document. The final implementation diverged in several areas — see inline annotations marked [IMPLEMENTED DIFFERENTLY].
+
 **Author:** Jason Holt (Scrum Master)
 **Date:** 2026-03-06
 **Status:** Pending Approval
@@ -13,7 +15,7 @@
 A self-contained **HTML slide deck** and **printable facilitator materials** for a 2-day in-person Scrum workshop. The slides use Jason's JHD neobrutalist design system (Epilogue + Plus Jakarta Sans, #0066ff primary, #ffd700 accent, black borders, hard shadows, zero radius).
 
 ### Deliverables
-1. **HTML slide deck** — Single `index.html` file using Reveal.js. Arrow keys to navigate. Works offline in any browser. Projected in class.
+1. **HTML slide deck** — Single `index.html` file using Reveal.js. [IMPLEMENTED DIFFERENTLY: Slide deck is slides.html; index.html is the landing page] Arrow keys to navigate. Works offline in any browser. Projected in class.
 2. **Printable facilitator guide** — Separate HTML page with timing, talking points, and exercise instructions. Print to PDF.
 3. **Printable handouts** — Scrum board template, retrospective format cards, "Getting Started with Scrum" canvas, Lego backlog cards.
 4. **Print stylesheet** — The main deck has a `@media print` view for quick reference handouts.
@@ -81,7 +83,7 @@ A self-contained **HTML slide deck** and **printable facilitator materials** for
 - **Theme:** Custom neobrutalist theme matching JHD tokens
 - **Estimated slides:** ~60-80 total
 - **Navigation:** Arrow keys, spacebar. Slide counter visible.
-- **No speaker notes in the deck** — separate facilitator guide instead
+- **No speaker notes in the deck** — separate facilitator guide instead [IMPLEMENTED DIFFERENTLY: 79 speaker notes blocks were added using Reveal.js `<aside class="notes">`]
 
 ### Design Tokens (from JHD Astro project)
 ```css
@@ -176,3 +178,4 @@ scrum_training/
   handouts.html        # Printable exercise handouts
   docs/plans/          # Design & planning docs
 ```
+[IMPLEMENTED DIFFERENTLY: index.html is the landing page; slides.html is the slide deck. Additional deliverables were built: intake-form.html and multiple handout files.]

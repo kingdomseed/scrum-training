@@ -1,6 +1,8 @@
 # Scrum Training Deck — Review Report
 ## Compiled from Content, Pacing, and Lego4Scrum Research Reviews
 
+> **Note:** This is a historical review document from mid-development. Several issues identified here were subsequently resolved — see inline annotations marked [RESOLVED] and [IMPLEMENTED DIFFERENTLY].
+
 ---
 
 ## Priority 1: HIGH — Should Fix Before March 18
@@ -18,12 +20,12 @@
 
 **Recommendation:** Add a visible time indicator (e.g., a small clock icon or bold text) to each exercise slide showing the allocated duration.
 
-### 3. "10% of Sprint Capacity" for Refinement is Outdated
+### 3. "10% of Sprint Capacity" for Refinement is Outdated [RESOLVED: Slides correctly omit 10% reference]
 **Problem:** The 2020 Scrum Guide removed the specific "10% of Sprint capacity" guidance for Product Backlog Refinement. Our slide 42 may reference this.
 
 **Recommendation:** Check slide 42 and change any "10%" reference to something like "as needed" or "the Scrum Team decides how and when refinement is done."
 
-### 4. Schedule Discrepancy: 9-5 vs 9-3:30
+### 4. Schedule Discrepancy: 9-5 vs 9-3:30 [RESOLVED: Final schedule is 8:00 AM – 4:00 PM]
 **Problem:** The design doc says 9:00-5:00, but the facilitator guide says 9:00-3:30. These need to be consistent.
 
 **Recommendation:** Confirm with Jason which schedule is correct and align both documents.
@@ -113,7 +115,7 @@ The following topics from the original APS murals are absent. Not all need to be
 
 **Recommendation:** Add subtitle: "Accountabilities, Events, and Artifacts"
 
-### 16. Presentation Sprint 2 Not Explicit
+### 16. Presentation Sprint 2 Not Explicit [RESOLVED: Full Sprint 2 section implemented]
 **Problem:** Day 2 Presentation Sprint only shows one cycle of Plan → Create → Review → Retro (S48-S51), then jumps to Final Presentations (S52). If there are meant to be 2 sprints, the second cycle should be explicit.
 
 **Recommendation:** Either add slides for Sprint 2 cycle, or add a note on S51 that says "Repeat for Sprint 2" with timing.

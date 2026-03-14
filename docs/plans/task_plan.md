@@ -1,5 +1,7 @@
 # Task Plan — Scrum Training Slide Deck
 
+> **Note:** This tracking document is from the initial planning phase (March 6, 2026). The project is now complete — all deliverables (slides, facilitator guide, handouts, intake form, landing page) have been built and deployed.
+
 ## Goal
 Create a 2-day in-person Scrum training experience for 6-8 people at an art education company ("Duolingo of art"). Deliverable is an HTML slide deck in JHD neobrutalist style with printable facilitator notes and exercise handouts.
 

@@ -1,5 +1,7 @@
 # Findings — Scrum Training Project
 
+> **Note:** This is a historical planning document from the research phase. The final implementation diverged in several areas — see inline annotations marked [IMPLEMENTED DIFFERENTLY].
+
 ## Source Material Analysis
 
 ### Three Mural PDFs (APS December 2022)
@@ -52,7 +54,7 @@ Located: `/Users/jholt/Library/CloudStorage/Dropbox/business/professional-docume
    - **Getting Started**: "Should we use Scrum?" canvas, organizational transformation exercise
 
 ### Original Class Context
-- **Format**: 2-day (9:00-5:00 ET), online via Mural
+- **Format**: 2-day (9:00-5:00 ET), online via Mural [IMPLEMENTED DIFFERENTLY: Final schedule is 8:00 AM – 4:00 PM, in-person delivery]
 - **Audience**: Educators (Columbus City Schools), mixed technical backgrounds
 - **Participants**: ~4-6 people (Kristina, Priscilla, Bill, Jason)
 - **In-class product**: Teams built a "presentation about Scrum" for 7th/8th graders

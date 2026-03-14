@@ -1,11 +1,13 @@
 # Scrum Training Timeline Research Findings
 
+> **Note:** This is a historical planning document from the early research phase. The final implementation diverged in several areas — see inline annotations marked [IMPLEMENTED DIFFERENTLY].
+
 ## 1. Typical APS (Applying Professional Scrum) 2-Day Class Schedule
 
 **Format:** 2 days, ~8 hours instruction per day (16 hours total). Scrum.org requires minimum 14 hours of instruction time.
 
 **Typical structure (from multiple providers):**
-- 9:00 AM - 5:00 PM each day
+- 9:00 AM - 5:00 PM each day [IMPLEMENTED DIFFERENTLY: Final schedule is 8:00 AM – 4:00 PM]
 - 1 hour lunch, two 15-min breaks per day
 - Net instruction: ~6.5 hours/day = ~13 hours total
 - Ratio: roughly 30% lecture/slides, 70% exercises and discussion
@@ -60,7 +62,7 @@
 - Extend Sprint Review to 7-8 minutes (allow more discussion)
 - Keep Retrospective at 5 minutes
 - Add 5-minute facilitation/teaching pauses between sprints
-- **Adjusted total per sprint: ~27-30 minutes**
+- **Adjusted total per sprint: ~27-30 minutes** [IMPLEMENTED DIFFERENTLY: Sprints are ~20-30 min with 3-5 min Planning, 7 min Build, 5-10 min Review, 5-8 min Retro]
 - **3 sprints adjusted: ~90 minutes + pre-game (75 min) + debrief (15 min) = ~3 hours**
 
 ---
@@ -132,7 +134,7 @@ See schedule below.
 
 # RECOMMENDED DETAILED SCHEDULE
 
-## Day 1 -- "Learn by Building" (Lego4Scrum)
+## Day 1 -- "Learn by Building" (Lego4Scrum) [IMPLEMENTED DIFFERENTLY: Final schedule starts at 8:00 AM, not 9:00 AM — see slides.html and facilitator.html for actual timings]
 
 ### Morning Block (9:00 - 12:30)
 
@@ -226,7 +228,7 @@ See schedule below.
 
 ## Key Design Decisions & Rationale
 
-### Why 2 Presentation Sprints (not 3)
+### Why 2 Presentation Sprints (not 3) [IMPLEMENTED DIFFERENTLY: Renamed to "Product Sprint" with open format — spec, pitch, prototype, or whatever serves the product]
 - Presentation sprints need longer work periods (20-25 min vs 7 min for Lego) because real creative work cannot be meaningfully compressed to 7 minutes
 - 2 sprints give enough iteration to demonstrate improvement without feeling rushed
 - The final presentations serve as a de facto 3rd "Review"

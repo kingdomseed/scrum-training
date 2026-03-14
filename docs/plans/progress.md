@@ -1,5 +1,7 @@
 # Progress — Scrum Training Project
 
+> **Note:** This tracking document is from the initial planning phase (March 6, 2026). The project is now complete — all deliverables (slides, facilitator guide, handouts, intake form, landing page) have been built and deployed.
+
 ## Current Status: Phase 1 — Design (In Progress)
 
 ### Completed
