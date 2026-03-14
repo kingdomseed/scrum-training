@@ -600,9 +600,22 @@
       if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
+    // Get Turnstile token via API (per Formspark docs)
+    const turnstileToken = typeof turnstile !== 'undefined' ? turnstile.getResponse() : null;
+    if (!turnstileToken) {
+      errorBanner.textContent = 'Please complete the security check before submitting.';
+      errorBanner.style.display = 'block';
+      errorBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
     const formData = new FormData(form);
     const data = {};
-    for (const [key, value] of formData.entries()) data[key] = value;
+    for (const [key, value] of formData.entries()) {
+      if (key === 'cf-turnstile-response') continue; // handled via API
+      data[key] = value;
+    }
+    data['cf-turnstile-response'] = turnstileToken;
 
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting\u2026';
@@ -625,9 +638,11 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (err) {
       console.error('Submission error:', err);
+      errorBanner.textContent = 'Something went wrong submitting the form. Please try again \u2014 if it persists, reach out to Jason directly.';
       errorBanner.style.display = 'block';
       submitBtn.disabled = false;
       submitBtn.textContent = 'Submit Responses';
+      if (typeof turnstile !== 'undefined') turnstile.reset();
       errorBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   });
