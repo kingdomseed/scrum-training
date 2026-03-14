@@ -442,7 +442,8 @@
     Something went wrong submitting the form. Please try again — if it persists, reach out to Jason directly.
   </div>
 
-  <form id="intakeForm" novalidate>
+  <form id="intakeForm" action="https://submit-form.com/BYkYiuKaL" method="POST" novalidate>
+    <input type="hidden" name="_redirect" value="https://scrum.jasonholtdigital.com/intake?success=true">
 
     <div class="form-card" data-required>
       <div class="q-num">1</div>
@@ -544,11 +545,7 @@
 </div>
 
 <script>
-  const FORMSPARK_FORM_ID = 'BYkYiuKaL';
-  const FORMSPARK_URL = `https://submit-form.com/${FORMSPARK_FORM_ID}`;
-
   const form = document.getElementById('intakeForm');
-  const submitBtn = document.getElementById('submitBtn');
   const errorBanner = document.getElementById('errorBanner');
   const successView = document.getElementById('successView');
   const introNote = document.getElementById('introNote');
@@ -578,45 +575,22 @@
     if (card) card.classList.remove('has-error');
   });
 
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    errorBanner.style.display = 'none';
+  // Only prevent submit when validation fails; otherwise let the form POST naturally
+  form.addEventListener('submit', e => {
     if (!validateForm()) {
+      e.preventDefault();
       const first = form.querySelector('.form-card.has-error');
       if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return;
-    }
-    const formData = new FormData(form);
-    const data = {};
-    for (const [key, value] of formData.entries()) data[key] = value;
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting\u2026';
-
-    try {
-      const res = await fetch(FORMSPARK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(data),
-      });
-      if (!res.ok) {
-        const body = await res.text().catch(() => '');
-        console.error('Formspark error:', res.status, body);
-        throw new Error(`HTTP ${res.status}`);
-      }
-      form.style.display = 'none';
-      introNote.style.display = 'none';
-      errorBanner.style.display = 'none';
-      successView.style.display = 'block';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } catch (err) {
-      console.error('Submission error:', err);
-      errorBanner.style.display = 'block';
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Submit Responses';
-      errorBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   });
+
+  // Show success view when redirected back after submission
+  if (new URLSearchParams(window.location.search).has('success')) {
+    form.style.display = 'none';
+    introNote.style.display = 'none';
+    errorBanner.style.display = 'none';
+    successView.style.display = 'block';
+  }
 </script>
 
 </body>
