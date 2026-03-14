@@ -603,11 +603,6 @@
     const formData = new FormData(form);
     const data = {};
     for (const [key, value] of formData.entries()) data[key] = value;
-    data['_submitted_at'] = new Date().toISOString();
-
-    // Include Turnstile token for bot protection
-    const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]');
-    if (turnstileResponse) data['cf-turnstile-response'] = turnstileResponse.value;
 
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting\u2026';
@@ -618,7 +613,11 @@
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      if (!res.ok) {
+        const body = await res.text().catch(() => '');
+        console.error('Formspark error:', res.status, body);
+        throw new Error(`HTTP ${res.status}`);
+      }
       form.style.display = 'none';
       introNote.style.display = 'none';
       errorBanner.style.display = 'none';
