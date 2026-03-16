@@ -1508,12 +1508,9 @@
       <!-- ======== SPRINT 1 ======== -->
       <section>
         <h2 style="font-size: 2.5rem;"><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> Sprint 1</h2>
-        <p style="text-align: center; font-size: 1.2rem; font-weight: 600; color: var(--color-text-muted);">Your first attempt. Expect chaos.</p>
-        <div class="card" style="max-width: 500px; margin: 20px auto; border-left: 5px solid var(--color-primary);">
-          <p style="font-weight: 700;">Plan &rarr; Build &rarr; Review &rarr; Retro</p>
-        </div>
+        <p style="text-align: center; font-size: 1.2rem; font-weight: 600; color: var(--color-text-muted);">Plan &rarr; Build &rarr; Review &rarr; Retro</p>
         <aside class="notes">
-          SPRINT 1 = THE HARSH PO. Commit now: reject 60-80% in Review. Do NOT soften. The contrast between Sprint 1 and Sprint 3 IS the learning.
+          SPRINT 1 = LET THEM FAIL. Per book: leave room during build ('business trip'). Let teams overcommit, skip PO questions, build individually. The learning is in the contrast between Sprint 1 and Sprint 3.
         </aside>
       </section>
 
@@ -1521,9 +1518,9 @@
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-flag"/></svg> Sprint Planning</h2>
         <div class="exercise-card">
           <ul>
-            <li>Select items from the Product Backlog</li>
-            <li>How many can your team commit to this Sprint?</li>
-            <li>Move selected items to your Sprint Backlog on the wall</li>
+            <li>Everyone to the board &mdash; pull items from the Product Backlog into your team&rsquo;s Sprint Backlog</li>
+            <li>Coordinate with the other team &mdash; you&rsquo;re building <strong>one city</strong></li>
+            <li>When done: confidence vote (fist of five) &mdash; how confident is your team in this plan?</li>
           </ul>
         </div>
         <div class="timer-widget" data-minutes="5">
@@ -1534,14 +1531,14 @@
           </div>
         </div>
         <aside class="notes">
-          Teams will overcommit and skip PO questions. Let it happen. Stay vague: "Impress me." Timebox strictly -- stop at 5 min even if confused.
+          Joint planning at the board. Teams pull, don't get assigned. Watch for: teams not coordinating, SMs planning instead of developers, no one asking PO questions. Confidence vote: fist = 0, 5 fingers = fully confident. If 2s and 3s: "What needs to change?"
         </aside>
       </section>
 
       <section>
         <h2 style="margin-bottom: 8px;">Build!</h2>
-        <div class="timer-widget" data-minutes="7">
-          <div class="timer-compact">7:00</div>
+        <div class="timer-widget" data-minutes="8">
+          <div class="timer-compact">8:00</div>
           <div class="timer-controls">
             <button class="timer-btn timer-btn--start">Start</button>
             <button class="timer-btn timer-btn--reset">Reset</button>
@@ -1549,20 +1546,53 @@
         </div>
         <p style="text-align: center; font-size: 1.2rem; font-weight: 700; margin-top: 16px;">Hands off when time is up!</p>
         <aside class="notes">
-          Observe, do NOT intervene or volunteer info. Note who builds alone vs. coordinates, and whether anyone asks PO questions (probably not). Use observations in debrief.
+          Observe, do NOT intervene. Leave room for 2-3 min ('business trip'). Note who builds alone vs. coordinates.
         </aside>
       </section>
 
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-comments"/></svg> Sprint Review</h2>
         <div class="card--primary" style="margin-bottom: 20px;">
-          <p style="font-size: 1.2rem; font-weight: 700; text-align: center;">&ldquo;Show me my campus!&rdquo;</p>
+          <p style="font-size: 1.2rem; font-weight: 700; text-align: center;">&ldquo;Where is my city?!&rdquo;</p>
         </div>
         <div class="exercise-card">
           <ul>
-            <li>What is Done according to your Definition of Done?</li>
-            <li>Does it meet the PO&rsquo;s expectations?</li>
+            <li>Assemble your work into <strong>one integrated city</strong></li>
+            <li>PO and all teams inspect together</li>
+            <li>What&rsquo;s done? What&rsquo;s missing? What needs to change?</li>
           </ul>
+        </div>
+        <div class="timer-widget" data-minutes="7">
+          <div class="timer-compact">7:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
+        <aside class="notes">
+          "Where is my city?!" — demand integration. 95% of teams haven't integrated. "Inspect and Adapt, not Inspect and Accept." Everyone inspects, not just PO. Ask: "What do you see here?" "What is missing?" Sprint 1: be disappointed, not mean. "Did you ask me what I wanted?" Hidden criteria: symmetry, windows/doors, color consistency, scale, connected pathways.
+        </aside>
+      </section>
+
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-gear"/></svg> Sprint Retrospective</h2>
+        <div class="grid-2" style="margin-bottom: 16px;">
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3>Team Retro (5 min)</h3>
+            <ul style="font-size: 0.9rem;">
+              <li>What worked well?</li>
+              <li>What needs to change so more items get to &ldquo;done&rdquo;?</li>
+              <li>What will we do differently?</li>
+            </ul>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3>Overall Retro (5 min)</h3>
+            <ul style="font-size: 0.9rem;">
+              <li>Each team: share one key learning</li>
+              <li>How can we improve coordination?</li>
+              <li>What do you want the PO to start, stop, or keep doing?</li>
+            </ul>
+          </div>
         </div>
         <div class="timer-widget" data-minutes="10">
           <div class="timer-compact">10:00</div>
@@ -1572,45 +1602,16 @@
           </div>
         </div>
         <aside class="notes">
-          THE HARSH PO. Reject 60-80%. Key phrases: "Did you ask me what I wanted?" / "Where are the windows?" / "This is not symmetrical." Frame as disappointment, not criticism. Reject high-effort work if it doesn't meet hidden criteria. Do not let them convince you.
-        </aside>
-      </section>
-
-      <section>
-        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-gear"/></svg> Sprint Retrospective</h2>
-        <div class="grid-3" style="margin-bottom: 20px;">
-          <div class="card" style="border-left: 5px solid var(--color-primary);">
-            <h3>What went well?</h3>
-          </div>
-          <div class="card" style="border-left: 5px solid var(--color-accent);">
-            <h3>What could improve?</h3>
-          </div>
-          <div class="card" style="border-left: 5px solid var(--color-primary);">
-            <h3>What will we change?</h3>
-          </div>
-        </div>
-        <p style="text-align: center; font-weight: 600;">Select 1&ndash;3 actionable improvements for the next Sprint.</p>
-        <div class="timer-widget" data-minutes="5">
-          <div class="timer-compact">5:00</div>
-          <div class="timer-controls">
-            <button class="timer-btn timer-btn--start">Start</button>
-            <button class="timer-btn timer-btn--reset">Reset</button>
-          </div>
-        </div>
-        <aside class="notes">
-          Most important retro. Ask: "How would you know if something is done BEFORE showing it to me?" Have teams create their own DoD on a sticky note. Push for actionable items: "Show PO work at 4-min mark" not "communicate more." Gotcha: if someone is upset, break character: "The frustration IS the lesson."
+          Team retros first (5 min), then overall (5 min). THIS is where Definition of Done should emerge. Ask: "How would you know if something is done BEFORE showing it to me?" Push for actionable items: "Show PO work at 4-min mark" not "communicate more."
         </aside>
       </section>
 
       <!-- ======== SPRINT 2 ======== -->
       <section>
         <h2 style="font-size: 2.5rem;"><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> Sprint 2</h2>
-        <p style="text-align: center; font-size: 1.2rem; font-weight: 600; color: var(--color-text-muted);">Apply what you learned. Ask better questions.</p>
-        <div class="card" style="max-width: 500px; margin: 20px auto; border-left: 5px solid var(--color-accent);">
-          <p style="font-weight: 700;">Plan &rarr; Build &rarr; Review &rarr; Retro</p>
-        </div>
+        <p style="text-align: center; font-size: 1.2rem; font-weight: 600; color: var(--color-text-muted);">Plan &rarr; Build &rarr; Review &rarr; Retro</p>
         <aside class="notes">
-          SPRINT 2 = THE COACHING PO. Accept work that meets criteria, acknowledge progress. Plan to leave the room for 2-3 min during build (PO unavailability lesson).
+          SPRINT 2 = THE COACHING PO. Accept work that meets criteria, acknowledge progress. Be available but don't volunteer criteria.
         </aside>
       </section>
 
@@ -1620,71 +1621,10 @@
           <ul>
             <li>What feedback did the PO give you?</li>
             <li>What will you do differently this Sprint?</li>
-            <li>Update your Sprint Backlog</li>
+            <li>Coordinate with the other team</li>
+            <li>Confidence vote</li>
           </ul>
         </div>
-        <div class="timer-widget" data-minutes="3">
-          <div class="timer-compact">3:00</div>
-          <div class="timer-controls">
-            <button class="timer-btn timer-btn--start">Start</button>
-            <button class="timer-btn timer-btn--reset">Reset</button>
-          </div>
-        </div>
-        <aside class="notes">
-          Watch for: teams referencing retro action items, using their Definition of Done, asking PO clarifying questions. Be available but don't volunteer criteria.
-        </aside>
-      </section>
-
-      <section>
-        <h2 style="margin-bottom: 8px;">Build!</h2>
-        <div class="timer-widget" data-minutes="7">
-          <div class="timer-compact">7:00</div>
-          <div class="timer-controls">
-            <button class="timer-btn timer-btn--start">Start</button>
-            <button class="timer-btn timer-btn--reset">Reset</button>
-          </div>
-        </div>
-        <p style="text-align: center; font-size: 1.2rem; font-weight: 700; margin-top: 16px;">Hands off when time is up!</p>
-        <aside class="notes">
-          Leave the room for 2-3 min (PO unavailability). This teaches teams to front-load questions during Planning. Note improvements for debrief.
-        </aside>
-      </section>
-
-      <section>
-        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-comments"/></svg> Sprint Review</h2>
-        <div class="exercise-card">
-          <ul>
-            <li>Show the PO what you&rsquo;ve built</li>
-            <li>What improved since Sprint 1?</li>
-            <li>What still doesn&rsquo;t meet the PO&rsquo;s vision?</li>
-          </ul>
-        </div>
-        <div class="timer-widget" data-minutes="8">
-          <div class="timer-compact">8:00</div>
-          <div class="timer-controls">
-            <button class="timer-btn timer-btn--start">Start</button>
-            <button class="timer-btn timer-btn--reset">Reset</button>
-          </div>
-        </div>
-        <aside class="notes">
-          Accept improved work, maintain standards. Still reject items that miss criteria, but explain why. Update velocity on wall: Sprint 1 pts vs Sprint 2 pts.
-        </aside>
-      </section>
-
-      <section>
-        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-gear"/></svg> Sprint Retrospective</h2>
-        <div class="grid-3" style="margin-bottom: 20px;">
-          <div class="card" style="border-left: 5px solid var(--color-primary);">
-            <h3>What went well?</h3>
-          </div>
-          <div class="card" style="border-left: 5px solid var(--color-accent);">
-            <h3>What could improve?</h3>
-          </div>
-          <div class="card" style="border-left: 5px solid var(--color-primary);">
-            <h3>What will we change?</h3>
-          </div>
-        </div>
-        <p style="text-align: center; font-weight: 600;">One sprint left &mdash; make it count!</p>
         <div class="timer-widget" data-minutes="5">
           <div class="timer-compact">5:00</div>
           <div class="timer-controls">
@@ -1693,19 +1633,88 @@
           </div>
         </div>
         <aside class="notes">
-          Push for actionable items only. Reject vague ones: "communicate more" is not an action. Ask: "What specific thing will you do differently in the next 7 minutes?"
+          Watch for teams referencing retro actions, using their Definition of Done, asking PO clarifying questions.
+        </aside>
+      </section>
+
+      <section>
+        <h2 style="margin-bottom: 8px;">Build!</h2>
+        <div class="timer-widget" data-minutes="8">
+          <div class="timer-compact">8:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
+        <p style="text-align: center; font-size: 1.2rem; font-weight: 700; margin-top: 16px;">Hands off when time is up!</p>
+        <aside class="notes">
+          Note improvements from Sprint 1. Be available but don't volunteer criteria.
+        </aside>
+      </section>
+
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-comments"/></svg> Sprint Review</h2>
+        <div class="card--primary" style="margin-bottom: 20px;">
+          <p style="font-size: 1.2rem; font-weight: 700; text-align: center;">&ldquo;Where is my city?!&rdquo;</p>
+        </div>
+        <div class="exercise-card">
+          <ul>
+            <li>Show the PO what you&rsquo;ve built</li>
+            <li>What improved since Sprint 1?</li>
+            <li>What still doesn&rsquo;t meet the vision?</li>
+          </ul>
+        </div>
+        <div class="timer-widget" data-minutes="7">
+          <div class="timer-compact">7:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
+        <aside class="notes">
+          Accept improved work, maintain standards. Still reject items that miss criteria but explain why. Update velocity tally on wall.
+        </aside>
+      </section>
+
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-gear"/></svg> Sprint Retrospective</h2>
+        <div class="grid-2" style="margin-bottom: 16px;">
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3>Team Retro (5 min)</h3>
+            <ul style="font-size: 0.9rem;">
+              <li>What worked well?</li>
+              <li>What needs to change so more items get to &ldquo;done&rdquo;?</li>
+              <li>What will we do differently?</li>
+            </ul>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3>Overall Retro (5 min)</h3>
+            <ul style="font-size: 0.9rem;">
+              <li>Each team: share one key learning</li>
+              <li>How can we improve coordination?</li>
+              <li>What do you want the PO to start, stop, or keep doing?</li>
+            </ul>
+          </div>
+        </div>
+        <p style="text-align: center; font-weight: 600;">One sprint left &mdash; make it count!</p>
+        <div class="timer-widget" data-minutes="10">
+          <div class="timer-compact">10:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
+        <aside class="notes">
+          Push for actionable items only. Reject vague ones: "communicate more" is not an action.
         </aside>
       </section>
 
       <!-- ======== SPRINT 3 ======== -->
       <section>
         <h2 style="font-size: 2.5rem;"><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> Sprint 3</h2>
-        <p style="text-align: center; font-size: 1.2rem; font-weight: 600; color: var(--color-text-muted);">Show what a team can do when it inspects and adapts.</p>
-        <div class="card" style="max-width: 500px; margin: 20px auto; border-left: 5px solid var(--color-primary);">
-          <p style="font-weight: 700;">Plan &rarr; Build &rarr; Review &rarr; Retro</p>
-        </div>
+        <p style="text-align: center; font-size: 1.2rem; font-weight: 600; color: var(--color-text-muted);">Plan &rarr; Build &rarr; Review &rarr; Retro</p>
         <aside class="notes">
-          SPRINT 3 = THE CELEBRATING PO. Be fully available, accept most work, celebrate contrast with Sprint 1. Optional surprise if teams are coasting: "We need an outdoor sculpture installation -- top priority!"
+          SPRINT 3 = THE CELEBRATING PO. Be fully available, accept most work, celebrate contrast with Sprint 1.
         </aside>
       </section>
 
@@ -1713,73 +1722,11 @@
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-flag"/></svg> Sprint Planning</h2>
         <div class="exercise-card">
           <ul>
-            <li>Final sprint &mdash; what will make the campus complete?</li>
+            <li>Final sprint &mdash; what will make this city complete?</li>
             <li>What does the PO most want to see?</li>
-            <li>Update your Sprint Backlog</li>
+            <li>Coordinate and confidence vote</li>
           </ul>
         </div>
-        <div class="timer-widget" data-minutes="3">
-          <div class="timer-compact">3:00</div>
-          <div class="timer-controls">
-            <button class="timer-btn timer-btn--start">Start</button>
-            <button class="timer-btn timer-btn--reset">Reset</button>
-          </div>
-        </div>
-        <aside class="notes">
-          Answer questions openly. Watch for cross-team coordination and realistic forecasts. If injecting surprise, do it NOW: "We're hosting a visiting artist. Outdoor sculpture installation -- top priority!"
-        </aside>
-      </section>
-
-      <section>
-        <h2 style="margin-bottom: 8px;">Build!</h2>
-        <div class="timer-widget" data-minutes="7">
-          <div class="timer-compact">7:00</div>
-          <div class="timer-controls">
-            <button class="timer-btn timer-btn--start">Start</button>
-            <button class="timer-btn timer-btn--reset">Reset</button>
-          </div>
-        </div>
-        <p style="text-align: center; font-size: 1.2rem; font-weight: 700; margin-top: 16px;">Hands off when time is up!</p>
-        <aside class="notes">
-          Stay present. Note teamwork improvements from Sprint 1. If a team finishes early, they can pull more items from Product Backlog (teach pull-based flow).
-        </aside>
-      </section>
-
-      <section>
-        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-comments"/></svg> Sprint Review</h2>
-        <div class="exercise-card">
-          <ul>
-            <li>Final campus review</li>
-            <li>How does this compare to Sprint 1?</li>
-            <li>Celebrate what your team accomplished!</li>
-          </ul>
-        </div>
-        <div class="timer-widget" data-minutes="8">
-          <div class="timer-compact">8:00</div>
-          <div class="timer-controls">
-            <button class="timer-btn timer-btn--start">Start</button>
-            <button class="timer-btn timer-btn--reset">Reset</button>
-          </div>
-        </div>
-        <aside class="notes">
-          Accept most work. Have teams physically assemble pieces into one campus. Update velocity on wall: the improvement arc (e.g., 3 / 8 / 12 pts) tells the story.
-        </aside>
-      </section>
-
-      <section>
-        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> Sprint 3 &mdash; Retrospective</h2>
-        <div class="grid-3" style="margin-bottom: 20px;">
-          <div class="card" style="border-left: 5px solid var(--color-primary);">
-            <h3>What went well?</h3>
-          </div>
-          <div class="card" style="border-left: 5px solid var(--color-accent);">
-            <h3>What could improve?</h3>
-          </div>
-          <div class="card" style="border-left: 5px solid var(--color-primary);">
-            <h3>What will we change?</h3>
-          </div>
-        </div>
-        <p style="text-align: center; font-weight: 600;">Reflect on your full journey &mdash; Sprint 1 to Sprint 3.</p>
         <div class="timer-widget" data-minutes="5">
           <div class="timer-compact">5:00</div>
           <div class="timer-controls">
@@ -1788,7 +1735,79 @@
           </div>
         </div>
         <aside class="notes">
-          Focus on the improvement arc: "Compare Sprint 1 vs Sprint 3. What changed?" This retro feeds directly into the Lego Debrief.
+          Watch for cross-team coordination and realistic forecasts. If injecting surprise, do it NOW: "We're hosting a visiting artist. Outdoor sculpture — top priority!"
+        </aside>
+      </section>
+
+      <section>
+        <h2 style="margin-bottom: 8px;">Build!</h2>
+        <div class="timer-widget" data-minutes="8">
+          <div class="timer-compact">8:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
+        <p style="text-align: center; font-size: 1.2rem; font-weight: 700; margin-top: 16px;">Hands off when time is up!</p>
+        <aside class="notes">
+          Stay present. If team finishes early, they can pull more items from Product Backlog.
+        </aside>
+      </section>
+
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-comments"/></svg> Sprint Review</h2>
+        <div class="card--primary" style="margin-bottom: 20px;">
+          <p style="font-size: 1.2rem; font-weight: 700; text-align: center;">&ldquo;Where is my city?!&rdquo;</p>
+        </div>
+        <div class="exercise-card">
+          <ul>
+            <li>Final city review</li>
+            <li>How does this compare to Sprint 1?</li>
+            <li>Celebrate what your teams accomplished!</li>
+          </ul>
+        </div>
+        <div class="timer-widget" data-minutes="7">
+          <div class="timer-compact">7:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
+        <aside class="notes">
+          Accept most work. Have teams physically assemble pieces into one city. Update velocity on wall: the improvement arc tells the story.
+        </aside>
+      </section>
+
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-gear"/></svg> Sprint Retrospective</h2>
+        <div class="grid-2" style="margin-bottom: 16px;">
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3>Team Retro (5 min)</h3>
+            <ul style="font-size: 0.9rem;">
+              <li>What worked well?</li>
+              <li>What needs to change so more items get to &ldquo;done&rdquo;?</li>
+              <li>What will we do differently?</li>
+            </ul>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3>Overall Retro (5 min)</h3>
+            <ul style="font-size: 0.9rem;">
+              <li>Each team: share one key learning</li>
+              <li>How can we improve coordination?</li>
+              <li>What do you want the PO to start, stop, or keep doing?</li>
+            </ul>
+          </div>
+        </div>
+        <p style="text-align: center; font-weight: 600;">Reflect on your full journey &mdash; Sprint 1 to Sprint 3.</p>
+        <div class="timer-widget" data-minutes="10">
+          <div class="timer-compact">10:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--start">Start</button>
+            <button class="timer-btn timer-btn--reset">Reset</button>
+          </div>
+        </div>
+        <aside class="notes">
+          Focus on the improvement arc: "Compare Sprint 1 vs Sprint 3. What changed?" This retro feeds directly into the Debrief.
         </aside>
       </section>
 
@@ -1810,7 +1829,7 @@
             <p>Write one way this connects to <strong>your real work.</strong></p>
           </div>
         </div>
-        <p style="text-align: center; font-weight: 600; margin-top: 16px;">Post your notes on the wall. Then we&rsquo;ll discuss as a group.</p>
+        <p style="text-align: center; font-weight: 600; margin-top: 16px;">Post your notes together. Then we&rsquo;ll discuss as a group.</p>
         <div class="timer-widget" data-minutes="5">
           <div class="timer-compact">5:00</div>
           <div class="timer-controls">
