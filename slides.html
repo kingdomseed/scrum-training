@@ -325,7 +325,7 @@
     .slide-clock {
       position: fixed;
       top: 14px;
-      right: 20px;
+      right: 60px;
       z-index: 100;
       font-family: var(--font-display);
       font-weight: 800;
@@ -627,10 +627,7 @@
         <p style="font-size: 1.4rem; font-weight: 600;">Jason Holt &middot; Professional Scrum Master</p>
         <p class="badge">March 18&ndash;19, 2026</p>
         <aside class="notes">
-          - Welcome everyone as they settle in; set an informal, energetic tone
-          - "This is a participatory workshop, not a lecture — you'll be building things, not just listening"
-          - Frame the two days: hands-on, safe space to experiment, learn by doing
-          - Transition: move quickly to the agenda so people know what to expect
+          70% of workshop is hands-on. Frame the two days: Day 1 = learn by building (Lego), Day 2 = apply to your product. Transition quickly to agenda.
         </aside>
       </section>
 
@@ -647,7 +644,7 @@
           </thead>
           <tbody style="font-family: var(--font-body);">
             <tr><td style="padding: 5px 10px; border: var(--border-base); font-weight: 700;">8:00 &ndash; 8:55</td><td style="padding: 5px 10px; border: var(--border-base);">Kickoff</td><td style="padding: 5px 10px; border: var(--border-base);">Welcome, introductions, Working Agreements, &ldquo;Great Team&rdquo; exercise</td></tr>
-            <tr style="background: rgba(0,102,255,0.06);"><td style="padding: 5px 10px; border: var(--border-base); font-weight: 700;">8:55 &ndash; 9:45</td><td style="padding: 5px 10px; border: var(--border-base);">Fundamentals</td><td style="padding: 5px 10px; border: var(--border-base);">Scrum, Agile Manifesto, Cynefin, Empirical Process</td></tr>
+            <tr style="background: rgba(0,102,255,0.06);"><td style="padding: 5px 10px; border: var(--border-base); font-weight: 700;">8:55 &ndash; 9:45</td><td style="padding: 5px 10px; border: var(--border-base);">Fundamentals</td><td style="padding: 5px 10px; border: var(--border-base);">Scrum, Agile Manifesto, Complexity, Empiricism, What Is a Product?</td></tr>
             <tr style="background: var(--color-accent); font-weight: 700;"><td style="padding: 5px 10px; border: var(--border-base);">9:45 &ndash; 10:00</td><td style="padding: 5px 10px; border: var(--border-base);" colspan="2">Break</td></tr>
             <tr><td style="padding: 5px 10px; border: var(--border-base); font-weight: 700;">10:00 &ndash; 10:40</td><td style="padding: 5px 10px; border: var(--border-base);">Framework</td><td style="padding: 5px 10px; border: var(--border-base);">Accountabilities, Events, Artifacts, Definition of Done</td></tr>
             <tr style="background: rgba(0,102,255,0.06);"><td style="padding: 5px 10px; border: var(--border-base); font-weight: 700;">10:40 &ndash; 11:30</td><td style="padding: 5px 10px; border: var(--border-base);">Lego Setup</td><td style="padding: 5px 10px; border: var(--border-base);">Simulation intro, backlog, estimation, Sprint 1 Planning</td></tr>
@@ -658,58 +655,59 @@
           </tbody>
         </table>
         <aside class="notes">
-          - Timing: ~2 minutes — quick orientation, don't linger
-          - Walk through the day at a high level; point out the Lego simulation to build anticipation
-          - Emphasize: "Most of today is hands-on. You'll be building things, not just listening."
-          - Watch for: anxious faces at "Lego Sprints" — reassure them it's fun
-          - Transition: "Before we dive in, let's get to know each other"
+          ~2 min. Quick orientation only. Build anticipation for Lego simulation. Transition: "Before we dive in, let's get to know each other."
         </aside>
       </section>
 
-      <!-- Slide 3: Introductions -->
+      <!-- Slide 3: Workshop Outcomes -->
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-lightbulb"/></svg> Outcomes</h2>
+        <p style="text-align: center; font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">Big Idea: Put together the bare minimum to get started with Scrum.</p>
+        <p style="text-align: center; font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 20px;">This workshop is modeled on the <a href="https://www.scrum.org/courses/applying-professional-scrum" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Applying Professional Scrum</a> course from Scrum.org.</p>
+        <div class="grid-2">
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3>Day 1 &mdash; Learn by Building</h3>
+            <ol style="font-size: 0.95rem; padding-left: 20px;">
+              <li>Understand why Scrum works for complex problems</li>
+              <li>Know the framework: accountabilities, events, artifacts</li>
+              <li>Experience three full Sprints</li>
+              <li>Connect Scrum values to your experience</li>
+            </ol>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-accent);">
+            <h3>Day 2 &mdash; Apply to Your Product</h3>
+            <ol style="font-size: 0.95rem; padding-left: 20px;">
+              <li>Apply Scrum to your own product</li>
+              <li>Identify who fills each Scrum accountability</li>
+              <li>Leave with everything you need to start Sprint 1</li>
+            </ol>
+          </div>
+        </div>
+        <aside class="notes">
+          ~1 min. This is the contract. Point back to it at end of each day.
+        </aside>
+      </section>
+
+      <!-- Slide 4: Introductions -->
       <section>
         <h2>Let&rsquo;s Meet</h2>
         <div class="exercise-card">
           <p>Go around the room. Share: <strong>your name</strong>, <strong>your role</strong>, and <strong>one creative project you&rsquo;re proud of</strong> &mdash; from ArtWod or your own practice.</p>
         </div>
         <aside class="notes">
-          - Timing: ~15 minutes (depends on group size)
-          - Go first to model the format and set the tone — keep yours brief and genuine
-          - Each person: name, role, one creative project they're proud of
-          - Listen for: what people hope to get from the workshop — note these for Day 2 closing
-          - Tip: if the group is large (10+), keep to 60 seconds per person; gently redirect storytellers
-          - Transition: "Great — now let's agree on how we'll work together these two days"
+          ~10 min. Transition: "Let's agree on how we'll work together."
         </aside>
       </section>
 
       <!-- Slide 4: Working Agreements -->
       <section>
         <h2>How Do We Want to Work Together?</h2>
-        <div class="exercise-card" style="margin-bottom: 20px;">
-          <p>On sticky notes, write ground rules for how we&rsquo;ll work as a group these two days. <strong>One idea per note.</strong></p>
-        </div>
-        <div style="text-align: center;">
-          <div class="sticky-note fragment">Phones on silent</div>
-          <div class="sticky-note fragment">Be present</div>
-          <div class="sticky-note fragment">No bad ideas</div>
-          <div class="sticky-note fragment">Have fun</div>
-        </div>
-        <div class="timer-widget" data-minutes="5">
-          <div class="timer-compact">5:00</div>
-          <div class="timer-controls">
-            <button class="timer-btn timer-btn--start">Start</button>
-            <button class="timer-btn timer-btn--reset">Reset</button>
-          </div>
+        <div class="exercise-card">
+          <p>What ground rules do we want for these two days?</p>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-top: 8px;">Call them out &mdash; I&rsquo;ll write them on the whiteboard.</p>
         </div>
         <aside class="notes">
-          - Timing: ~10 minutes (5 min writing + 5 min clustering and agreement)
-          - Materials: sticky notes, markers, wall space
-          - Each person writes 1-2 ground rules on sticky notes (one idea per note)
-          - Post on wall, cluster similar ones together, read them aloud
-          - Group agrees to honor them for both days — this is a social contract
-          - Examples on slide are prompts, not prescriptions — let the group own it
-          - Tip: if group is quiet, seed with "phones on silent" and "be present" then step back
-          - Transition: "Now that we know HOW we'll work, let's talk about what makes a great team"
+          ~5 min. Transition: "Now let's talk about what makes a great team."
         </aside>
       </section>
 
@@ -720,17 +718,10 @@
           <p>Think of an <strong>AMAZING team</strong> you were on &mdash; a collaborative art project, a product team, a band, a theater production &mdash; any group.</p>
           <p>What made it great? Write <strong>one characteristic per sticky note.</strong></p>
           <p style="font-weight: 700; color: var(--color-text-muted); margin-top: 12px;">Time: 5 minutes</p>
-          <p>Then we&rsquo;ll cluster themes on the wall.</p>
+          <p>Then we&rsquo;ll cluster themes together.</p>
         </div>
         <aside class="notes">
-          - Timing: ~15 minutes (5 min writing + 10 min clustering and debrief)
-          - Materials: sticky notes, markers, wall space
-          - Prompt: "Think of an AMAZING team — any group. What made it great?"
-          - One characteristic per sticky note; post and cluster into themes on the wall
-          - Debrief: "Notice how many of these are about people and interactions, not processes"
-          - This foreshadows the Agile Manifesto values — don't reveal this yet, just plant the seed
-          - Watch for: trust, communication, shared purpose, fun — call these out during clustering
-          - Transition: "Now that we know what makes great teams, let's look at a framework designed to help teams be great"
+          ~15 min (5 write + 10 cluster/debrief). Common themes: Trust, Communication/Openness, Shared Purpose, Fun/Enjoyment, Commitment, Diverse Skills. Debrief: "Notice how almost everything is about people and interactions, not processes or tools." Foreshadows the Agile Manifesto — plant the seed, don't reveal it yet. Transition: "Let's look at a framework designed to help teams be great."
         </aside>
       </section>
 
@@ -742,11 +733,7 @@
           <p class="attribution">&mdash; Jeff Sutherland</p>
         </div>
         <aside class="notes">
-          - Timing: brief pause — ~30 seconds
-          - Section shift: moving from "who we are" to "what Scrum is"
-          - Let this slide breathe — it signals a transition from interactive kickoff to content
-          - Tip: "We just identified what makes great teams. Now let's look at a framework built on those same ideas."
-          - This section covers: origins of Scrum, the Agile Manifesto, complexity, and empiricism (~40 min total)
+          ~30 sec pause. Connect: "We just identified what makes great teams. Now let's look at a framework built on those same ideas." This section covers origins, Manifesto, complexity, empiricism (~40 min total).
         </aside>
       </section>
 
@@ -758,7 +745,7 @@
         </div>
         <p style="text-align: center; color: var(--color-text-muted); margin-top: 12px;">In rugby, a <strong>scrum</strong> restarts play &mdash; the whole team binds together and moves the ball forward as one unit.</p>
         <aside class="notes">
-          Show this image and let it land. Don't explain too much yet — just say "This is a scrum" and let the visual do the work. The next slide will connect it to the framework. The power of this image is that it immediately conveys: teamwork, physical togetherness, shared effort, no individual heroes.
+          Let the image land. Say "This is a scrum" and nothing more. Next slide makes the connection.
         </aside>
       </section>
 
@@ -781,11 +768,11 @@
         </div>
         <div class="slide-question fragment">How is your team&rsquo;s current way of working more like a relay race or more like a rugby scrum?</div>
         <aside class="notes">
-          The key insight from Takeuchi &amp; Nonaka: the best teams don't work in sequential phases (like a relay race). They work together, overlapping phases, adapting as they go. This is the fundamental shift Scrum asks teams to make. The relay race metaphor is powerful for this audience — small teams often work sequentially (design → review → revise → approve).
+          Key insight: best teams overlap phases instead of sequential handoffs. Relay race vs. rugby scrum metaphor is powerful for small teams who often work sequentially (design > review > revise > approve).
         </aside>
       </section>
 
-      <!-- Slide 8: Definition of Scrum -->
+      <!-- Slide 9: Definition of Scrum -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-lightbulb"/></svg> What Is Scrum?</h2>
         <div class="quote-card">
@@ -799,97 +786,11 @@
         </ul>
         <div class="slide-question fragment">What makes a problem &ldquo;complex&rdquo; vs. just &ldquo;complicated&rdquo;?</div>
         <aside class="notes">
-          Scrum solves the problem of helping people understand that the way they work by default is the reason for most project failures. Seeing this and understanding it unlocks the way for you to consider a new way of working.
-
-          We want to answer: how do people ACTUALLY work? This happens in teams that want to create something new. Why did it take so long and take so much effort?
+          Frame this as: "Scrum helps people see that the way they work by default is the reason for most failures." Key question to pose: "Why does creating something new always take so long?"
         </aside>
       </section>
 
-      <!-- Slide 8b: Incremental Product Development -->
-      <section>
-        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> Deliver Early, Learn Often</h2>
-        <div class="grid-2" style="margin-top: 16px;">
-          <div class="card" style="border-left: 5px solid var(--color-text-muted);">
-            <h3>Traditional</h3>
-            <p>Plan everything &rarr; Build everything &rarr; Deliver once at the end</p>
-            <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 8px;">Feedback comes too late to act on.</p>
-          </div>
-          <div class="card" style="border-left: 5px solid var(--color-primary);">
-            <h3>Incremental</h3>
-            <p>Plan a little &rarr; Build a little &rarr; Deliver &rarr; Learn &rarr; Repeat</p>
-            <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 8px;">Each increment is usable and gets real feedback.</p>
-          </div>
-        </div>
-        <div class="card--accent fragment" style="margin-top: 20px; text-align: center;">
-          <p style="font-weight: 700; font-size: 1.1rem;">Scrum delivers working product <strong>frequently</strong> &mdash; so you can learn and adapt before it&rsquo;s too late.</p>
-        </div>
-        <aside class="notes">
-          - 2-3 minutes — keep this quick and visual
-          - Ask: "Has your team ever built something for weeks, only to learn it wasn't what was needed?"
-          - The point: frequent delivery reduces risk. You find out what works before you've invested everything.
-          - This is WHY Scrum uses short Sprints — not just for speed, but for learning.
-          - Transition: "So what exactly is the thing you're delivering? Let's talk about products."
-        </aside>
-      </section>
-
-      <!-- Slide 8c: What Is a Product? -->
-      <section>
-        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-lightbulb"/></svg> What Is a Product?</h2>
-        <div class="card" style="margin-bottom: 16px; border-left: 5px solid var(--color-primary);">
-          <p style="font-size: 1.15rem; font-weight: 600;">A product is a vehicle to deliver value. It has customers, users, and stakeholders.</p>
-        </div>
-        <p class="fragment" style="text-align: center; font-weight: 600; margin-bottom: 12px;">At ArtWod, your &ldquo;product&rdquo; might be&hellip;</p>
-        <div class="grid-2">
-          <div class="card fragment" style="border-left: 5px solid var(--color-accent);">
-            <h3>A learning path</h3>
-            <p>A new drawing course designed for beginners</p>
-          </div>
-          <div class="card fragment" style="border-left: 5px solid var(--color-primary);">
-            <h3>A feature</h3>
-            <p>The gamified challenge system that keeps learners engaged</p>
-          </div>
-          <div class="card fragment" style="border-left: 5px solid var(--color-primary);">
-            <h3>A partnership</h3>
-            <p>The Wacom tablet integration for learners</p>
-          </div>
-          <div class="card fragment" style="border-left: 5px solid var(--color-accent);">
-            <h3>A process</h3>
-            <p>The way your team reviews and ships new course content</p>
-          </div>
-        </div>
-        <aside class="notes">
-          Scrum talks about "the product" constantly — if participants don't identify what their product IS, the rest of the framework feels abstract. Walk through the ArtWod examples quickly, then transition to the next slide where they'll answer the question themselves.
-        </aside>
-      </section>
-
-      <!-- Slide: What Is YOUR Product? (Exercise) -->
-      <section>
-        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-lightbulb"/></svg> What Is YOUR Product?</h2>
-        <div class="exercise-card">
-          <p style="font-size: 1.15rem;">Put this into your own words:</p>
-          <ul>
-            <li>What <strong>value</strong> does your product deliver?</li>
-            <li><strong>Who</strong> are your users, customers, and stakeholders?</li>
-            <li>What makes it <strong>worth working on</strong>?</li>
-          </ul>
-          <p style="margin-top: 12px; font-weight: 600;">Write it on a sticky note. We&rsquo;ll come back to this on Day 2.</p>
-        </div>
-        <div class="timer-widget" data-minutes="3">
-          <div class="timer-compact">3:00</div>
-          <div class="timer-controls">
-            <button class="timer-btn timer-btn--start">Start</button>
-            <button class="timer-btn timer-btn--reset">Reset</button>
-          </div>
-        </div>
-        <aside class="notes">
-          - 3 minutes to write, then take 2-3 answers aloud
-          - Validate creative answers — there's no wrong product
-          - Have them keep the sticky note! It comes back on Day 2 as the starting point for the sprint exercise
-          - If people are stuck: "What does ArtWod exist to do? What part of that do YOU touch?"
-        </aside>
-      </section>
-
-      <!-- Slide 8: Agile Manifesto — 4 Values -->
+      <!-- Slide 10: Agile Manifesto — 4 Values -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-heart"/></svg> The Agile Manifesto</h2>
         <div class="grid-2">
@@ -914,11 +815,11 @@
         <p style="text-align: center; font-size: 0.7rem; color: var(--color-text-muted); margin-top: 4px;">*The Manifesto says &ldquo;Working Software&rdquo; &mdash; we read &ldquo;software&rdquo; as &ldquo;product&rdquo; for our context.</p>
         <div class="slide-question fragment">Which of these values resonates most with you today?</div>
         <aside class="notes">
-          Agile is a statement of values. Scrum is a way to put these values into focus, clarity, and practice. Ideas are easy — execution is hard.
+          Frame as: "Agile is a statement of values. Scrum is how you practice them." Connect back to Great Team exercise -- those characteristics map to these values.
         </aside>
       </section>
 
-      <!-- Slide 9: Bridge — Why Complexity Matters -->
+      <!-- Slide 11: Bridge — Why Complexity Matters -->
       <section>
         <h2 style="line-height: 1.3; max-width: 700px; margin: 0 auto;">The Manifesto tells us <span style="color: var(--color-primary); font-size: inherit;">what</span> to value.</h2>
         <h2 style="line-height: 1.3; max-width: 700px; margin: 16px auto 0;">Complexity tells us <span style="color: var(--color-primary); font-size: inherit;">why.</span></h2>
@@ -927,16 +828,11 @@
           <p class="attribution">&mdash; Jeff Sutherland, <em>Scrum: The Art of Doing Twice the Work in Half the Time</em></p>
         </div>
         <aside class="notes">
-          - Timing: ~1 minute — this is a transition slide, not a teaching slide
-          - Let the two statements land: "The Manifesto tells us WHAT to value. Complexity tells us WHY."
-          - Read the Sutherland quote aloud; let it sit for a beat
-          - Key point: the Agile values aren't just philosophy — they're a response to the reality of complex work
-          - Don't explain complexity yet — the next slides (Stacey Matrix, Cynefin) will do that
-          - Transition: "So what do we mean by complexity? Let's look at two models that make this concrete."
+          ~1 min transition slide. Don't explain complexity yet -- next slides do that. Transition: "What do we mean by complexity? Two models make this concrete."
         </aside>
       </section>
 
-      <!-- Slide 9b: Complexity of Product Development (Stacey Matrix) -->
+      <!-- Slide 12: Stacey Matrix -->
       <section>
         <h2 style="margin-bottom: 2px;"><svg class="slide-icon slide-icon--heading"><use href="#icon-compass"/></svg> The Complexity of Product Development</h2>
         <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 12px; align-items: start;">
@@ -1009,17 +905,11 @@
           </div>
         </div>
         <aside class="notes">
-          DISCUSS: Where does your current work fall on this map?
-
-          Waterfall and Gantt Charts — this was a World War I organizational idea. Once the plan hits reality it falls apart. People are hired to update the chart — people are being paid to lie to them.
-
-          Reality versus the plan — we must look at actual development. "Plans are worthless, but planning is everything."
-
-          Management wants two things: control and predictability — leads to graphs and charts. All that wanting to know the unknowable doesn't work because every project involves the discovery of problems and bursts of inspiration. Trying to restrict that to charts is doomed to failure. It's not how people work, not how progress happens, not how ideas reach fruition and how great things are made. It leads to frustrated people who don't get what they want.
+          Extra data: Gantt charts originated from WWI -- once the plan hits reality it falls apart. Sutherland quote: "Plans are worthless, but planning is everything." Management wants control and predictability, but complex work involves discovery and bursts of inspiration. Ask: "Where does your current work fall on this map?"
         </aside>
       </section>
 
-      <!-- Slide 10: Cynefin Framework -->
+      <!-- Slide 13: Cynefin Framework -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-map"/></svg> The Cynefin Framework</h2>
         <div style="max-width: 750px; margin: 0 auto;">
@@ -1059,13 +949,11 @@
 </svg>
         </div>
         <aside class="notes">
-          DISCUSS: How does each domain change the way you should make decisions?
-
-          The Cynefin framework helps teams recognize what kind of problem they're facing so they can respond appropriately. In the Complex domain (where Scrum lives), you can't analyze your way to an answer — you have to probe (try something), sense (see what happens), and respond (adapt). This is fundamentally different from Complicated problems where experts can analyze and predict.
+          Key distinction: Complex vs. Complicated. Complicated = experts can analyze and predict. Complex = you must probe, sense, respond. Scrum lives in Complex. Ask: "How does each domain change how you make decisions?"
         </aside>
       </section>
 
-      <!-- Slide 11: Empirical Process Control -->
+      <!-- Slide 14: Empirical Process Control -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-eye"/></svg> The Three Pillars of Empiricism</h2>
         <div style="max-width: 900px; margin: 0 auto;">
@@ -1113,13 +1001,11 @@
 </svg>
         </div>
         <aside class="notes">
-          All that wanting to know the unknowable doesn't work because every project involves the discovery of problems and bursts of inspiration. Trying to restrict that to charts is doomed to failure.
-
-          Reality versus the plan — we must look at actual development. These three pillars are HOW we look at reality.
+          Frame as: the three pillars are HOW we look at reality instead of clinging to the plan. Connect forward: every Scrum event maps to these pillars (next slide).
         </aside>
       </section>
 
-      <!-- Slide 11: Empiricism in Practice — How Events Map to Pillars -->
+      <!-- Slide 15: Empiricism in Practice — How Events Map to Pillars -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-eye"/></svg> How Scrum Events Use Empiricism</h2>
         <p style="text-align: center; font-size: 1.05rem; margin-bottom: 16px;">Every Scrum event is an opportunity to inspect and adapt.</p>
@@ -1161,19 +1047,73 @@
         </table>
         <div class="slide-question fragment">Which of these three pillars does your team practice today &mdash; and which one is missing?</div>
         <aside class="notes">
-          Inspect and adapt. Respect, honesty, discipline, thought, introspection is required to do this.
-
-          End goal: teams improve their productivity and get what they want.
+          Sutherland: "Respect, honesty, discipline, thought, introspection is required to do this." End goal: teams improve their productivity and get what they want.
         </aside>
       </section>
 
-      <!-- Slide 12: Section Divider — The Scrum Framework -->
+      <!-- Slide 16: Deliver Early, Learn Often -->
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> Deliver Early, Learn Often</h2>
+        <div class="grid-2" style="margin-top: 16px;">
+          <div class="card" style="border-left: 5px solid var(--color-text-muted);">
+            <h3>Traditional</h3>
+            <p>Plan everything &rarr; Build everything &rarr; Deliver once at the end</p>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 8px;">Feedback comes too late to act on.</p>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--color-primary);">
+            <h3>Incremental</h3>
+            <p>Plan a little &rarr; Build a little &rarr; Deliver &rarr; Learn &rarr; Repeat</p>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 8px;">Each increment is usable and gets real feedback.</p>
+          </div>
+        </div>
+        <div class="card--accent fragment" style="margin-top: 20px; text-align: center;">
+          <p style="font-weight: 700; font-size: 1.1rem;">Scrum delivers working product <strong>frequently</strong> &mdash; so you can learn and adapt before it&rsquo;s too late.</p>
+        </div>
+        <aside class="notes">
+          2-3 min. Transition: "So what exactly is the thing you're delivering?"
+        </aside>
+      </section>
+
+      <!-- Slide 17: What Is a Product? -->
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-lightbulb"/></svg> What Is a Product?</h2>
+        <div class="quote-card" style="margin-bottom: 16px;">
+          <p>&ldquo;A product is a vehicle to deliver value. It has a clear boundary, known stakeholders, well-defined users or customers. A product could be a service, a physical product, or something more abstract.&rdquo;</p>
+          <p class="attribution">&mdash; The Scrum Guide (2020)</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; font-size: 0.85rem;">
+          <div class="card fragment" style="padding: 8px 12px; border-left: 4px solid var(--color-primary);">
+            <strong>Saab</strong><br>Fighter jet development
+          </div>
+          <div class="card fragment" style="padding: 8px 12px; border-left: 4px solid var(--color-accent);">
+            <strong>John Deere</strong><br>Connected farm equipment
+          </div>
+          <div class="card fragment" style="padding: 8px 12px; border-left: 4px solid var(--color-primary);">
+            <strong>Lonely Planet</strong><br>Travel guide publishing
+          </div>
+          <div class="card fragment" style="padding: 8px 12px; border-left: 4px solid var(--color-accent);">
+            <strong>Unilever</strong><br>Hand sanitizer rapid delivery
+          </div>
+          <div class="card fragment" style="padding: 8px 12px; border-left: 4px solid var(--color-primary);">
+            <strong>A Dutch house</strong><br>Home renovation in 6 weeks
+          </div>
+          <div class="card fragment" style="padding: 8px 12px; border-left: 4px solid var(--color-accent);">
+            <strong>A church</strong><br>&ldquo;Saving the world one Sprint at a time&rdquo;
+          </div>
+        </div>
+        <div class="slide-question fragment">A product is whatever delivers value to your users or customers. What else could be a &ldquo;product&rdquo;?</div>
+        <aside class="notes">
+          Sutherland&rsquo;s friend Eelco renovated a house in 6 weeks using Sprints and daily stand-ups. A neighbor with the same house and crew but no Scrum took 3 months. (Ch. 1, &ldquo;Scrum: The Art of Doing Twice the Work in Half the Time&rdquo;). Transition: "Now let&rsquo;s look at the framework that helps teams deliver these products."
+        </aside>
+      </section>
+
+      <!-- Slide 18: Section Divider — The Scrum Framework -->
       <section class="section-divider">
         <h2>The Scrum Framework</h2>
         <p style="font-size: 1.2rem; font-weight: 600; color: var(--color-text-muted); margin-top: 8px;">Accountabilities, Events, and Artifacts</p>
       </section>
 
-      <!-- Slide 13: Scrum Framework Overview — Circular Flow -->
+      <!-- Slide 19: Scrum Framework Overview — Circular Flow -->
       <section>
         <h2>Fitting the Pieces Together</h2>
         <div style="max-width: 900px; margin: 0 auto;">
@@ -1271,11 +1211,11 @@
         </div>
         <p style="text-align: center; font-size: 1.0rem; color: var(--color-text-muted); margin-top: 4px;">One Scrum Team &middot; Three accountabilities &middot; Five events &middot; Three artifacts</p>
         <aside class="notes">
-          Framework for team performance: how does the team work together? Careful alignment. Unity of purpose. Clarity of goal. The Sprint is a container event — everything happens within it. Notice how the feedback loop from Review goes all the way back to the Product Backlog.
+          The Sprint is a container event -- everything happens within it. Point out the feedback loop: Review feeds all the way back to Product Backlog.
         </aside>
       </section>
 
-      <!-- Slide 14: Product Owner -->
+      <!-- Slide 20: Product Owner -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-crown"/></svg> Product Owner</h2>
         <div class="card" style="margin-bottom: 16px; border-left: 5px solid var(--color-accent);">
@@ -1289,11 +1229,11 @@
         </ul>
         <div class="slide-question fragment">Who in your organization is closest to this role today?</div>
         <aside class="notes">
-          What brings the most value? 80% of the value of software is in 20% of the features. The PO's job is to find that 20%.
+          Extra data: 80% of the value of software is in 20% of the features (Standish Group). The PO's job is to find that 20%.
         </aside>
       </section>
 
-      <!-- Slide 15: Developers -->
+      <!-- Slide 21: Developers -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-users"/></svg> Developers</h2>
         <div class="card" style="margin-bottom: 16px; border-left: 5px solid var(--color-primary);">
@@ -1308,7 +1248,7 @@
         <div class="slide-question fragment">In Scrum, &ldquo;Developers&rdquo; means anyone doing the work &mdash; not just coders. Who are the developers on your team?</div>
       </section>
 
-      <!-- Slide 16: Scrum Master -->
+      <!-- Slide 22: Scrum Master -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-shield"/></svg> Scrum Master</h2>
         <div class="card" style="margin-bottom: 16px; border-left: 5px solid var(--color-accent);">
@@ -1322,13 +1262,11 @@
         </ul>
         <div class="slide-question fragment">Think about the last time a project stalled at ArtWod. What was actually blocking progress &mdash; and whose job was it to remove that block?</div>
         <aside class="notes">
-          Toyota Production System: production should flow swiftly and calmly throughout the process, and one of management's key tasks is to remove impediments to that flow.
-
-          Everything that stands in the way is waste, and this is morally wrong. Eliminating waste is the first responsibility of management. This requires being honest with yourselves.
+          Toyota Production System: "production should flow swiftly and calmly; management's key task is to remove impediments to that flow." Everything standing in the way is waste. Connect to SM role: causing the removal of impediments.
         </aside>
       </section>
 
-      <!-- Slide 16b: Match the Accountability Exercise -->
+      <!-- Slide 23: Match the Accountability Exercise -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-people-group"/></svg> Match the Accountability</h2>
         <p style="text-align: center; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;">Drag each scenario to the accountability responsible.</p>
@@ -1356,11 +1294,11 @@
           <button class="drag-check-btn" id="drag-reset-btn" style="display: inline-block; margin: 0 4px; background: var(--color-surface); color: var(--color-text);">Reset</button>
         </div>
         <aside class="notes">
-          INTERACTIVE BREAK — This exercise breaks up the 8-slide concept run. Let participants work in pairs or small groups. After checking answers, briefly discuss any surprises. Key teaching point: "Decides who works on which task" belongs to Developers (self-management), not the Scrum Master.
+          Pairs or small groups. Key teaching point: "Decides who works on which task" = Developers (self-management), not SM. Discuss surprises after checking answers.
         </aside>
       </section>
 
-      <!-- Slide 17: The Sprint -->
+      <!-- Slide 24: The Sprint -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> The Sprint</h2>
         <div class="card" style="margin-bottom: 16px; border-left: 5px solid var(--color-primary);">
@@ -1374,13 +1312,11 @@
         </ul>
         <div class="slide-question fragment">Imagine your team had to ship a finished piece of course content every two weeks instead of finalizing it all at quarter&rsquo;s end. What would you do differently?</div>
         <aside class="notes">
-          Scrum sets sequential goals — a finished increment of product. Near real-time feedback. These are cycles.
-
-          The team decides. They create a sense of their own velocity. How can we work together better in the next Sprint? Measure the velocity.
+          Teams create a sense of their own velocity over time. Velocity is a planning tool for the team, not a management metric. Connect forward: they'll experience this in the Lego simulation.
         </aside>
       </section>
 
-      <!-- Slide 18: Sprint Events -->
+      <!-- Slide 25: Sprint Events -->
       <section>
         <h2>Sprint Events</h2>
         <div class="grid-2">
@@ -1404,7 +1340,7 @@
         </div>
       </section>
 
-      <!-- Slide 19: Artifacts & Commitments -->
+      <!-- Slide 26: Artifacts & Commitments -->
       <section>
         <h2>Artifacts &amp; Commitments</h2>
         <div class="grid-3">
@@ -1426,7 +1362,7 @@
         </div>
       </section>
 
-      <!-- Slide 20: Definition of Done -->
+      <!-- Slide 27: Definition of Done -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-check"/></svg> Definition of Done</h2>
         <div class="quote-card" style="margin-bottom: 16px;">
@@ -1443,23 +1379,20 @@
         </div>
         <div class="slide-question fragment">What does &ldquo;Done&rdquo; look like for your team&rsquo;s work right now?</div>
         <aside class="notes">
-          FACILITATION TIP: Keep this slide brief (2 minutes). The real DoD learning will happen organically during the Lego Sprint 1 retrospective when teams experience the pain of not having one.
+          2 min max. The real DoD learning happens during Lego Sprint 1 retro when teams feel the pain of not having one.
         </aside>
       </section>
 
-      <!-- Slide 21: Section Divider — Lego Sprint Simulation -->
+      <!-- Slide 28: Section Divider — Lego Sprint Simulation -->
       <section class="section-divider">
         <h2>Lego Sprint Simulation</h2>
         <p style="font-size: 1.2rem; font-weight: 600;">Time to stand up. You&rsquo;re building an Art School Campus out of Lego.</p>
         <aside class="notes">
-          ENERGY TRANSITION: Switch from theory to hands-on. Get people standing, rearrange tables if needed.
-          - Set up shared Lego pile between teams, Scrum board on wall, visible countdown timer
-          - Explicitly announce: "I am now taking off my trainer hat. I am your Product Owner."
-          - Have sticky notes and markers ready for DoD creation later
+          Setup: shared Lego pile between teams, Scrum board on wall, visible timer. Announce: "I am now your Product Owner." Have sticky notes/markers ready for DoD creation later.
         </aside>
       </section>
 
-      <!-- Slide 22: The Product Vision -->
+      <!-- Slide 29: The Product Vision -->
       <section>
         <h2>Your Mission: Build an Art School Campus</h2>
         <div class="card--accent" style="margin-bottom: 20px;">
@@ -1475,65 +1408,58 @@
           <li>The PO cares about aesthetics, functionality, and creativity</li>
         </ul>
         <aside class="notes">
-          PO BEHAVIOR: Be deliberately vague. Use storytelling, not checklists.
-          - "Imagine a vibrant campus where creativity thrives..."
-          - DO NOT share acceptance criteria. Hidden criteria: symmetry, windows/doors, color consistency, consistent scale, connected pathways
-          - If asked "What do you want?" say: "A beautiful art school campus. Impress me."
-          - Only reveal criteria if teams ask SPECIFIC questions. Answer briefly, do not volunteer extra info.
+          PO BEHAVIOR: Be deliberately vague. Hidden criteria: symmetry, windows/doors, color consistency, consistent scale, connected pathways. If asked "What do you want?": "Impress me." Only reveal criteria when teams ask SPECIFIC questions. Do not volunteer info.
         </aside>
       </section>
 
-      <!-- Slide 23: Product Backlog -->
+      <!-- Slide 30: Product Backlog -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-map"/></svg> Product Backlog</h2>
         <div class="grid-4">
           <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-accent);">
-            <strong>Art Studio</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">2</span>
+            <strong>Art Studio</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">S</span>
           </div>
           <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-primary);">
-            <strong>Gallery</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">5</span>
+            <strong>Gallery</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">L</span>
           </div>
           <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-accent);">
-            <strong>Main Building</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">5</span>
+            <strong>Main Building</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">L</span>
           </div>
           <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-primary);">
-            <strong>Cafe / Shop</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">3</span>
+            <strong>Cafe / Shop</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">M</span>
           </div>
           <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-accent);">
-            <strong>Sculpture Garden</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">2</span>
+            <strong>Sculpture Garden</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">S</span>
           </div>
           <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-primary);">
-            <strong>Walking Paths</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">1</span>
+            <strong>Walking Paths</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">XS</span>
           </div>
           <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-accent);">
-            <strong>Parking Area</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">2</span>
+            <strong>Parking Area</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">S</span>
           </div>
           <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-primary);">
-            <strong>Bridge / Entrance</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">3</span>
+            <strong>Bridge / Entrance</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">M</span>
           </div>
           <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-accent);">
-            <strong>Supply Storage</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">2</span>
+            <strong>Supply Storage</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">S</span>
           </div>
           <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-primary);">
-            <strong>Amphitheater</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">8</span>
+            <strong>Amphitheater</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">XL</span>
           </div>
           <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-accent);">
-            <strong>Student Housing</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">5</span>
+            <strong>Student Housing</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">L</span>
           </div>
           <div class="card" style="padding: 10px; text-align: center; font-size: 1.0rem; border-left: 5px solid var(--color-primary);">
-            <strong>Admin Office</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">3</span>
+            <strong>Admin Office</strong><br><span style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary);">M</span>
           </div>
         </div>
-        <p style="text-align: center; font-size: 0.95rem; color: var(--color-text-muted); margin-top: 16px;">Story points are relative estimates. Items can be built with Lego OR drawn on paper.</p>
+        <p style="text-align: center; font-size: 0.95rem; color: var(--color-text-muted); margin-top: 16px;">T-shirt sizes are relative estimates &mdash; not hours or days. Items can be built with Lego or drawn on paper.</p>
         <aside class="notes">
-          Quick overview only. Numbers are story points (relative size). Teams will select from this list during Sprint Planning.
-          - Do not explain every item in detail; let teams figure it out
-          - Remind them Lego pieces are shared between teams (resource negotiation)
-          - Items can also be drawn on paper if Lego pieces run out
+          Quick overview only. Don't explain items in detail -- let teams figure it out. Lego pieces are shared between teams (resource negotiation). Items can be drawn on paper if pieces run out.
         </aside>
       </section>
 
-      <!-- Slide 24: Sprint Rules -->
+      <!-- Slide 31: Sprint Rules -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-stopwatch"/></svg> Sprint Rules</h2>
         <div class="grid-2" style="margin-bottom: 20px;">
@@ -1554,10 +1480,7 @@
           <p style="font-weight: 700; font-size: 1.2rem;"><svg class="slide-icon slide-icon--heading"><use href="#icon-stopwatch"/></svg> Hands off when time is up! The timebox is sacred.</p>
         </div>
         <aside class="notes">
-          THE TIMEBOX IS SACRED. End sprints at exactly 7 minutes: "Everyone raise your hands!"
-          - Use a large visible timer (phone on stand or projected)
-          - Timeboxing is itself a Scrum principle; enforce it strictly
-          - Sprint 1 Planning gets 5 min (teams will be confused; that is OK). Sprints 2-3 get 3 min.
+          Enforce timeboxes strictly -- this IS a Scrum principle. End builds at exactly 7 min: "Hands up!" Sprint 1 Planning = 5 min, Sprints 2-3 = 3 min. Teams will be confused in Sprint 1; that's the point.
         </aside>
       </section>
 
@@ -1569,10 +1492,7 @@
           <p style="font-weight: 700;">Plan &rarr; Build &rarr; Review &rarr; Retro</p>
         </div>
         <aside class="notes">
-          SPRINT 1 = THE HARSH PO. This sprint will be chaos. That is the point.
-          - Teams will overcommit, build in isolation, skip questions. Let it happen.
-          - Commit now: you will reject 60-80% of their work in Review. Do NOT soften.
-          - The contrast between Sprint 1 and Sprint 3 IS the learning.
+          SPRINT 1 = THE HARSH PO. Commit now: reject 60-80% in Review. Do NOT soften. The contrast between Sprint 1 and Sprint 3 IS the learning.
         </aside>
       </section>
 
@@ -1593,10 +1513,7 @@
           </div>
         </div>
         <aside class="notes">
-          SPRINT 1 PLANNING (5 min): Teams will be confused and overcommit. That is expected.
-          - Watch for: no one asking the PO questions, individuals grabbing items without team discussion
-          - If they ask "What do you want?" stay vague: "Impress me."
-          - Timebox strictly. If they are still confused at 5 min, stop them anyway.
+          Teams will overcommit and skip PO questions. Let it happen. Stay vague: "Impress me." Timebox strictly -- stop at 5 min even if confused.
         </aside>
       </section>
 
@@ -1611,10 +1528,7 @@
         </div>
         <p style="text-align: center; font-size: 1.2rem; font-weight: 700; margin-top: 16px;">Hands off when time is up!</p>
         <aside class="notes">
-          SPRINT 1 BUILD (7 min): Observe but DO NOT intervene. Be available but do not volunteer information.
-          - Note who builds alone vs. who coordinates (use in debrief)
-          - Note whether anyone comes to ask the PO questions (they probably will not)
-          - End at exactly 7 min: "Hands up! Step away from the Lego!"
+          Observe, do NOT intervene or volunteer info. Note who builds alone vs. coordinates, and whether anyone asks PO questions (probably not). Use observations in debrief.
         </aside>
       </section>
 
@@ -1637,12 +1551,7 @@
           </div>
         </div>
         <aside class="notes">
-          SPRINT 1 REVIEW (10 min): THE HARSH PO. Reject 60-80%. Do NOT soften.
-          - "Show me my campus!" Walk around, inspect each piece.
-          - Key phrases: "Did you ask me what I wanted?" / "Where are the windows?" / "This is not symmetrical." / "I did not ask for that."
-          - Point out nobody came to ask questions during the build.
-          - Frame as disappointment, not criticism: "This is not what I envisioned" not "This is bad."
-          - Reject high-effort work if it does not meet hidden criteria. Do not let them convince you.
+          THE HARSH PO. Reject 60-80%. Key phrases: "Did you ask me what I wanted?" / "Where are the windows?" / "This is not symmetrical." Frame as disappointment, not criticism. Reject high-effort work if it doesn't meet hidden criteria. Do not let them convince you.
         </aside>
       </section>
 
@@ -1668,11 +1577,7 @@
           </div>
         </div>
         <aside class="notes">
-          SPRINT 1 RETRO (5 min): The most important retro. Let teams process the rejection.
-          - "I know that felt rough. That is intentional. Let us talk about why."
-          - Ask: "How would you know if something is done BEFORE showing it to me?" Let teams create their own Definition of Done on a sticky note.
-          - Push for ACTIONABLE items: "Show PO work at 4-min mark" not "communicate more."
-          - If someone is visibly upset, break character briefly as trainer: "The frustration IS the lesson."
+          Most important retro. Ask: "How would you know if something is done BEFORE showing it to me?" Have teams create their own DoD on a sticky note. Push for actionable items: "Show PO work at 4-min mark" not "communicate more." Gotcha: if someone is upset, break character: "The frustration IS the lesson."
         </aside>
       </section>
 
@@ -1684,10 +1589,7 @@
           <p style="font-weight: 700;">Plan &rarr; Build &rarr; Review &rarr; Retro</p>
         </div>
         <aside class="notes">
-          SPRINT 2 = THE COACHING PO. Reward improvement while maintaining standards.
-          - Teams should be asking better questions now. Watch for adjusted forecasts.
-          - Plan to leave the room for 2-3 min during the build (PO unavailability lesson).
-          - Accept work that meets criteria. Acknowledge progress.
+          SPRINT 2 = THE COACHING PO. Accept work that meets criteria, acknowledge progress. Plan to leave the room for 2-3 min during build (PO unavailability lesson).
         </aside>
       </section>
 
@@ -1708,10 +1610,7 @@
           </div>
         </div>
         <aside class="notes">
-          SPRINT 2 PLANNING (3 min): Should be faster. Watch for better questions and realistic forecasts.
-          - Are teams referencing their retro action items? Their DoD?
-          - Are they asking the PO clarifying questions? Good sign.
-          - Be available and encouraging but do not volunteer criteria.
+          Watch for: teams referencing retro action items, using their DoD, asking PO clarifying questions. Be available but don't volunteer criteria.
         </aside>
       </section>
 
@@ -1726,10 +1625,7 @@
         </div>
         <p style="text-align: center; font-size: 1.2rem; font-weight: 700; margin-top: 16px;">Hands off when time is up!</p>
         <aside class="notes">
-          SPRINT 2 BUILD (7 min): Leave the room for 2-3 minutes to simulate PO unavailability.
-          - This teaches teams to front-load questions during Planning.
-          - When you return, observe: better coordination? Checking their DoD? Talking to each other?
-          - Note improvements for the debrief.
+          Leave the room for 2-3 min (PO unavailability). This teaches teams to front-load questions during Planning. Note improvements for debrief.
         </aside>
       </section>
 
@@ -1750,11 +1646,7 @@
           </div>
         </div>
         <aside class="notes">
-          SPRINT 2 REVIEW (8 min): THE COACHING PO. Accept improved work. Maintain standards.
-          - "I can see you asked about symmetry; this is much better."
-          - Still reject items that do not meet criteria, but explain why more clearly.
-          - Acknowledge progress explicitly: "This feels more like a campus now."
-          - Update velocity on the wall chart: Sprint 1 pts vs Sprint 2 pts.
+          Accept improved work, maintain standards. Still reject items that miss criteria, but explain why. Update velocity on wall: Sprint 1 pts vs Sprint 2 pts.
         </aside>
       </section>
 
@@ -1780,10 +1672,7 @@
           </div>
         </div>
         <aside class="notes">
-          SPRINT 2 RETRO (5 min): Look for concrete changes from Sprint 1.
-          - Push for ACTIONABLE items: "We will show the PO our work halfway through the build."
-          - Reject vague items: "Communicate more" is not an action.
-          - Ask: "What specific thing will you do differently in the next 7 minutes?"
+          Push for actionable items only. Reject vague ones: "communicate more" is not an action. Ask: "What specific thing will you do differently in the next 7 minutes?"
         </aside>
       </section>
 
@@ -1795,10 +1684,7 @@
           <p style="font-weight: 700;">Plan &rarr; Build &rarr; Review &rarr; Retro</p>
         </div>
         <aside class="notes">
-          SPRINT 3 = THE CELEBRATING PO. Demonstrate the improvement arc.
-          - Be genuinely enthusiastic and fully available.
-          - Accept most work. Celebrate the contrast with Sprint 1.
-          - Optional: if teams are coasting, inject a surprise priority change: "We need an outdoor sculpture installation; top priority!"
+          SPRINT 3 = THE CELEBRATING PO. Be fully available, accept most work, celebrate contrast with Sprint 1. Optional surprise if teams are coasting: "We need an outdoor sculpture installation -- top priority!"
         </aside>
       </section>
 
@@ -1819,10 +1705,7 @@
           </div>
         </div>
         <aside class="notes">
-          SPRINT 3 PLANNING (3 min): Teams should be confident and realistic.
-          - Be fully available and encouraging. Answer questions openly.
-          - Watch for: teams coordinating across both tables, referencing DoD, realistic forecasts.
-          - If injecting a surprise, do it NOW: "I just learned we are hosting a visiting artist. We need an outdoor sculpture installation; it is top priority!"
+          Answer questions openly. Watch for cross-team coordination and realistic forecasts. If injecting surprise, do it NOW: "We're hosting a visiting artist. Outdoor sculpture installation -- top priority!"
         </aside>
       </section>
 
@@ -1837,10 +1720,7 @@
         </div>
         <p style="text-align: center; font-size: 1.2rem; font-weight: 700; margin-top: 16px;">Hands off when time is up!</p>
         <aside class="notes">
-          SPRINT 3 BUILD (7 min): Expect better coordination and quality.
-          - Stay present and available. Observe the improvement from Sprint 1.
-          - Note teamwork patterns for the debrief: who coordinates, who checks DoD, who asks questions.
-          - If a team finishes early, they can pull more items from the Product Backlog (teach pull-based flow).
+          Stay present. Note teamwork improvements from Sprint 1. If a team finishes early, they can pull more items from Product Backlog (teach pull-based flow).
         </aside>
       </section>
 
@@ -1861,11 +1741,7 @@
           </div>
         </div>
         <aside class="notes">
-          SPRINT 3 REVIEW (8 min): THE CELEBRATING PO. Accept most work.
-          - "Look how far you have come. Compare this to Sprint 1!"
-          - Be genuinely enthusiastic. Celebrate the campus as a whole.
-          - Have teams physically assemble their pieces together into one campus.
-          - Update velocity on the wall: the improvement arc (e.g., 3 pts / 8 pts / 12 pts) tells the story.
+          Accept most work. Have teams physically assemble pieces into one campus. Update velocity on wall: the improvement arc (e.g., 3 / 8 / 12 pts) tells the story.
         </aside>
       </section>
 
@@ -1891,11 +1767,7 @@
           </div>
         </div>
         <aside class="notes">
-          SPRINT 3 RETRO (5 min): Final retro — focus on the improvement arc.
-          - Ask: "Compare how you worked in Sprint 1 vs Sprint 3. What changed?"
-          - Encourage teams to reflect on the full journey, not just this sprint.
-          - Look for insights about communication, planning, and adapting to feedback.
-          - This retro feeds directly into the Lego Debrief discussion.
+          Focus on the improvement arc: "Compare Sprint 1 vs Sprint 3. What changed?" This retro feeds directly into the Lego Debrief.
         </aside>
       </section>
 
@@ -1926,36 +1798,25 @@
           </div>
         </div>
         <aside class="notes">
-          FACILITATION: Give 5 minutes for writing, then 15-20 for discussion. Go around the room — everyone shares at least one note. Ask "What did you OBSERVE?" before "What did you LEARN?"
+          5 min writing, 15-20 min discussion. DO NOT RUSH -- 70% of learning happens here. Everyone shares at least one note. Ask "Observe" before "Learn."
 
-          Key questions to weave in during discussion:
-          - "When did you start asking the PO questions? Why not earlier?"
-          - "How did it feel when I rejected your work?"
-          - "Think about how your learners feel the first time they get feedback on a drawing challenge. How is that similar?"
-          - "Did anyone feel like a Scrum Master was needed?"
+          Key questions: "When did you start asking PO questions? Why not earlier?" / "How did rejection feel?" / "Did anyone feel a Scrum Master was needed?"
 
-          VIRGINIA SATIR CHANGE MODEL (mention verbally, 2-3 min):
-          What you experienced follows a known pattern of how teams adopt new ways of working:
-          Status Quo → Foreign Element (Sprint 1 chaos) → Resistance/Chaos → Transforming Idea (retro insights) → Practice → New Status Quo (Sprint 3 flow).
-          "The discomfort you felt in Sprint 1 is normal. It's what happens every time a team starts working differently. The good news: you already made it through to the other side in 90 minutes."
-
-          The debrief is where 70% of the learning happens. Do not rush it.
+          Virginia Satir Change Model (mention verbally, 2-3 min): Status Quo > Foreign Element (Sprint 1 chaos) > Resistance > Transforming Idea (retro insights) > Practice > New Status Quo (Sprint 3 flow). "The discomfort in Sprint 1 is normal. You made it through in 90 minutes."
         </aside>
       </section>
 
-      <!-- Slide 30: Section Divider — Scrum Values -->
+      <!-- Slide 32: Section Divider — Scrum Values -->
       <section class="section-divider">
         <h1>The Scrum Values</h1>
         <p style="font-size: 1.3rem; font-style: italic; color: var(--color-text-muted); margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">&ldquo;Respect, honesty, discipline, thought, introspection is required to do this.&rdquo;</p>
         <p style="font-size: 1.0rem; color: var(--color-text-muted); margin-top: 8px;">&mdash; Jeff Sutherland</p>
         <aside class="notes">
-          - Transition from Lego debrief: "You just lived these values. Now let's name them."
-          - Connect each value back to what teams experienced during the simulation
-          - This section is about reflection, not lecture
+          Connect: "You just lived these values. Now let's name them." This section is reflection, not lecture.
         </aside>
       </section>
 
-      <!-- Slide 31: Five Scrum Values -->
+      <!-- Slide 33: Five Scrum Values -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-star"/></svg> The Five Scrum Values</h2>
         <div style="display: flex; gap: 12px; justify-content: center; margin-bottom: 12px;">
@@ -1989,11 +1850,11 @@
         </div>
         <div class="slide-question fragment" style="margin-top: 16px;">Which of these came naturally during the Lego simulation? Which was hardest?</div>
         <aside class="notes">
-          Respect, honesty, discipline, thought, introspection is required to do this. Ideas are easy — execution is hard. These values are what make the execution possible. Ask the room which value they felt most during the sprints — then which was hardest. Courage and Openness often get the most discussion.
+          Courage and Openness often get the most discussion. Sutherland: "Ideas are easy -- execution is hard." These values make execution possible.
         </aside>
       </section>
 
-      <!-- Slide 32: Values Discussion -->
+      <!-- Slide 34: Values Discussion -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-star"/></svg> Connect Values to Experience</h2>
         <div class="exercise-card">
@@ -2008,13 +1869,11 @@
           </div>
         </div>
         <aside class="notes">
-          - Ask: "Which value did you experience most? Which was hardest?"
-          - Encourage specific examples: "When did you show courage? When was openness difficult?"
-          - Listen for connections to the Lego experience — reinforce them
+          Push for specific examples: "When did you show courage? When was openness difficult?"
         </aside>
       </section>
 
-      <!-- Slide 33: Feedback Wall -->
+      <!-- Slide 35: Feedback Wall -->
       <section>
         <h2>Feedback Wall</h2>
         <div class="exercise-card">
@@ -2031,14 +1890,11 @@
           </div>
         </div>
         <aside class="notes">
-          - Three columns on the wall: Surprises | Questions | Connections to My Work
-          - One sticky per column minimum
-          - Read a few aloud and group-discuss before closing
-          - Note recurring themes — address questions tomorrow on Day 2
+          Three wall columns: Surprises | Questions | Connections to My Work. One sticky per column minimum. Note recurring themes -- address questions on Day 2.
         </aside>
       </section>
 
-      <!-- Slide 34: Day 1 Closing -->
+      <!-- Slide 36: Day 1 Closing -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-star"/></svg> See You Tomorrow!</h2>
         <div class="grid-3" style="margin-bottom: 16px;">
@@ -2059,24 +1915,19 @@
           <p style="font-size: 1.1rem; font-weight: 600;">Tomorrow you&rsquo;ll apply everything you learned to <strong>your actual work</strong> &mdash; the thing you came here to figure out.</p>
         </div>
         <aside class="notes">
-          - Preview Day 2: deeper planning concepts, estimation, and a new hands-on exercise
-          - Optional: Read the Scrum Guide — a quick, focused read
-          - Review the Parking Lot — address or flag unanswered questions
-          - Thank everyone for their energy and participation
+          Review the Parking Lot -- address or flag unanswered questions for tomorrow.
         </aside>
       </section>
 
-      <!-- Slide 35: Section Divider — Day 2 -->
+      <!-- Slide 37: Section Divider — Day 2 -->
       <section class="section-divider">
         <h1>Day 2: Apply to Your Product</h1>
         <aside class="notes">
-          - Day 2 shifts from "learn Scrum" to "apply Scrum to your work"
-          - Energy check: start with an informal welcome, let people settle in
-          - Have the Feedback Wall from yesterday visible as a reference
+          Day 2 shifts from "learn Scrum" to "apply Scrum to your work." Have yesterday's Feedback Wall visible.
         </aside>
       </section>
 
-      <!-- Slide 36: Day 2 Opening -->
+      <!-- Slide 38: Day 2 Opening -->
       <section>
         <h2>Welcome Back!</h2>
         <div class="card" style="border-left: 5px solid var(--color-primary);">
@@ -2086,10 +1937,7 @@
           <p><svg class="slide-icon"><use href="#icon-comments"/></svg> Turn to your neighbor. In 2 minutes, explain what Scrum is to someone who wasn&rsquo;t here yesterday. Then share: <strong>one thing that surprised you</strong> and <strong>one thing you want to understand better today</strong>.</p>
         </div>
         <aside class="notes">
-          - Open with: "What stuck with you overnight?"
-          - Let people share freely — this surfaces what resonated most
-          - Pair exercise: explain Scrum to a neighbor in 2 minutes
-          - Collect "what I want to understand better" items for the Parking Lot
+          Collect "what I want to understand better" items for the Parking Lot.
         </aside>
       </section>
 
@@ -2122,14 +1970,11 @@
           </tbody>
         </table>
         <aside class="notes">
-          - Timing: ~1 minute — quick overview to orient the day
-          - Highlight: "Today you apply Scrum to your own product"
-          - Point out: two full Product Sprints plus final presentations
-          - Transition: "Let's start with a deeper look at the Sprint events you experienced yesterday"
+          ~1 min orientation. Transition: "Let's start with a deeper look at the Sprint events you experienced yesterday."
         </aside>
       </section>
 
-      <!-- Slide 37: Sprint Events Flow -->
+      <!-- Slide 39: Sprint Events Flow -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-arrows-rotate"/></svg> The Sprint as a Learning Loop</h2>
         <div style="max-width: 900px; margin: 0 auto;">
@@ -2227,14 +2072,11 @@
         </div>
         <p style="text-align: center; font-size: 1.0rem; color: var(--color-text-muted); margin-top: 12px;">Each event is an opportunity to inspect and adapt &mdash; the heartbeat of empiricism.</p>
         <aside class="notes">
-          - Walk through the flow: Planning -> Daily Scrum -> Sprint Review -> Retrospective
-          - Emphasize the Sprint is the container — everything lives inside it
-          - Point out the feedback loop: Review feeds back into the Product Backlog
-          - Connect to Lego: "You lived this loop three times yesterday"
+          Connect to Lego: "You lived this loop three times yesterday." Point out Review > Product Backlog feedback loop.
         </aside>
       </section>
 
-      <!-- Slide 38: Self-Management -->
+      <!-- Slide 40: Self-Management -->
       <section>
         <h2>Self-Managing Teams</h2>
         <div class="card--primary">
@@ -2252,24 +2094,21 @@
         </div>
         <div class="slide-question fragment">Where at ArtWod do teams already self-manage? Where does someone else decide the who, what, or how?</div>
         <aside class="notes">
-          The team decides. They create a sense of their own velocity. How can we work together better in the next Sprint?
-          T-shaped people: deep expertise in one area (the vertical bar), broad ability to collaborate across disciplines (the horizontal bar). In a startup like ArtWod, people likely already work this way — validate that and name the pattern.
+          T-shaped people: deep expertise in one area (vertical bar), broad ability to collaborate across disciplines (horizontal bar). ArtWod likely already works this way -- validate and name the pattern.
         </aside>
       </section>
 
-      <!-- Slide 39: Section Divider — Planning with Scrum -->
+      <!-- Slide 41: Section Divider — Planning with Scrum -->
       <section class="section-divider">
         <h1>Planning with Scrum</h1>
         <p style="font-size: 1.3rem; font-style: italic; color: var(--color-text-muted); margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">&ldquo;Plans are worthless, but planning is everything.&rdquo;</p>
         <p style="font-size: 1.0rem; color: var(--color-text-muted); margin-top: 8px;">&mdash; Dwight D. Eisenhower</p>
         <aside class="notes">
-          - Transition: "Today we go deeper into the planning side of Scrum."
-          - Use the Eisenhower quote: Scrum embraces change rather than fighting it
-          - This section covers estimation, refinement, Definition of Ready, and progress monitoring
+          This section covers estimation, refinement, Definition of Ready, and progress monitoring.
         </aside>
       </section>
 
-      <!-- Slide 40: Estimation -->
+      <!-- Slide 42: Estimation -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-compass"/></svg> Estimation</h2>
         <div class="card" style="border-left: 5px solid var(--color-accent);">
@@ -2287,14 +2126,11 @@
           </div>
         </div>
         <aside class="notes">
-          - Key point: estimation is a team activity, not a management tool
-          - Relative sizing: "Is this bigger or smaller than that?"
-          - T-shirt sizes (XS, S, M, L, XL) are accessible for non-technical teams
-          - The conversation matters more than the number
+          The conversation matters more than the number. T-shirt sizes are accessible for non-technical teams.
         </aside>
       </section>
 
-      <!-- Slide 41: Estimation Exercise -->
+      <!-- Slide 43: Estimation Exercise -->
       <section>
         <h2>Estimation Exercise</h2>
         <div class="exercise-card">
@@ -2306,14 +2142,11 @@
           </ul>
         </div>
         <aside class="notes">
-          - Have teams pick 5-8 real tasks from their current work
-          - Use T-shirt sizes; compare and discuss differences
-          - Debrief: "Where did you disagree? What did the conversation reveal?"
-          - Emphasize: shared understanding is the value, not precision
+          10 min. Debrief question: "Where did you disagree? What did the conversation reveal?" Shared understanding is the value, not precision.
         </aside>
       </section>
 
-      <!-- Slide 42: Product Backlog Refinement -->
+      <!-- Slide 44: Product Backlog Refinement -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-gear"/></svg> Product Backlog Refinement</h2>
         <div class="card" style="border-left: 5px solid var(--color-primary);">
@@ -2328,14 +2161,11 @@
           <p>Think of it as &ldquo;grooming the queue&rdquo; &mdash; keeping the backlog ready for the next Sprint.</p>
         </div>
         <aside class="notes">
-          - Refinement is ongoing, NOT a formal Scrum event
-          - Break big items down, add detail, re-order
-          - The Scrum Team decides how and when refinement is done
-          - Connect to Lego: "Remember how Sprint 2 planning was faster? That's refinement in action."
+          Connect to Lego: "Remember how Sprint 2 planning was faster? That's refinement in action."
         </aside>
       </section>
 
-      <!-- Slide 43: Definition of Ready -->
+      <!-- Slide 45: Definition of Ready -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-check"/></svg> When Is a Backlog Item &ldquo;Ready&rdquo;?</h2>
         <div class="grid-3">
@@ -2354,14 +2184,11 @@
         </div>
         <p style="text-align: center; font-size: 1.0rem; color: var(--color-text-muted); margin-top: 16px;">Ready &ne; fully specified. Just enough to start.</p>
         <aside class="notes">
-          - Definition of Ready: Clear, Sized, Testable
-          - Compare to Definition of Done — Ready is the entry gate, Done is the exit gate
-          - "Like acceptance criteria for a platform feature" — connect to their work context
-          - Not in the Scrum Guide, but a useful team practice
+          Ready = entry gate, Done = exit gate. Gotcha: Definition of Ready is NOT in the Scrum Guide -- it's a useful team practice, not a requirement.
         </aside>
       </section>
 
-      <!-- Slide 44: Monitoring Sprint Progress -->
+      <!-- Slide 46: Monitoring Sprint Progress -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-eye"/></svg> Monitoring Sprint Progress</h2>
         <div class="card" style="border-left: 5px solid var(--color-primary);">
@@ -2373,10 +2200,7 @@
           </ul>
         </div>
         <aside class="notes">
-          - Sprint Backlog makes progress visible — transparency in action
-          - Burndown/burnup charts are tools, not mandates
-          - Focus on the Sprint Goal, not individual task completion
-          - Connect to Lego: "How did you know if you were on track during each sprint?"
+          Connect to Lego: "How did you know if you were on track during each sprint?"
         </aside>
       </section>
 
@@ -2384,19 +2208,16 @@
            DAY 2 — PRODUCT SPRINT & CLOSING
            ============================================ -->
 
-      <!-- Slide 45: Section Divider — Product Sprint -->
+      <!-- Slide 47: Section Divider — Product Sprint -->
       <section class="section-divider">
         <h1>Product Sprint</h1>
         <h2>Build Something Real</h2>
         <aside class="notes">
-          - Transition: "You've learned the framework. Now apply it to YOUR product."
-          - This exercise is more open-ended than Lego — let teams find their own rhythm
-          - Observe how they apply what they learned yesterday
-          - Distribute materials: paper, markers, poster boards, laptops if available
+          Materials: paper, markers, poster boards, laptops if available. More open-ended than Lego -- let teams find their own rhythm.
         </aside>
       </section>
 
-      <!-- Slide 46: Revisit Your Product -->
+      <!-- Slide 48: Revisit Your Product -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-lightbulb"/></svg> Remember This?</h2>
         <div class="card" style="border-left: 5px solid var(--color-primary); margin-bottom: 16px;">
@@ -2415,14 +2236,11 @@
           </div>
         </div>
         <aside class="notes">
-          - This callbacks to the Day 1 sticky note exercise
-          - Teams read their product definitions, then discuss what to focus on
-          - Help teams pick something real and scoped: a feature spec, a product pitch, a roadmap section
-          - The deliverable is whatever serves the product best — not just slides
+          Callbacks to Day 1 sticky note. Help teams pick something real and scoped: feature spec, product pitch, roadmap section. Deliverable = whatever serves the product, not just slides.
         </aside>
       </section>
 
-      <!-- Slide 47: The Challenge -->
+      <!-- Slide 49: The Challenge -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-flag"/></svg> The Challenge</h2>
         <div style="background: var(--color-primary); color: #fff; border: var(--border-thick); box-shadow: var(--shadow-base); padding: 20px 28px; margin-bottom: 20px;">
@@ -2451,14 +2269,11 @@
           </div>
         </div>
         <aside class="notes">
-          - The deliverable is open: product spec, pitch deck, prototype mockup, whatever serves the team
-          - Teams pick their own PO this time (callback to Lego where you were PO)
-          - Emphasize: agree on a Definition of Done before starting (callback to Lego DoD)
-          - Teams create their own Product Backlog — they own the process now
+          Teams pick their own PO this time (callback: you were PO in Lego). Remind them: agree on DoD before starting.
         </aside>
       </section>
 
-      <!-- Slide 48: What to Include -->
+      <!-- Slide 50: What to Include -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-lightbulb"/></svg> What to Include</h2>
         <div class="card" style="border-left: 5px solid var(--color-accent);">
@@ -2471,13 +2286,11 @@
           </ul>
         </div>
         <aside class="notes">
-          - These are guidelines, not requirements — teams can adapt
-          - Encourage "show, don't tell" — visual aids, demos, mockups
-          - Teams should break these into backlog items for Sprint Planning
+          Guidelines, not requirements. Teams should break these into backlog items for Sprint Planning.
         </aside>
       </section>
 
-      <!-- Slide 49: Sprint Planning -->
+      <!-- Slide 51: Sprint Planning -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-flag"/></svg> Sprint Planning</h2>
         <div class="exercise-card">
@@ -2496,14 +2309,11 @@
           </div>
         </div>
         <aside class="notes">
-          - Each team selects their own PO — this person owns the vision
-          - Teams define their own Definition of Done (callback to Lego)
-          - Remind teams to use their Scrum boards from yesterday
-          - Encourage teams to write backlog items on sticky notes
+          Remind teams to use their Scrum boards from yesterday. Backlog items on sticky notes.
         </aside>
       </section>
 
-      <!-- Slide 50: Create! -->
+      <!-- Slide 52: Create! -->
       <section>
         <h2 style="margin-bottom: 8px;">Create!</h2>
         <div class="timer-widget" data-minutes="20">
@@ -2515,14 +2325,11 @@
         </div>
         <p style="text-align: center; font-size: 1.4rem; font-weight: 700; margin-top: 20px;">BUILD! Make something you can show.</p>
         <aside class="notes">
-          - 20-minute timebox — click Start on the timer
-          - Circulate and observe; don't intervene unless teams are stuck
-          - Watch for teams applying Lego lessons: asking PO questions, updating boards
-          - Note positive patterns to call out in the debrief
+          Circulate and observe; don't intervene unless stuck. Watch for Lego lessons being applied: PO questions, board updates. Note positives for debrief.
         </aside>
       </section>
 
-      <!-- Slide 50: Product Sprint Review -->
+      <!-- Slide 53: Product Sprint Review -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-comments"/></svg> Sprint Review</h2>
         <div class="exercise-card">
@@ -2541,14 +2348,11 @@
           </div>
         </div>
         <aside class="notes">
-          - ~5 min per team; use warm/cool feedback structure
-          - Warm: "What's working well?" Cool: "What could be stronger?"
-          - Other teams provide feedback too — not just the PO
-          - Teams adapt their Product Backlog based on what they hear
+          ~5 min per team. Warm/cool feedback: "What's working?" / "What could be stronger?" Other teams provide feedback too, not just PO.
         </aside>
       </section>
 
-      <!-- Slide 51: Sprint Retrospective -->
+      <!-- Slide 54: Sprint Retrospective -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-gear"/></svg> Sprint Retrospective</h2>
         <div class="grid-3">
@@ -2564,10 +2368,7 @@
         </div>
         <p class="fragment" style="text-align: center; font-size: 1.0rem; color: var(--color-text-muted); margin-top: 16px;">Quick retro &mdash; 5 minutes. Then Sprint 2!</p>
         <aside class="notes">
-          - Keep this retro short and focused — 5 minutes max
-          - Push for actionable items, not vague goals
-          - Ask: "What one thing will you change for Sprint 2?"
-          - Transition quickly into Sprint 2 after lunch
+          5 min max. Ask: "What one thing will you change for Sprint 2?" Transition quickly into Sprint 2 after lunch.
         </aside>
       </section>
 
@@ -2579,7 +2380,7 @@
           <p style="font-weight: 700;">Remember your Definition of Done!</p>
         </div>
         <aside class="notes">
-          Teams should be noticeably better at planning and incorporating feedback. Draw the parallel to the Lego sprints: "Notice how you're doing the same thing you did with Lego — inspecting and adapting."
+          Draw the parallel: "Notice how you're doing the same thing you did with Lego -- inspecting and adapting."
         </aside>
       </section>
 
@@ -2600,9 +2401,7 @@
           </div>
         </div>
         <aside class="notes">
-          - Should be faster than Sprint 1 planning
-          - Watch for teams referencing their retro items
-          - Encourage PO to prioritize: what's most important to finish?
+          Should be faster than Sprint 1. Encourage PO to prioritize: what's most important to finish?
         </aside>
       </section>
 
@@ -2617,9 +2416,7 @@
         </div>
         <p style="text-align: center; font-size: 1.4rem; font-weight: 700; margin-top: 20px;">Refine and complete your deliverable.</p>
         <aside class="notes">
-          - Final build phase — teams should be focused and efficient
-          - Observe how much better they collaborate vs Sprint 1
-          - Note improvements to call out during Final Presentations
+          Note improvements vs Sprint 1 to call out during Final Presentations.
         </aside>
       </section>
 
@@ -2641,9 +2438,7 @@
           </div>
         </div>
         <aside class="notes">
-          - ~5 min per team; warm/cool feedback structure
-          - This is the last chance to refine before Final Presentations
-          - Encourage teams to make one final improvement based on feedback
+          ~5 min per team. Last chance to refine before Final Presentations. Encourage one final improvement based on feedback.
         </aside>
       </section>
 
@@ -2669,13 +2464,11 @@
           </div>
         </div>
         <aside class="notes">
-          - Last retro of the workshop — make it meaningful
-          - Ask: "How was this different from Lego Sprint retros?"
-          - Connect to real work: "You'll do this every Sprint with your actual team"
+          Ask: "How was this different from Lego Sprint retros?" Connect forward: "You'll do this every Sprint with your actual team."
         </aside>
       </section>
 
-      <!-- Slide 52: Final Presentations -->
+      <!-- Slide 55: Final Presentations -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-trophy"/></svg> Final Presentations</h2>
         <div class="card" style="border-left: 5px solid var(--color-primary);">
@@ -2685,28 +2478,22 @@
           <p style="font-size: 1.1rem; font-weight: 600;">This is your final Sprint Review &mdash; make it count.</p>
         </div>
         <aside class="notes">
-          - Frame this as the final Sprint Review — use the Scrum language
-          - Give the audience a stakeholder role: "You are investors deciding whether to fund this"
-          - 10-15 min per team; encourage feedback from other teams after each
-          - Celebrate the work and the improvement from Sprint 1 to final product
-          - Make this celebratory — the point is iterative improvement, not perfection
+          Frame as final Sprint Review. Give audience a stakeholder role: "You are investors deciding whether to fund this." 10-15 min per team. The point is iterative improvement, not perfection.
         </aside>
       </section>
 
-      <!-- Slide 53: Section Divider — Your Scrum Startup Kit -->
+      <!-- Slide 56: Section Divider — Your Scrum Startup Kit -->
       <section class="section-divider">
         <h1>Your Scrum Startup Kit</h1>
         <p style="font-size: 1.2rem; color: var(--color-text-muted);">Everything you need to run your first Sprint at ArtWod</p>
         <p style="font-size: 1.3rem; font-style: italic; color: var(--color-text-muted); margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">&ldquo;End goal: teams improve their productivity and get what they want.&rdquo;</p>
         <p style="font-size: 1.0rem; color: var(--color-text-muted); margin-top: 8px;">&mdash; Jeff Sutherland</p>
         <aside class="notes">
-          - Transition: "You've experienced Scrum. You've applied it to your product. Now let's make sure you can actually start."
-          - Frame this as: "Here's the bare minimum you need to run your first Sprint. We're going to fill this in together."
-          - Energy shift: from learning to committing. This should feel like the team is making real decisions.
+          Frame as: "Here's the bare minimum to run your first Sprint. We'll fill this in together." Energy shift: from learning to committing.
         </aside>
       </section>
 
-      <!-- Slide 54: The Bare Minimum -->
+      <!-- Slide 57: The Bare Minimum -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-check"/></svg> The Bare Minimum to Start</h2>
         <p style="text-align: center; font-weight: 600; margin-bottom: 16px;">You don&rsquo;t need to be perfect. You need these seven things.</p>
@@ -2734,13 +2521,11 @@
           </div>
         </div>
         <aside class="notes">
-          - Walk through each item briefly — they've already learned what all these are
-          - "You experienced every one of these during the Lego simulation and Product Sprint. Now we're filling them in for real."
-          - This slide is the frame. The next 30 minutes is where they self-organize and commit.
+          Walk through briefly -- they already know all these. This slide is the frame; the next 30 min is where they self-organize and commit.
         </aside>
       </section>
 
-      <!-- Slide 54b: The Scrum Master Question -->
+      <!-- Slide 58: The Scrum Master Question -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-shield"/></svg> About the Scrum Master</h2>
         <div class="card" style="border-left: 5px solid var(--color-primary); margin-bottom: 16px;">
@@ -2763,15 +2548,11 @@
         </div>
         <div class="slide-question fragment">What makes sense for ArtWod right now?</div>
         <aside class="notes">
-          - Be factual, not prescriptive. The Scrum Guide says SM is an accountability, not optional.
-          - In practice: the SM role is most intensive early on (coaching, removing org impediments, teaching the framework). It becomes less intensive as the team matures.
-          - For a startup: internal part-time or external coach are the most common starting points.
-          - Don't push a specific answer — let the team discuss and decide.
-          - The intensity of the role decreases over time as Scrum becomes habitual.
+          Be factual, not prescriptive. SM is an accountability per the Scrum Guide, not optional. SM intensity is highest early on and decreases as Scrum becomes habitual. For startups: internal part-time or external coach are the most common starting points. Let the team decide.
         </aside>
       </section>
 
-      <!-- Slide 54c: Watch Out For -->
+      <!-- Slide 59: Watch Out For -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-shield"/></svg> Watch Out For</h2>
         <p style="text-align: center; font-weight: 600; margin-bottom: 16px;">Common patterns that undermine Scrum &mdash; even when teams have good intentions.</p>
@@ -2795,14 +2576,11 @@
         </div>
         <div class="slide-question fragment">What impediments exist for your team today? Who would own removing them?</div>
         <aside class="notes">
-          - 3-5 minutes — keep it conversational, not a lecture
-          - "Scrum-But" is the most common: teams adopt the ceremonies but skip the hard parts
-          - Impediments: ask the group to name real blockers they face.
-          - Don't be preachy — frame these as patterns to watch for, not rules to follow
+          3-5 min. "Scrum-But" is the most common anti-pattern: adopt the ceremonies, skip the hard parts. Ask the group to name real blockers they face today.
         </aside>
       </section>
 
-      <!-- Slide 55: Self-Organize -->
+      <!-- Slide 60: Self-Organize -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-people-group"/></svg> Self-Organize</h2>
         <div class="card--primary" style="margin-bottom: 16px;">
@@ -2826,16 +2604,11 @@
           </div>
         </div>
         <aside class="notes">
-          - 30 minutes of self-organization. Step back and let them work.
-          - Be available for questions but don't drive the conversation.
-          - Walk around and observe — note how they self-organize (this IS Scrum in action).
-          - If they're stuck on SM, acknowledge the options: internal part-time, external coach, hire. No wrong answer.
-          - Handout 4 (Team Canvas) is their artifact — they should fill in every box.
-          - At 25 min, give a 5-minute warning: "Start wrapping up — you'll share back with the group."
+          30 min. Step back and let them work -- this IS Scrum in action. Be available, don't drive. Handout 4 (Team Canvas) is their artifact; fill in every box. At 25 min give 5-minute warning.
         </aside>
       </section>
 
-      <!-- Slide 55b: Share Back -->
+      <!-- Slide 61: Share Back -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-comments"/></svg> Share Back</h2>
         <div class="exercise-card">
@@ -2849,29 +2622,22 @@
         </div>
         <p class="fragment" style="text-align: center; font-weight: 700; font-size: 1.1rem; margin-top: 16px;">This is your commitment to each other.</p>
         <aside class="notes">
-          - ~10 min per team if multiple teams; or 15-20 for the full group as one team
-          - This is the climax of the workshop — they're committing to start
-          - Ask clarifying questions: "When exactly is Sprint 1?" "Who's the PO?" "What's the first thing you'd build?"
-          - Celebrate the decisions — this is real, not hypothetical
-          - If they couldn't fill in SM, that's OK — acknowledge it as an open item and discuss next steps
+          ~10 min per team. This is the climax -- they're committing to start. Ask: "When exactly is Sprint 1?" / "Who's the PO?" / "What's the first thing you'd build?" If SM is unfilled, acknowledge as open item.
         </aside>
       </section>
 
-      <!-- Slide 56: Appreciation Wall -->
+      <!-- Slide 62: Appreciation Wall -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-heart"/></svg> Appreciation Wall</h2>
         <div class="exercise-card">
           <p>Write a statement of appreciation about someone in this workshop or about the experience itself. Post it on the wall.</p>
         </div>
         <aside class="notes">
-          - Each person writes an appreciation for someone else in the workshop
-          - Post on the wall; read a few aloud
-          - This creates a positive close and reinforces the Respect value
-          - Allow 3-5 minutes for writing and sharing
+          3-5 min. Reinforces the Respect value from Scrum Values section.
         </aside>
       </section>
 
-      <!-- Slide 57: Suggested Reading -->
+      <!-- Slide 63: Suggested Reading -->
       <section>
         <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-lightbulb"/></svg> Continue Learning</h2>
         <div class="grid-2">
@@ -2889,14 +2655,11 @@
           </div>
         </div>
         <aside class="notes">
-          - Highlight the Scrum Guide as the essential free resource
-          - Sutherland's book is the most accessible intro — engaging stories, not textbook
-          - Pocket Guide is great as a quick reference to keep on hand
-          - Keep this brief — just point people to resources, don't lecture
+          Brief -- just point to resources. Scrum Guide is free and essential. Sutherland's book is the most accessible intro (stories, not textbook).
         </aside>
       </section>
 
-      <!-- Slide 58: Closing -->
+      <!-- Slide 64: Closing -->
       <section class="section-divider">
         <h1>Thank You!</h1>
         <p>Keep inspecting and adapting.</p>
@@ -2907,10 +2670,7 @@
           Jason Holt &middot; Professional Scrum Master
         </p>
         <aside class="notes">
-          - Thank everyone for their time, participation, and openness
-          - Share attributions: Lego4Scrum by Alexey Krivitsky; Scrum Guide by Schwaber and Sutherland
-          - Final message: "Every great work of art is an iteration. Keep inspecting and adapting."
-          - Collect any remaining feedback or questions
+          Collect any remaining feedback or questions.
         </aside>
       </section>
 
