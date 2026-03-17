@@ -66,18 +66,37 @@
 
 On Day 1, the PO pitches a city vision for the Lego exercise. What's the equivalent for Day 2?
 
-The product is a presentation, but the PO needs to bring it to life with a story — not just say "make a presentation about Scrum." Per Krivitsky: "A good Product Owner is a great storyteller."
+### DECIDED: The Product is "The ArtWod Way"
 
-**Possible vision angles:**
-1. "Imagine it's 3 months from now. Someone new joins ArtWod. They ask: 'How do you work here?' This presentation IS the answer. It should feel like ArtWod — your aesthetic, your voice, your style. When they see it, they should understand not just the process but WHY you chose it."
+**What it is:** An onboarding guide for new hires. When someone joins ArtWod, this is the ONE thing you hand them to show how the team works. Not a policy document — a creative piece that feels like ArtWod.
 
-2. "Your investors ask: 'What changed after that Scrum training?' This presentation is what you show them. It's proof that this team doesn't just make art — they make art WITH a system."
+**The PO (Jason) vision pitch:**
+"I need an onboarding guide. When someone new joins ArtWod, I want to hand them ONE thing that shows them how we work. Not a policy document — a creative piece that feels like US. It should answer: What is our process? Why do we work this way? What does it look like in practice? When they finish reading it, they should be ready to join a Sprint on day one."
 
-3. "This is the manifesto for how ArtWod works. Not a corporate process document — a creative artifact that represents who you are as a team and how you deliver."
+**The key PO question (every Sprint Review):** "Where's my presentation? Could I hand this to a new hire RIGHT NOW and they'd understand how ArtWod works?"
 
-**What the PO cares about (hidden + stated):**
-- Stated: "Tell the story of how ArtWod will use Scrum"
-- Hidden: artistic quality (they're an art company), cohesion between the two teams' sections, practical specificity (not just theory regurgitation), their own voice (not Jason's words repeated back)
+This parallels Day 1's "Where is my city?!" — both ask: did you deliver a working product that creates value?
+
+**Product Discovery (same flow as Day 1):**
+1. PO pitches the vision
+2. Users: new hire (primary), existing team (secondary), CEO/founder (tertiary)
+3. Needs: what does a new hire need to know on day one? What does the existing team need documented?
+4. Features: what sections/content address those needs?
+5. Estimate & Prioritize
+
+**Hidden PO criteria (for Sprint 1 disappointment):**
+- Does it tell a cohesive story or is it just a list of Scrum terms?
+- Would a new hire actually understand this?
+- Does it FEEL like ArtWod or does it feel like a generic corporate doc?
+- Is it one unified product or two disconnected halves?
+- Could you hand this to someone right now?
+
+**Why this works:**
+- It's a real deliverable they'll actually use after the workshop
+- It forces synthesis of Day 1 learnings into their own words (Feynman method)
+- The artistic design requirement engages their actual skills
+- "The ArtWod Way" carries identity weight — it's who they are
+- The output feeds directly into the Startup Kit (the presentation IS the first draft of their Scrum adoption)
 
 ---
 
@@ -117,7 +136,8 @@ The handout canvas has:
 
 ## Gaps / Risks
 
-1. **PO vision for Day 2 presentation is undefined** — Jason needs to figure out his story before Wednesday
+1. ~~**PO vision for Day 2 presentation is undefined**~~ — RESOLVED: "The ArtWod Way" onboarding guide
 2. **Day 2 morning is theory-heavy** (9:15-10:15 = 60 min of slides before the Challenge) — consider making some of it interactive (Fact/Myth exercise?)
 3. **Materials for presentation** — what do they create with? Paper + markers? Laptops? Poster boards? Need to decide and bring supplies.
-4. **Integration moment** — the "Where is my presentation?!" moment needs to be designed. Unlike Lego where you physically assemble pieces, a presentation needs a plan for how two teams' work becomes one product. Maybe: one team does content/structure, other does design/visual identity? Or split by sections?
+4. **Integration moment** — "Where's my presentation?" works the same as "Where's my city?" — the PO demands ONE unified product. Teams must coordinate structure, style, flow. The disappointment in Sprint 1 should be: "I see two halves, not one guide."
+5. **Day 1 PO vision for Lego city** — Jason still needs to craft his specific city vision (book recommends something personal and inspiring, not generic "build a city")
