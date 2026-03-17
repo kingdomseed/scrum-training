@@ -342,14 +342,13 @@
 
     .canvas-row-bottom {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 0.15in;
       margin-top: 0.15in;
     }
 
     .canvas-box {
-      border: 2px solid var(--color-border);
-      box-shadow: var(--shadow-base);
+      border: 1px solid #999;
       padding: 0.12in;
       display: flex;
       flex-direction: column;
@@ -366,14 +365,11 @@
     .canvas-box-label {
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: 0.75rem;
-      background: var(--color-primary);
-      color: #fff;
-      padding: 0.03in 0.1in;
-      border: 2px solid var(--color-border);
-      display: inline-block;
-      width: fit-content;
-      margin-bottom: 0.08in;
+      font-size: 0.8rem;
+      color: var(--color-text);
+      padding: 0 0 0.05in 0;
+      margin-bottom: 0.05in;
+      border-bottom: 2px solid var(--color-border);
     }
 
     .canvas-box-body {
@@ -711,7 +707,8 @@
           <div class="canvas-box-body"></div>
         </div>
         <div class="canvas-box medium">
-          <div class="canvas-box-label">Scrum Master &mdash; who will coach the team? <span style='font-size: 0.75rem; font-weight: 400; display: block; margin-top: 4px; color: #666;'>Options: an internal team member, a rotating role, a new hire, or an external consultant</span></div>
+          <div class="canvas-box-label">Scrum Master &mdash; who will coach the team?</div>
+          <p style="font-size: 0.7rem; color: #666; margin: 0 0 0.05in;">Options: internal team member, rotating role, new hire, or external consultant</p>
           <div class="canvas-box-body"></div>
         </div>
         <div class="canvas-box medium">
