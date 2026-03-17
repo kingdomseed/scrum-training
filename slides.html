@@ -745,10 +745,10 @@
       <!-- Slide 8: What Is a Scrum? (Rugby Image) -->
       <section>
         <h2>What Is a Scrum?</h2>
-        <div class="card fragment" style="text-align: center; padding: 8px;">
+        <div class="card fragment" data-fragment-index="1" style="text-align: center; padding: 8px;">
           <img src="images/rugby-scrum.jpg" alt="A rugby scrum — two teams locked together, pushing as a unit" style="width: 100%; max-height: 420px; object-fit: cover; border: var(--border-base); display: block;">
-          <p style="text-align: center; color: var(--color-text-muted); margin-top: 12px;">In rugby, a <strong>scrum</strong> restarts play &mdash; the whole team binds together and moves the ball forward as one unit.</p>
         </div>
+        <p class="fragment" data-fragment-index="2" style="text-align: center; color: var(--color-text-muted); margin-top: 12px;">In rugby, a <strong>scrum</strong> restarts play &mdash; the whole team binds together and moves the ball forward as one unit.</p>
         <aside class="notes">
           The term comes from Takeuchi &amp; Nonaka's 1986 HBR paper "The New New Product Development Game." Sutherland and Schwaber built it into a framework in the early 90s, presented at OOPSLA 1995. Best teams overlap phases instead of sequential handoffs.
         </aside>
@@ -2856,6 +2856,63 @@
           <h3>From Paper to Practice</h3>
           <p><strong>Jeff Sutherland</strong> and <strong>Ken Schwaber</strong> took this idea and created the Scrum framework in the early 1990s, first presented at OOPSLA in 1995.</p>
         </div>
+      </section>
+
+      <!-- Appendix: Case Study — Linear -->
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-lightbulb"/></svg> Case Study: Linear</h2>
+        <p style="text-align: center; font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: 16px;">Founded by <strong>Karri Saarinen</strong>. A software company that practices the agile mindset &mdash; without calling it Scrum.<br><a href="https://linear.app/method" target="_blank" style="color: var(--color-primary); text-decoration: underline;">linear.app/method</a></p>
+        <div class="grid-2" style="font-size: 0.85rem;">
+          <div class="card fragment" style="padding: 10px 14px; border-left: 4px solid var(--color-primary);">
+            <strong>&ldquo;Create momentum &mdash; don&rsquo;t sprint&rdquo;</strong><br>Find a cadence and routine. Maintain healthy momentum, don&rsquo;t rush.
+          </div>
+          <div class="card fragment" style="padding: 10px 14px; border-left: 4px solid var(--color-accent);">
+            <strong>&ldquo;Work in n-week cycles&rdquo;</strong><br>2-week cycles. Short enough to stay focused, long enough to build.
+          </div>
+          <div class="card fragment" style="padding: 10px 14px; border-left: 4px solid var(--color-accent);">
+            <strong>&ldquo;Keep a manageable backlog&rdquo;</strong><br>Important items resurface. Low priority ones never get done. Focus.
+          </div>
+          <div class="card fragment" style="padding: 10px 14px; border-left: 4px solid var(--color-primary);">
+            <strong>&ldquo;Run cross-functional teams&rdquo;</strong><br>Designers and engineers together. Natural push and pull.
+          </div>
+          <div class="card fragment" style="padding: 10px 14px; border-left: 4px solid var(--color-primary);">
+            <strong>&ldquo;Scope issues to be as small as possible&rdquo;</strong><br>Small tasks, visible progress, easier to review.
+          </div>
+          <div class="card fragment" style="padding: 10px 14px; border-left: 4px solid var(--color-accent);">
+            <strong>&ldquo;Decide and move on&rdquo;</strong><br>There isn&rsquo;t always a best answer. Make a decision. Adapt later.
+          </div>
+        </div>
+        <aside class="notes">
+          Linear never says "Scrum" but practices everything in it: cycles (Sprints), manageable backlog (Refinement), cross-functional teams (Self-Management), small scope (Incremental delivery), decide and adapt (Empiricism). The "don't sprint" line is powerful — same practice, deliberately avoids jargon. Connects to our terminology slide: practices matter more than labels.
+        </aside>
+      </section>
+
+      <!-- Appendix: Linear — Deeper Principles -->
+      <section>
+        <h2><svg class="slide-icon slide-icon--heading"><use href="#icon-lightbulb"/></svg> Linear: More Principles</h2>
+        <div class="grid-2" style="font-size: 0.85rem;">
+          <div class="card fragment" style="padding: 10px 14px; border-left: 4px solid var(--color-primary);">
+            <strong>&ldquo;Measure progress with actual work&rdquo;</strong><br>Show the diff, not a status report. Working product over documentation.
+          </div>
+          <div class="card fragment" style="padding: 10px 14px; border-left: 4px solid var(--color-accent);">
+            <strong>&ldquo;Aim for clarity&rdquo;</strong><br>Don&rsquo;t invent terms. Projects should be called projects.
+          </div>
+          <div class="card fragment" style="padding: 10px 14px; border-left: 4px solid var(--color-accent);">
+            <strong>&ldquo;Say no to busy work&rdquo;</strong><br>Your tools should work for you, not the other way around.
+          </div>
+          <div class="card fragment" style="padding: 10px 14px; border-left: 4px solid var(--color-primary);">
+            <strong>&ldquo;Write project specs&rdquo;</strong><br>Aim for brevity. Force teams to scope so they avoid building the wrong thing.
+          </div>
+          <div class="card fragment" style="padding: 10px 14px; border-left: 4px solid var(--color-primary);">
+            <strong>&ldquo;Understand your users&rdquo;</strong><br>Collect feedback. Spot trends. Bring the voice of customers into development.
+          </div>
+          <div class="card fragment" style="padding: 10px 14px; border-left: 4px solid var(--color-accent);">
+            <strong>&ldquo;Simple first, then powerful&rdquo;</strong><br>Start simple. Grow more powerful as you scale.
+          </div>
+        </div>
+        <aside class="notes">
+          "Measure with actual work" = Working Product over Documentation (Manifesto). "Aim for clarity" = Transparency. "Write project specs" = Refinement — just enough detail. "Understand your users" = Product Discovery (what we did on the wall). These are the same ideas wearing different clothes.
+        </aside>
       </section>
 
     </div>
