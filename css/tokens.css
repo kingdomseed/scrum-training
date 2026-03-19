@@ -1,0 +1,21 @@
+/* ============================================
+   DESIGN TOKENS — shared across all pages
+   ============================================ */
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f9f9f9;
+  --color-text: #1a1a1a;
+  --color-text-muted: #444444;
+  --color-primary: #0066ff;
+  --color-on-primary: #ffffff;
+  --color-accent: #ffd700;
+  --color-on-accent: #1a1a1a;
+  --color-border: #000000;
+  --border-base: 2px solid var(--color-border);
+  --border-thick: 3px solid var(--color-border);
+  --border-heavy: 4px solid var(--color-border);
+  --shadow-base: 6px 6px 0 0 rgba(0,0,0,0.12);
+  --shadow-lift: 10px 10px 0 0 rgba(0,0,0,0.18);
+  --font-display: "Epilogue", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+}
